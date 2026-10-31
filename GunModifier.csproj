@@ -12,6 +12,11 @@
   <ItemGroup>
     <PackageReference Include="LavaGang.MelonLoader"
                       Version="0.6.5" />
+
+    <Reference Include="BoneLib">
+      <HintPath>Lib/BoneLib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
   </ItemGroup>
 
 </Project>
