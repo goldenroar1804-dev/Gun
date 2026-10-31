@@ -1,0 +1,497 @@
+[22:57:57.072] Initialized JNI
+[22:57:57.390] ------------------------------
+[22:57:57.392] MelonLoader v0.6.5 Open-Beta
+[22:57:57.397] OS: Android 14
+[22:57:57.397] Hash Code: 5CD70450DB040884645CC87694335EB2DEFBB8CE840FC149EED709EAD3D2B03F
+[22:57:57.397] ------------------------------
+[22:57:57.397] Game Type: Il2cpp
+[22:57:57.397] Game Arch: x64
+[22:57:57.398] ------------------------------
+[22:57:57.400] Command-Line: 
+[22:57:57.400] ------------------------------
+[22:57:57.401] Core::BasePath = /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB
+[22:57:57.401] Game::BasePath = /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB
+[22:57:57.401] Game::DataPath = bin/Data/
+[22:57:57.402] Game::ApplicationPath = /system/bin/app_process64
+[22:57:57.402] Runtime Type: net8
+[22:57:57.800] ------------------------------
+[22:57:57.800] Game Name: BONELAB
+[22:57:57.801] Game Developer: Stress Level Zero
+[22:57:57.810] Unity Version: 2021.3.16f1
+[22:57:57.811] Game Version: 1.2974.57485
+[22:57:57.811] ------------------------------
+
+[22:57:59.077] DotnetAssemblyLoadContextFix Exception: System.NullReferenceException: Null method for MelonLoader
+   at HarmonyLib.PatchProcessor.Patch()
+   at HarmonyLib.Harmony.Patch(MethodBase original, HarmonyMethod prefix, HarmonyMethod postfix, HarmonyMethod transpiler, HarmonyMethod finalizer, HarmonyMethod ilmanipulator)
+   at MelonLoader.Fixes.DotnetAssemblyLoadContextFix.Install()
+[22:57:59.614] HarmonyLib.HarmonyException: IL Compile Error (unknown location)
+ ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location)
+ ---> System.MissingMethodException: Method not found: void Il2CppInterop.Runtime.Injection.RegisterTypeOptions.set_LogSuccess(bool)
+   at System.RuntimeMethodHandle.GetFunctionPointer()
+   at MonoMod.Core.Platforms.Runtimes.MonoRuntime.Compile(MethodBase method)
+   at MonoMod.Core.Platforms.PlatformTriple.Compile(MethodBase method)
+   at MonoMod.RuntimeDetour.DetourManager.ManagedDetourState.UpdateEndOfChain()
+   at MonoMod.RuntimeDetour.DetourManager.ManagedDetourState.AddILHook(SingleILHookState ilhook, Boolean takeLock)
+   at MonoMod.RuntimeDetour.ILHook.Apply()
+   at HarmonyLib.Public.Patching.ManagedMethodPatcher.DetourTo(MethodBase replacement)
+   --- End of inner exception stack trace ---
+   at HarmonyLib.Public.Patching.ManagedMethodPatcher.DetourTo(MethodBase replacement)
+   at HarmonyLib.PatchFunctions.UpdateWrapper(MethodBase original, PatchInfo patchInfo)
+   --- End of inner exception stack trace ---
+   at HarmonyLib.PatchFunctions.UpdateWrapper(MethodBase original, PatchInfo patchInfo)
+   at HarmonyLib.PatchProcessor.Patch()
+   at HarmonyLib.Harmony.Patch(MethodBase original, HarmonyMethod prefix, HarmonyMethod postfix, HarmonyMethod transpiler, HarmonyMethod finalizer, HarmonyMethod ilmanipulator)
+   at MelonLoader.Fixes.Il2CppInteropFixes.Install()
+[22:57:59.918] Preferences Loaded!
+
+[22:58:00.157] Loading UserLibs from '/storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserLibs'...
+[22:58:00.159] ------------------------------
+[22:58:00.176] Melon Assembly loaded: './UserLibs/System.Speech.dll'
+[22:58:00.177] SHA256 Hash: '09ED245882F438A164D20C2FA59ABAEBDC1FEAACC32BA9756DB731E388EA45A6'
+
+[22:58:00.185] Loading Plugins from '/storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/Plugins'...
+[22:58:00.186] ------------------------------
+[22:58:00.191] Melon Assembly loaded: './Plugins/ThunderstoreModAssistantPlugin.dll'
+[22:58:00.191] SHA256 Hash: 'B60F4E52164ED4729038EAF7A3DD359CBAEBCFDA9083869B5E420C0A474E0D78'
+
+[22:58:00.316] ------------------------------
+[22:58:00.318] ThunderstoreModAssistantPlugin v1.0.0
+[22:58:00.318] by notnotnotswipez
+[22:58:00.319] Assembly: ThunderstoreModAssistantPlugin.dll
+[22:58:00.319] ------------------------------
+[22:58:00.320] ------------------------------
+[22:58:00.321] 1 Plugin loaded.
+[22:58:02.369] Loading Il2CppAssemblyGenerator...
+[22:58:02.423] [Il2CppAssemblyGenerator] Contacting RemoteAPI...
+[22:58:02.609] [Il2CppAssemblyGenerator] Game Not Found on RemoteAPI Host (https://api.melonloader.com/api/v1/game/bonelab)
+[22:58:02.609] [Il2CppAssemblyGenerator] RemoteAPI.DumperVersion = null
+[22:58:02.609] [Il2CppAssemblyGenerator] RemoteAPI.ObfuscationRegex = null
+[22:58:02.609] [Il2CppAssemblyGenerator] RemoteAPI.MappingURL = null
+[22:58:02.610] [Il2CppAssemblyGenerator] RemoteAPI.MappingFileSHA512 = null
+[22:58:02.625] [Il2CppAssemblyGenerator] Using Cpp2IL Version: 2022.1.0-pre-release.16
+[22:58:02.625] [Il2CppAssemblyGenerator] Using Il2CppInterop Version = 1.4.6+5c0c44bfc31bc50023fb7426fc4a32b2086f672b
+[22:58:02.625] [Il2CppAssemblyGenerator] Using Unity Dependencies Version = 2021.3.16
+[22:58:02.625] [Il2CppAssemblyGenerator] Using Deobfuscation Regex = null
+[22:58:02.626] [Il2CppAssemblyGenerator] UnityDependencies is up to date.
+[22:58:02.626] [Il2CppAssemblyGenerator] Checking GameAssembly...
+[22:58:03.006] [Il2CppAssemblyGenerator] Assembly is up to date. No Generation Needed.
+
+[22:58:03.007] Loading Mods from '/storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/Mods'...
+[22:58:03.009] ------------------------------
+[22:58:03.017] Melon Assembly loaded: './Mods/UltimateRagdoll.dll'
+[22:58:03.017] SHA256 Hash: 'FDE492DFCC19D1A10651E6229DE4E44AA5EA1A376DC9D513982A1C0AC42D9FDA'
+[22:58:03.064] Melon Assembly loaded: './Mods/BoneLib.dll'
+[22:58:03.064] SHA256 Hash: '6E347AD57342979B22AB24D83F468DCCE3B201D56B9BA15CDC1F0301DD14A97A'
+[22:58:03.080] Melon Assembly loaded: './Mods/SpawnLab.dll'
+[22:58:03.080] SHA256 Hash: 'A5D4DD7A4DC46FAEC17B55366D169E01D107512F084EDD0173BCA9EB2013ADFB'
+[22:58:03.085] Melon Assembly loaded: './Mods/RagdollUtility.dll'
+[22:58:03.085] SHA256 Hash: 'C913A0C1CEBDF2E17B2D54A9F8C77A1E9F6DC9599BDB36F3D3853886A2C9B845'
+[22:58:03.087] Melon Assembly loaded: './Mods/BulletCleanup.dll'
+[22:58:03.087] SHA256 Hash: '46ACC083B960F4992C71CB39CFC13465897F725F1BC0A3EE6323FCF6385F9C45'
+[22:58:03.090] Melon Assembly loaded: './Mods/LabUtils.dll'
+[22:58:03.090] SHA256 Hash: '6E554EE034621E5973837A6398CE6B49DF8AABA3FE41A9943F92FD493BFC47FB'
+[22:58:03.098] Melon Assembly loaded: './Mods/SearchThing.dll'
+[22:58:03.099] SHA256 Hash: '941F462BCCE5BCC1985D11E506027F0059AF7ACE99AABBEE20EA3D692F8BECF8'
+[22:58:03.134] Melon Assembly loaded: './Mods/ModioModNetworker.dll'
+[22:58:03.134] SHA256 Hash: 'B9E0184CDE3898E7FA1AE0EFE76F8175504833147F8673D6783A8DB1DAB94025'
+[22:58:03.144] Melon Assembly loaded: './Mods/Doppel.dll'
+[22:58:03.144] SHA256 Hash: '7114BE14755F4E6910FD7E1CC6687CFF8DB79FC6793ACE77978E941D479E3B31'
+[22:58:03.190] Melon Assembly loaded: './Mods/BonelabCinematicCamera.dll'
+[22:58:03.190] SHA256 Hash: '98489FFAAE68652F677873A185CF030CFD0E446E4727C12FF84C4C5030361972'
+[22:58:03.192] Melon Assembly loaded: './Mods/GunModifier.dll'
+[22:58:03.192] SHA256 Hash: '7D92B0568B65D67D69752A6EA8D403648240F94F76B4C5DE39B8D355C225F48D'
+[22:58:03.195] Melon Assembly loaded: './Mods/SpawnLogger.dll'
+[22:58:03.195] SHA256 Hash: 'F5A3A82C2DACB7BFE1D2B3ECDDE27809CEF982B1566E5E5908CCF20860050898'
+[22:58:03.572] Melon Assembly loaded: './Mods/LabFusion.dll'
+[22:58:03.572] SHA256 Hash: '696D715C524508AD555C804F55F7831A596000B8F10AF156A3E5CD49D7CE3633'
+[22:58:03.605] Melon Assembly loaded: './Mods/ThunderstoreModAssistant.dll'
+[22:58:03.605] SHA256 Hash: '13D32ED6D7EBFAE2FA573973EBA22E9884343C2C829D31DFFDFB422CD0C20471'
+[22:58:03.623] Melon Assembly loaded: './Mods/RagdollPlayer.dll'
+[22:58:03.624] SHA256 Hash: '6C6078229707B48F968857B3DE0D9C2FC18DEEA893758FD6398AC5A8BCBFD656'
+
+[22:58:03.938] Some Melons are missing dependencies, which you may have to install.
+If these are optional dependencies, mark them as optional using the MelonOptionalDependencies attribute.
+This warning will turn into an error and Melons with missing dependencies will not be loaded in the next version of MelonLoader.
+- 'Doppel' is missing the following dependencies:
+    - 'Portals' v1.6.0.0
+[22:58:03.951] ------------------------------
+[22:58:03.951] BoneLib v3.2.2
+[22:58:03.951] by The BONELAB Modding Community
+[22:58:03.951] Assembly: BoneLib.dll
+[22:58:03.952] ------------------------------
+[22:58:03.974] [LabFusion] Data is at /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Fusion/.
+[22:58:03.977] [LabFusion] Loading embedded resource data LabFusion.dependencies.resources.lib.Facepunch.Steamworks.Win64.dll...
+[22:58:03.979] [LabFusion] Done!
+[22:58:03.983] [LabFusion] Loading embedded resource data LabFusion.dependencies.resources.lib.arm64.libEOSSDK.so...
+[22:58:04.050] [LabFusion] Done!
+[22:58:04.324] [LabFusion] EOSSDK already exists, skipping extraction.
+[22:58:04.393] [LabFusion] Successfully loaded EOSSDK into the application!
+[22:58:04.400] ------------------------------
+[22:58:04.401] LabFusion v1.14.2
+[22:58:04.401] by Lakatrazz
+[22:58:04.401] Assembly: LabFusion.dll
+[22:58:04.401] ------------------------------
+[22:58:04.407] ------------------------------
+[22:58:04.407] BulletCleanup v0.1.0
+[22:58:04.407] by Geozek (with Codex)
+[22:58:04.407] Assembly: BulletCleanup.dll
+[22:58:04.408] ------------------------------
+[22:58:04.415] ------------------------------
+[22:58:04.415] Cinematic Camera v1.15.2
+[22:58:04.416] by BonelabCamMod
+[22:58:04.416] Assembly: BonelabCinematicCamera.dll
+[22:58:04.416] ------------------------------
+[22:58:04.421] ------------------------------
+[22:58:04.421] Gun Modifier v1.2.2
+[22:58:04.421] by GunModifier
+[22:58:04.421] Assembly: GunModifier.dll
+[22:58:04.422] ------------------------------
+[22:58:04.426] ------------------------------
+[22:58:04.426] Doppel v1.3.0
+[22:58:04.426] by RUDYHILL
+[22:58:04.427] Assembly: Doppel.dll
+[22:58:04.427] ------------------------------
+[22:58:04.431] ------------------------------
+[22:58:04.431] LabUtils v1.0.0
+[22:58:04.431] by cheesy
+[22:58:04.432] Assembly: LabUtils.dll
+[22:58:04.432] ------------------------------
+[22:58:04.436] ------------------------------
+[22:58:04.436] ModioModNetworker v2.8.1
+[22:58:04.436] by notnotnotswipez
+[22:58:04.436] Assembly: ModioModNetworker.dll
+[22:58:04.436] ------------------------------
+[22:58:04.441] ------------------------------
+[22:58:04.441] Ragdoll Player v1.3.0
+[22:58:04.441] by Lakatrazz
+[22:58:04.441] Assembly: RagdollPlayer.dll
+[22:58:04.441] ------------------------------
+[22:58:04.446] ------------------------------
+[22:58:04.446] RagdollUtility v1.0.0
+[22:58:04.446] by notnotnotswipez
+[22:58:04.446] Assembly: RagdollUtility.dll
+[22:58:04.446] ------------------------------
+[22:58:04.451] ------------------------------
+[22:58:04.451] SearchThing v0.5.0
+[22:58:04.451] by Mash
+[22:58:04.451] Assembly: SearchThing.dll
+[22:58:04.451] ------------------------------
+[22:58:04.456] ------------------------------
+[22:58:04.456] Spawn Logger v2.5.0
+[22:58:04.456] by Local Utility
+[22:58:04.456] Assembly: SpawnLogger.dll
+[22:58:04.456] ------------------------------
+[22:58:04.460] ------------------------------
+[22:58:04.461] SpawnLab v1.0.2
+[22:58:04.461] by ChappieStudios
+[22:58:04.461] Assembly: SpawnLab.dll
+[22:58:04.461] ------------------------------
+[22:58:04.465] ------------------------------
+[22:58:04.465] ThunderstoreModAssistant v1.2.1
+[22:58:04.465] by notnotnotswipez
+[22:58:04.466] Assembly: ThunderstoreModAssistant.dll
+[22:58:04.466] ------------------------------
+[22:58:04.470] ------------------------------
+[22:58:04.470] Ultimate Ragdoll v5.4.1
+[22:58:04.470] by Int_Void
+[22:58:04.471] Assembly: UltimateRagdoll.dll
+[22:58:04.471] ------------------------------
+[22:58:04.471] ------------------------------
+[22:58:04.471] 15 Mods loaded.
+
+[22:58:05.075] [Il2CppInterop] Registered mono type Il2CppInterop.Runtime.DelegateSupport+Il2CppToMonoDelegateReference in il2cpp domain
+[22:58:05.168] [Il2CppInterop] Registered mono type MelonLoader.Support.MonoEnumeratorWrapper in il2cpp domain
+[22:58:05.177] [Il2CppInterop] Registered mono type MelonLoader.Support.SM_Component in il2cpp domain
+[22:58:05.212] Support Module Loaded: /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/MelonLoader/Dependencies/SupportModules/Il2Cpp.dll
+[22:58:05.252] [Il2CppInterop] Registered mono type BoneLib.MonoBehaviours.PopupBox in il2cpp domain
+[22:58:05.304] [Il2CppInterop] Method Void DrawHeader(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
+[22:58:05.305] [Il2CppInterop] Method Void DrawBackground(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
+[22:58:05.305] [Il2CppInterop] Method Void DrawFooter(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
+[22:58:05.305] [Il2CppInterop] Method Void DrawElements(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
+[22:58:05.405] [Il2CppInterop] Method Void SetModInfo(ModioModNetworker.Data.ModInfo) on type ModIoModNetworker.Ui.ModInfoDisplay has unsupported parameter ModioModNetworker.Data.ModInfo modInfo of type ModioModNetworker.Data.ModInfo
+[22:58:05.417] [Il2CppInterop] Registered mono type ModIoModNetworker.Ui.ModInfoDisplay in il2cpp domain
+[22:58:05.419] [Il2CppInterop] Method Void TriggerModInfoPopup(Boolean, ModioModNetworker.Data.ModInfo) on type ModIoModNetworker.Ui.NetworkerMenuController has unsupported parameter ModioModNetworker.Data.ModInfo modInfo of type ModioModNetworker.Data.ModInfo
+[22:58:05.419] [Il2CppInterop] Method UnityEngine.GameObject MakeModInfoObject(UnityEngine.Transform, ModioModNetworker.Data.ModInfo, Boolean) on type ModIoModNetworker.Ui.NetworkerMenuController has unsupported parameter ModioModNetworker.Data.ModInfo modInfo of type ModioModNetworker.Data.ModInfo
+[22:58:05.421] [Il2CppInterop] Method Void SetKeyAction(System.String, System.Action) on type ModIoModNetworker.Ui.NetworkerMenuController has unsupported parameter System.Action action of type System.Action
+[22:58:05.450] [Il2CppInterop] Registered mono type ModIoModNetworker.Ui.NetworkerMenuController in il2cpp domain
+[22:58:05.524] [Il2CppInterop] Registered mono type LabFusion.Voice.VoiceSource in il2cpp domain
+[22:58:05.534] [Il2CppInterop] Registered mono type LabFusion.UI.FusionUIMachine in il2cpp domain
+[22:58:05.541] [Il2CppInterop] Registered mono type LabFusion.UI.CupBoard in il2cpp domain
+[22:58:05.545] [Il2CppInterop] Registered mono type LabFusion.UI.FusionPanelView in il2cpp domain
+[22:58:05.554] [Il2CppInterop] Registered mono type LabFusion.UI.CupBoardPanelView in il2cpp domain
+[22:58:05.559] [Il2CppInterop] Registered mono type LabFusion.UI.FusionUITrigger in il2cpp domain
+[22:58:05.562] [Il2CppInterop] Registered mono type LabFusion.UI.InfoBox in il2cpp domain
+[22:58:05.567] [Il2CppInterop] Registered mono type LabFusion.UI.InfoBoxPanelView in il2cpp domain
+[22:58:05.600] [Il2CppInterop] Registered mono type LabFusion.SDK.MonoBehaviours.GamemodeItem in il2cpp domain
+[22:58:05.603] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.AntiHasher in il2cpp domain
+[22:58:05.608] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.CollisionSyncer in il2cpp domain
+[22:58:05.611] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.DestroyOnDisconnect in il2cpp domain
+[22:58:05.613] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.DestroySensor in il2cpp domain
+[22:58:05.616] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.MirrorIdentifier in il2cpp domain
+[22:58:05.620] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.NotifyOnEnable in il2cpp domain
+[22:58:05.628] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.TimedDespawner in il2cpp domain
+[22:58:05.633] [Il2CppInterop] Registered mono type LabFusion.Audio.AudioStreamFilter in il2cpp domain
+[22:58:05.640] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.AnimatorSyncer in il2cpp domain
+[22:58:05.648] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.AvatarCosmeticPoint in il2cpp domain
+[22:58:05.660] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.CosmeticRoot in il2cpp domain
+[22:58:05.665] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.DeathTrigger in il2cpp domain
+[22:58:05.668] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.Desyncer in il2cpp domain
+[22:58:05.671] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.CelebrationEvents in il2cpp domain
+[22:58:05.675] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.OwnershipEvents in il2cpp domain
+[22:58:05.681] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.PlayerEvents in il2cpp domain
+[22:58:05.687] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.ServerEvents in il2cpp domain
+[22:58:05.691] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.BitTransactor in il2cpp domain
+[22:58:05.697] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeCrateSpawner in il2cpp domain
+[22:58:05.700] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeDropper in il2cpp domain
+[22:58:05.724] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeDropperSettings in il2cpp domain
+[22:58:05.726] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeEvents in il2cpp domain
+[22:58:05.731] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeMarker in il2cpp domain
+[22:58:05.738] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeMusicSettings in il2cpp domain
+[22:58:05.742] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodePlayerSettings in il2cpp domain
+[22:58:05.747] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeTeamSettings in il2cpp domain
+[22:58:05.769] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCEvent in il2cpp domain
+[22:58:05.776] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCVariable in il2cpp domain
+[22:58:05.781] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCVector3 in il2cpp domain
+[22:58:05.785] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCString in il2cpp domain
+[22:58:05.789] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCBool in il2cpp domain
+[22:58:05.793] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCFloat in il2cpp domain
+[22:58:05.796] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCInt in il2cpp domain
+[22:58:05.819] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.VoiceProxy in il2cpp domain
+[22:58:05.831] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.Keyboard in il2cpp domain
+[22:58:05.837] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.KeyboardButton in il2cpp domain
+[22:58:05.839] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.AchievementBoard in il2cpp domain
+[22:58:05.871] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitMart in il2cpp domain
+[22:58:05.873] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.InfoBoard in il2cpp domain
+[22:58:05.879] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuElement in il2cpp domain
+[22:58:05.999] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitCatalogElement in il2cpp domain
+[22:58:06.012] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitMartElement in il2cpp domain
+[22:58:06.021] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitResultElement in il2cpp domain
+[22:58:06.027] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitWelcomeElement in il2cpp domain
+[22:58:06.035] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.GamemodeResultElement in il2cpp domain
+[22:58:06.040] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelResultElement in il2cpp domain
+[22:58:06.048] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelRotationResultElement in il2cpp domain
+[22:58:06.061] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LabelElement in il2cpp domain
+[22:58:06.064] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.ButtonElement in il2cpp domain
+[22:58:06.068] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BoolElement in il2cpp domain
+[22:58:06.072] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.GroupElement in il2cpp domain
+[22:58:06.077] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.DropdownElement in il2cpp domain
+[22:58:06.081] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.ValueElement in il2cpp domain
+[22:58:06.086] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.EnumElement in il2cpp domain
+[22:58:06.093] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.FloatElement in il2cpp domain
+[22:58:06.097] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.FunctionElement in il2cpp domain
+[22:58:06.104] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.IntElement in il2cpp domain
+[22:58:06.114] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PageArrowsElement in il2cpp domain
+[22:58:06.121] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PageElement in il2cpp domain
+[22:58:06.128] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.StringElement in il2cpp domain
+[22:58:06.161] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LobbyElement in il2cpp domain
+[22:58:06.172] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LobbyResultElement in il2cpp domain
+[22:58:06.193] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PlayerElement in il2cpp domain
+[22:58:06.204] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PlayerResultElement in il2cpp domain
+[22:58:06.213] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.NotificationElement in il2cpp domain
+[22:58:06.216] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelNameLabel in il2cpp domain
+[22:58:06.226] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuPage in il2cpp domain
+[22:58:06.231] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuPopups in il2cpp domain
+[22:58:06.233] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuToolbar in il2cpp domain
+[22:58:06.246] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.ScrollButtonProxy in il2cpp domain
+[22:58:06.257] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelDownloadUI in il2cpp domain
+[22:58:06.259] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.UIPanel in il2cpp domain
+[22:58:06.273] [Il2CppInterop] Method System.Collections.Generic.List`1[ThunderstoreModAssistant.CodeModInfo] GetInstalledCodeModList() on type ThunderstoreModAssistant.Behaviors.AssistantMenuController has unsupported return type System.Collections.Generic.List`1[ThunderstoreModAssistant.CodeModInfo]
+[22:58:06.273] [Il2CppInterop] Method Void SetKeyAction(System.String, System.Action) on type ThunderstoreModAssistant.Behaviors.AssistantMenuController has unsupported parameter System.Action action of type System.Action
+[22:58:06.274] [Il2CppInterop] Method Void UpdateModDisplay(ThunderstoreModAssistant.CodeModInfo, Boolean) on type ThunderstoreModAssistant.Behaviors.AssistantMenuController has unsupported parameter ThunderstoreModAssistant.CodeModInfo info of type ThunderstoreModAssistant.CodeModInfo
+[22:58:06.292] [Il2CppInterop] Registered mono type ThunderstoreModAssistant.Behaviors.AssistantMenuController in il2cpp domain
+[22:58:06.293] [Il2CppInterop] Method Void SetModInfo(ThunderstoreModAssistant.CodeModInfo) on type ThunderstoreModAssistant.Behaviors.CodeModInfoDisplay has unsupported parameter ThunderstoreModAssistant.CodeModInfo modInfo of type ThunderstoreModAssistant.CodeModInfo
+[22:58:06.295] [Il2CppInterop] Registered mono type ThunderstoreModAssistant.Behaviors.CodeModInfoDisplay in il2cpp domain
+[22:58:08.545] [ModioModNetworker] HarmonyLib.HarmonyException: Patching exception in method null
+ ---> System.ArgumentException: Undefined target method for patch method static void ModioModNetworker.Patches.LevelLoadPatch+SendLevelPatchClass::Prefix(string barcode, string loadBarcode, ulong userId)
+   at HarmonyLib.PatchClassProcessor.PatchWithAttributes(MethodBase& lastOriginal, Boolean unpatch)
+   at HarmonyLib.PatchClassProcessor.Patch()
+   --- End of inner exception stack trace ---
+   at HarmonyLib.PatchClassProcessor.ReportException(Exception exception, MethodBase original)
+   at HarmonyLib.PatchClassProcessor.Patch()
+   at HarmonyLib.Harmony.<PatchAll>b__11_0(Type type)
+   at HarmonyLib.CollectionExtensions.Do[Type](IEnumerable`1 sequence, Action`1 action)
+   at HarmonyLib.Harmony.PatchAll(Assembly assembly)
+   at MelonLoader.MelonMod.HarmonyInit()
+   at MelonLoader.MelonEvent.<>c.<Invoke>b__1_0(LemonAction x)
+   at MelonLoader.MelonEventBase`1[[MelonLoader.LemonAction, MelonLoader, Version=0.6.5.0, Culture=neutral, PublicKeyToken=null]].Invoke(Action`1 delegateInvoker)
+[22:58:09.571] [BoneLib] BoneLib loaded
+[22:58:09.591] [LabFusion] PermissionList was found, attempting to read it!
+[22:58:09.645] [LabFusion] Contacts was found, attempting to read it!
+[22:58:09.910] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.raw_changelog.txt...
+[22:58:09.911] [LabFusion] Done!
+[22:58:09.911] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.credits.raw_credits_01.txt...
+[22:58:09.912] [LabFusion] Done!
+[22:58:09.912] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.credits.raw_credits_02.txt...
+[22:58:09.912] [LabFusion] Done!
+[22:58:09.912] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.credits.raw_credits_03.txt...
+[22:58:09.912] [LabFusion] Done!
+[22:58:09.918] [LabFusion] ListFetcher - Fetching profanityList.json from url https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/profanityList.json...
+[22:58:09.927] [LabFusion] ListFetcher - Fetching globalModBlacklist.json from url https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/globalModBlacklist.json...
+[22:58:09.928] [LabFusion] ListFetcher - Fetching urlWhitelist.json from url https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/urlWhitelist.json...
+[22:58:09.943] [LabFusion] --==== Loaded Fusion Module ====--
+[22:58:09.943] [LabFusion] Fusion SDK - v1.14.2
+[22:58:09.944] [LabFusion] by Lakatrazz
+[22:58:09.944] [LabFusion] --=============================--
+[22:58:09.956] [LabFusion] --==== Loaded Fusion Module ====--
+[22:58:09.957] [LabFusion] Marrow - v1.14.2
+[22:58:09.957] [LabFusion] by Lakatrazz
+[22:58:09.957] [LabFusion] --=============================--
+[22:58:10.006] [LabFusion] Loading embedded resource data LabFusion.SupportModules.BonelabSupport.dll...
+[22:58:10.006] [LabFusion] Done!
+[22:58:10.011] [LabFusion] --==== Loaded Fusion Module ====--
+[22:58:10.011] [LabFusion] BONELAB - v1.14.2
+[22:58:10.011] [LabFusion] by Lakatrazz
+[22:58:10.011] [LabFusion] --=============================--
+[22:58:12.842] [BulletCleanup] LOOSE ITEM CLEANUP: casings, unfired rounds and optional dropped magazines share timer and cap. Cleanup follows the saved enabled setting; magazines also require their own toggle.
+[22:58:12.865] MelonPreferences Loaded from /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/CinematicCamera/CinematicCamera.cfg
+[22:58:12.935] [Cinematic_Camera] Headset detected: Quest 3S (model 'Quest 3S', device 'panther'). Automatic settings: Res540p at Fps60.
+[22:58:13.197] [Cinematic_Camera] Camera model loaded: 906 verts / 1022 tris, bounds 8.90x6.10x6.15
+[22:58:13.240] [Cinematic_Camera] Handle model loaded: 744 verts / 248 tris, bounds 290.97x97.58x100.56, bar 128.03 long x 64.96 thick
+[22:58:13.397] [Cinematic_Camera] Video gallery model loaded: 1034 verts / 980 tris.
+[22:58:13.403] [Cinematic_Camera] LabFusion detected: multiplayer identity and prop ownership tracking enabled.
+[22:58:13.441] [Cinematic_Camera] Fusion prop transport ready (reflection-only, protocol BCCPROP1).
+[22:58:13.515] [Cinematic_Camera] BoneMenu category created.
+[22:58:13.517] [Cinematic_Camera] Recordings: /sdcard/Movies/BonelabCinematicCamera (visible to the headset's media apps)
+[22:58:13.522] [Cinematic_Camera] Async GPU readback: True, graphics API: Vulkan
+[22:58:13.523] [Cinematic_Camera] Controls: Trigger: record | A or X: freeze | B or Y: preset | Both sticks: record anywhere | off: swap camera | off: photo | Stick in + Trigger (holding hand): mount on surface
+[22:58:13.531] [Cinematic_Camera] Cinematic Camera v1.15.2 initialised. Loaded from BonelabCinematicCamera.dll, 4740608 bytes, written 2026-10-28 19:02:06.
+[22:58:13.532] [Gun_Modifier] Gun Modifier loaded!
+[22:58:13.532] [Gun_Modifier] Waiting for BoneLib BoneMenu to initialize...
+[22:58:13.560] [Doppel] Bot brain: 0 earlier builds in memory
+[22:58:13.849] [Doppel] Bot Player: Fusion is here: bots are shown to the other players
+[22:58:13.891] [Doppel] Bot brain started
+[22:58:13.892] [Doppel] Doppel ready (BoneMenu > Doppel)
+[22:58:13.892] [LabUtils] Loaded LabUtils.
+[22:58:14.071] [LabUtils] Loading DevUtils from Melons
+[22:58:14.084] [LabUtils] Loaded LabUtils.Utils.InfiniteAmmoUtil.AmmoUtility Util
+[22:58:14.091] [LabUtils] Loaded LabUtils.Utils.AssetWarehouseUtil.AssetWarehouseUtility Util
+[22:58:14.093] [LabUtils] Loaded LabUtils.Utils.All.FunUtility Util
+[22:58:14.099] [LabUtils] Loaded LabUtils.Utils.All.HealthUtility Util
+[22:58:14.103] [LabUtils] Loaded LabUtils.Utils.All.RagdollUtility Util
+[22:58:14.127] [LabUtils] Loaded LabUtils.Utils.All.Developer.SceneUtility Util
+[22:58:14.128] [LabUtils] Loaded LabUtils.Utils.Dangerous.AchivementUtility Util
+[22:58:14.148] [LabUtils] Loaded LabUtils.Utils.Dangerous.SaveDataUtility Util
+[22:58:14.183] MelonPreferences Loaded from /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/ModioModNetworker.cfg
+[22:58:14.427] [ModioModNetworker] Loaded blacklist with 0 entries.
+[22:58:14.464] [ModioModNetworker] Loading internal module...
+[22:58:14.464] [LabFusion] --==== Loaded Fusion Module ====--
+[22:58:14.464] [LabFusion] ModIoModNetworkerModule - v2.8.1
+[22:58:14.465] [LabFusion] by notnotnotswipez
+[22:58:14.465] [LabFusion] --=============================--
+[22:58:14.484] [RagdollUtility] Initialized.
+[22:58:15.443] [Spawn_Logger] EOS network layer detected; attributing spawns by ProductUserId.
+[22:58:15.443] [SpawnLab] SpawnLab 1.0.2: bounded lists and keyboard search enabled.
+[22:58:16.863] [Ultimate_Ragdoll] Harmony patches applied.
+[22:58:16.863] [Ultimate_Ragdoll] UltimateRagdoll v5.4.1 initialized.
+[22:58:17.367] [BulletCleanup] Tracking probe heartbeat: updates=1, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[22:58:17.369] [BulletCleanup] BoneMenu setup begin.
+[22:58:17.369] [BulletCleanup] BoneMenu setup complete.
+[22:58:17.420] [Cinematic_Camera] Recording badge layer resolved to the UI layer, index 5. Lenses have always excluded it, and the player's cameras draw it.
+[22:58:17.425] [Cinematic_Camera] Recording badge now rides the player's view camera 'Main Camera'.
+[22:58:17.486] [Gun_Modifier] Gun Modifier: NPC damage hook installed.
+[22:58:17.503] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugEnter (prefix).
+[22:58:17.516] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugLocked (prefix).
+[22:58:17.561] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugExit (postfix).
+[22:58:17.574] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugUnlocked (postfix).
+[22:58:17.575] [Gun_Modifier] Gun Modifier: Any Mag lifecycle hooks installed: 4.
+[22:58:17.608] [Gun_Modifier] Gun Modifier: physical recoil hooks installed on Gun.OnFire.
+[22:58:17.608] [Gun_Modifier] Gun Modifier: fire-rate hook installed.
+[22:58:17.613] [Gun_Modifier] Gun Modifier menu created successfully!
+[22:58:17.775] [LabFusion] ListFetcher - Finished fetching https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/profanityList.json!
+[22:58:17.801] [LabFusion] ListFetcher - Finished fetching https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/globalModBlacklist.json!
+[22:58:17.817] [LabFusion] ListFetcher - Finished fetching https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/urlWhitelist.json!
+[22:58:17.836] [ModioModNetworker] Populating currently installed mods via this mod.
+[22:58:17.996] [ModioModNetworker] Checking mod.io account subscriptions
+[22:58:17.999] [ModioModNetworker] Registered on mod.io with auth key!
+[22:58:19.199] [ModioModNetworker] Total subscriptions: 72
+[22:58:19.444] [ModioModNetworker] Finished refreshing mod.io subscriptions!
+[22:58:19.457] [ModioModNetworker] Downloading mod fpv-drone1
+[22:58:20.248] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
+[22:58:20.257] [ModioModNetworker] Error while downloading mod fpv-drone1: System.IO.InvalidDataException: End of Central Directory record could not be found.
+   at System.IO.Compression.ZipArchive.ReadEndOfCentralDirectory()
+   at System.IO.Compression.ZipArchive..ctor(Stream stream, ZipArchiveMode mode, Boolean leaveOpen, Encoding entryNameEncoding)
+   at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode, Encoding entryNameEncoding)
+   at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode)
+   at System.IO.Compression.ZipFile.OpenRead(String archiveFileName)
+   at DownloadAction.<>c.<Handle>b__3_0()
+[22:58:20.275] [ModioModNetworker] Downloading mod police-french-hood-rp
+[22:58:20.708] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
+[22:58:20.709] [ModioModNetworker] Error while downloading mod police-french-hood-rp: System.IO.InvalidDataException: End of Central Directory record could not be found.
+   at System.IO.Compression.ZipArchive.ReadEndOfCentralDirectory()
+   at System.IO.Compression.ZipArchive..ctor(Stream stream, ZipArchiveMode mode, Boolean leaveOpen, Encoding entryNameEncoding)
+   at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode, Encoding entryNameEncoding)
+   at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode)
+   at System.IO.Compression.ZipFile.OpenRead(String archiveFileName)
+   at DownloadAction.<>c.<Handle>b__3_0()
+[22:58:20.742] [ModioModNetworker] Downloading mod ghosts-of-tabor-gun-pack
+[22:58:21.209] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
+[22:58:21.210] [ModioModNetworker] Error while downloading mod ghosts-of-tabor-gun-pack: System.IO.InvalidDataException: End of Central Directory record could not be found.
+   at System.IO.Compression.ZipArchive.ReadEndOfCentralDirectory()
+   at System.IO.Compression.ZipArchive..ctor(Stream stream, ZipArchiveMode mode, Boolean leaveOpen, Encoding entryNameEncoding)
+   at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode, Encoding entryNameEncoding)
+   at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode)
+   at System.IO.Compression.ZipFile.OpenRead(String archiveFileName)
+   at DownloadAction.<>c.<Handle>b__3_0()
+[22:58:21.242] [ModioModNetworker] Downloading mod taborite-ghost-of-tabor-avatar
+[22:58:21.675] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
+[22:58:21.676] [ModioModNetworker] Error while downloading mod taborite-ghost-of-tabor-avatar: System.IO.InvalidDataException: End of Central Directory record could not be found.
+   at System.IO.Compression.ZipArchive.ReadEndOfCentralDirectory()
+   at System.IO.Compression.ZipArchive..ctor(Stream stream, ZipArchiveMode mode, Boolean leaveOpen, Encoding entryNameEncoding)
+   at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode, Encoding entryNameEncoding)
+   at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode)
+   at System.IO.Compression.ZipFile.OpenRead(String archiveFileName)
+   at DownloadAction.<>c.<Handle>b__3_0()
+[22:58:21.709] [ModioModNetworker] Downloading mod ukr-war-test-still-in-development
+[22:58:22.142] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
+[22:58:22.143] [ModioModNetworker] Error while downloading mod ukr-war-test-still-in-development: System.IO.InvalidDataException: End of Central Directory record could not be found.
+   at System.IO.Compression.ZipArchive.ReadEndOfCentralDirectory()
+   at System.IO.Compression.ZipArchive..ctor(Stream stream, ZipArchiveMode mode, Boolean leaveOpen, Encoding entryNameEncoding)
+   at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode, Encoding entryNameEncoding)
+   at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode)
+   at System.IO.Compression.ZipFile.OpenRead(String archiveFileName)
+   at DownloadAction.<>c.<Handle>b__3_0()
+[22:58:27.374] [BulletCleanup] Tracking probe heartbeat: updates=241, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[22:58:37.665] [BulletCleanup] Tracking probe heartbeat: updates=489, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[22:58:40.964] [LabUtils] MelonPreferences Saved to /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/MelonPreferences.cfg
+[22:58:40.991] [LabUtils] Preferences Saved!
+[22:58:41.019] [SearchThing] Fusion integration: Successfully applied RegisterSpawnHistory patch
+[22:58:59.506] [BulletCleanup] Tracking probe heartbeat: updates=689, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[22:59:11.852] [BulletCleanup] Tracking probe heartbeat: updates=694, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[22:59:13.018] [Cinematic_Camera] Recording badge layer added to camera 'Main Camera'.
+[22:59:13.019] [Cinematic_Camera] Recording badge now rides the player's view camera 'Main Camera'.
+[22:59:13.019] [Cinematic_Camera] The operator's view now renders the recording badge layer.
+[22:59:17.562] [BoneLib] Finding player object references
+[22:59:17.757] [BulletCleanup] Level-loaded callback received.
+[22:59:17.797] [Ultimate_Ragdoll] Level loaded: 15 - Void G114
+[22:59:17.797] [Doppel] Bot Player: a player body was spawned (SLZ.BONELAB.Core.Spawnable.RigManagerBlank)
+[22:59:20.647] [Doppel] Moves: now those of ChillNew (0 recorded)
+[22:59:22.351] [BulletCleanup] Tracking probe heartbeat: updates=1129, ready=True, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[22:59:22.540] [Cinematic_Camera] Recording badge now rides the player's view camera 'Headset'.
+[22:59:29.045] [BulletCleanup] Creating cleanup worker after grab.
+[22:59:29.054] [BulletCleanup] Tracking unfired round type: Rexmeck.WeaponPackLT.Spawnable.Cartridge9x19mm
+[22:59:29.054] [BulletCleanup] Tracking spent casing type: Rexmeck.WeaponPackLT.Spawnable.Cartridge9x19mmCase
+[22:59:29.057] [BulletCleanup] Casing scan begin.
+[22:59:29.074] [BulletCleanup] Casing scan complete: tracked=0, removed=0, scanned=0, ammo types=2, unfired types=1, magazine types=0, passes=1
+[22:59:29.317] [BulletCleanup] Casing scan begin.
+[22:59:29.327] [BulletCleanup] Casing scan complete: tracked=0, removed=0, scanned=10, ammo types=2, unfired types=1, magazine types=0, passes=2
+[22:59:29.551] [BulletCleanup] Casing scan begin.
+[22:59:29.553] [BulletCleanup] Casing scan complete: tracked=0, removed=0, scanned=20, ammo types=2, unfired types=1, magazine types=0, passes=3
+[22:59:32.357] [BulletCleanup] Tracking probe heartbeat: updates=1993, ready=True, worker=True, cleanup=True; tracked=0, removed=0, scanned=156, ammo types=2, unfired types=1, magazine types=0, passes=13
+[22:59:40.084] [Gun_Modifier] Gun Modifier: Any Mag set to True. Magazine compatibility hook status will be reported by GunController.
+[22:59:41.647] [Gun_Modifier] Gun Modifier: Any Mag saw a plug, but its magazine platform was empty or unavailable.
+[22:59:42.360] [BulletCleanup] Tracking probe heartbeat: updates=2866, ready=True, worker=True, cleanup=True; tracked=0, removed=0, scanned=629, ammo types=2, unfired types=1, magazine types=0, passes=52
+[22:59:52.361] [BulletCleanup] Tracking probe heartbeat: updates=3744, ready=True, worker=True, cleanup=True; tracked=0, removed=0, scanned=1150, ammo types=2, unfired types=1, magazine types=0, passes=91
+[22:59:59.731] [Gun_Modifier] Gun Modifier: gun layout Il2CppSLZ.Marrow.Gun => isWrapped, pooledPtr, _magState, _hasMagState, isSilenced, roundsPerMinute, muzzleVelocity, fireMode, fireCurve, returnCurve, isSlideReleaseOnCollision, allowFireOnSlideGrabbed, isCharged, isSlideLockedOnEmpty, isLoaded, isMagEjectOnEmpty, muzzleFlareSpawnable, weaponSlot, ammoSocket, animator, host, entity, internalMagazine, defaultMagazine, defaultCartridge, slideVirtualController, chargingHelperHighRes, magazineHelperHighRes, chargingHelperLowRes, magazineHelperLowRes, _chargingHandleHelperRenderer, _magazineHelperRenderer, triggerGrip, otherGrips, gunSFX, proxyOverride, shellSpawnTransform, shellOrientationTransform, firePointTransform, nextCartridgeGameObject, chamberedCaseGameObject, chamberedCatridgeGameObject, _hasChamberedCartArt, _chamberedCartridgeArt, _hasChamberedCaseArt, _chamberedCartridgeCaseArt, _hasNextCartArt, _nextCartridgeArt, onFireDelegate, OnSlideUpdate, OnSlideGrabbed, OnSlideReleased, OnMagazineEjectDelegate, isTriggerPulledOnAttach, isFiring, isTriggerPulled, isTriggerPressed, hasFiredOnce, fireSpeedHash, neutralHash, slidePullHash, slideReturnHash, slideLockedHash, pullAnimationPerc, returnAnimationPerc, pullAnimationSpeed, returnAnimationSpeed, roundsPerSecond, fireDuration, slideLockDuration, chamberedCartridge, _wasInstaLoaded, _isUpdatingArt, _waitForEOF, _ammoInventory, animationState, slideState, hammerState, cartridgeState, cachedVelocity, blinkHighlightCoroutine, overridePerc, isSlideOverride, _isSlideGrabbed, lastCompletedAnimation, leftOverTime, playAnimationStateCoroutine, MagazineState, _poolee, ID, IsDespawned, useGUILayout, enabled, isActiveAndEnabled, transform, gameObject, tag, m_CachedPtr, name, hideFlags
+[22:59:59.736] [Gun_Modifier] Gun Modifier: ammoSocket=Il2CppSLZ.Marrow.AmmoSocket; socket platform=EDER; plug=Il2CppSLZ.Marrow.AmmoPlug; magazine=Il2CppSLZ.Marrow.Magazine; inserted=True; magazineData=Il2CppSLZ.Marrow.Data.MagazineData; mag platform=EDER; mag rounds=17; loaded ammo=16; default platform=EDER; default rounds=17; internal rounds=null
+[22:59:59.753] [Gun_Modifier] Gun Modifier: recoil could not find the Rigidbody above the gun's AmmoSocket.
+[23:00:02.364] [BulletCleanup] Tracking probe heartbeat: updates=4600, ready=True, worker=True, cleanup=True; tracked=7, removed=0, scanned=1639, ammo types=2, unfired types=1, magazine types=0, passes=130
+[23:00:12.368] [BulletCleanup] Tracking probe heartbeat: updates=5481, ready=True, worker=True, cleanup=True; tracked=7, removed=0, scanned=2439, ammo types=2, unfired types=1, magazine types=0, passes=170
+[23:00:22.379] [BulletCleanup] Tracking probe heartbeat: updates=6375, ready=True, worker=True, cleanup=True; tracked=7, removed=0, scanned=3219, ammo types=2, unfired types=1, magazine types=0, passes=209
+[23:00:32.380] [BulletCleanup] Tracking probe heartbeat: updates=7272, ready=True, worker=True, cleanup=True; tracked=7, removed=0, scanned=3999, ammo types=2, unfired types=1, magazine types=0, passes=248
+[23:00:42.389] [BulletCleanup] Tracking probe heartbeat: updates=8159, ready=True, worker=True, cleanup=True; tracked=7, removed=0, scanned=4779, ammo types=2, unfired types=1, magazine types=0, passes=287
+[23:00:52.390] [BulletCleanup] Tracking probe heartbeat: updates=9054, ready=True, worker=True, cleanup=True; tracked=7, removed=0, scanned=5559, ammo types=2, unfired types=1, magazine types=0, passes=326
+[23:01:02.391] [BulletCleanup] Tracking probe heartbeat: updates=9946, ready=True, worker=True, cleanup=True; tracked=7, removed=0, scanned=6339, ammo types=2, unfired types=1, magazine types=0, passes=365
+[23:01:12.400] [BulletCleanup] Tracking probe heartbeat: updates=10841, ready=True, worker=True, cleanup=True; tracked=7, removed=0, scanned=7119, ammo types=2, unfired types=1, magazine types=0, passes=404
+[23:01:22.400] [BulletCleanup] Tracking probe heartbeat: updates=11736, ready=True, worker=True, cleanup=True; tracked=7, removed=0, scanned=7899, ammo types=2, unfired types=1, magazine types=0, passes=443
+[23:01:32.400] [BulletCleanup] Tracking probe heartbeat: updates=12630, ready=True, worker=True, cleanup=True; tracked=7, removed=0, scanned=8679, ammo types=2, unfired types=1, magazine types=0, passes=482
