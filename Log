@@ -1,31 +1,31 @@
- [23:53:06.254] Initialized JNI
-[23:53:06.580] ------------------------------
-[23:53:06.582] MelonLoader v0.6.5 Open-Beta
-[23:53:06.587] OS: Android 14
-[23:53:06.588] Hash Code: 5CD70450DB040884645CC87694335EB2DEFBB8CE840FC149EED709EAD3D2B03F
-[23:53:06.588] ------------------------------
-[23:53:06.588] Game Type: Il2cpp
-[23:53:06.589] Game Arch: x64
-[23:53:06.589] ------------------------------
-[23:53:06.591] Command-Line: 
-[23:53:06.591] ------------------------------
-[23:53:06.592] Core::BasePath = /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB
-[23:53:06.593] Game::BasePath = /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB
-[23:53:06.593] Game::DataPath = bin/Data/
-[23:53:06.595] Game::ApplicationPath = /system/bin/app_process64
-[23:53:06.595] Runtime Type: net8
-[23:53:07.131] ------------------------------
-[23:53:07.131] Game Name: BONELAB
-[23:53:07.132] Game Developer: Stress Level Zero
-[23:53:07.143] Unity Version: 2021.3.16f1
-[23:53:07.144] Game Version: 1.2974.57485
-[23:53:07.145] ------------------------------
+[00:06:52.524] Initialized JNI
+[00:06:52.845] ------------------------------
+[00:06:52.847] MelonLoader v0.6.5 Open-Beta
+[00:06:52.851] OS: Android 14
+[00:06:52.851] Hash Code: 5CD70450DB040884645CC87694335EB2DEFBB8CE840FC149EED709EAD3D2B03F
+[00:06:52.852] ------------------------------
+[00:06:52.852] Game Type: Il2cpp
+[00:06:52.852] Game Arch: x64
+[00:06:52.852] ------------------------------
+[00:06:52.854] Command-Line: 
+[00:06:52.854] ------------------------------
+[00:06:52.855] Core::BasePath = /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB
+[00:06:52.855] Game::BasePath = /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB
+[00:06:52.856] Game::DataPath = bin/Data/
+[00:06:52.857] Game::ApplicationPath = /system/bin/app_process64
+[00:06:52.857] Runtime Type: net8
+[00:06:53.244] ------------------------------
+[00:06:53.245] Game Name: BONELAB
+[00:06:53.245] Game Developer: Stress Level Zero
+[00:06:53.255] Unity Version: 2021.3.16f1
+[00:06:53.256] Game Version: 1.2974.57485
+[00:06:53.256] ------------------------------
 
-[23:53:08.766] DotnetAssemblyLoadContextFix Exception: System.NullReferenceException: Null method for MelonLoader
+[00:06:54.653] DotnetAssemblyLoadContextFix Exception: System.NullReferenceException: Null method for MelonLoader
    at HarmonyLib.PatchProcessor.Patch()
    at HarmonyLib.Harmony.Patch(MethodBase original, HarmonyMethod prefix, HarmonyMethod postfix, HarmonyMethod transpiler, HarmonyMethod finalizer, HarmonyMethod ilmanipulator)
    at MelonLoader.Fixes.DotnetAssemblyLoadContextFix.Install()
-[23:53:09.414] HarmonyLib.HarmonyException: IL Compile Error (unknown location)
+[00:06:55.253] HarmonyLib.HarmonyException: IL Compile Error (unknown location)
  ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location)
  ---> System.MissingMethodException: Method not found: void Il2CppInterop.Runtime.Injection.RegisterTypeOptions.set_LogSuccess(bool)
    at System.RuntimeMethodHandle.GetFunctionPointer()
@@ -43,266 +43,266 @@
    at HarmonyLib.PatchProcessor.Patch()
    at HarmonyLib.Harmony.Patch(MethodBase original, HarmonyMethod prefix, HarmonyMethod postfix, HarmonyMethod transpiler, HarmonyMethod finalizer, HarmonyMethod ilmanipulator)
    at MelonLoader.Fixes.Il2CppInteropFixes.Install()
-[23:53:09.763] Preferences Loaded!
+[00:06:55.600] Preferences Loaded!
 
-[23:53:09.891] Loading UserLibs from '/storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserLibs'...
-[23:53:09.892] ------------------------------
-[23:53:09.910] Melon Assembly loaded: './UserLibs/System.Speech.dll'
-[23:53:09.910] SHA256 Hash: '09ED245882F438A164D20C2FA59ABAEBDC1FEAACC32BA9756DB731E388EA45A6'
+[00:06:55.843] Loading UserLibs from '/storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserLibs'...
+[00:06:55.844] ------------------------------
+[00:06:55.861] Melon Assembly loaded: './UserLibs/System.Speech.dll'
+[00:06:55.862] SHA256 Hash: '09ED245882F438A164D20C2FA59ABAEBDC1FEAACC32BA9756DB731E388EA45A6'
 
-[23:53:09.918] Loading Plugins from '/storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/Plugins'...
-[23:53:09.921] ------------------------------
-[23:53:09.924] Melon Assembly loaded: './Plugins/ThunderstoreModAssistantPlugin.dll'
-[23:53:09.924] SHA256 Hash: 'B60F4E52164ED4729038EAF7A3DD359CBAEBCFDA9083869B5E420C0A474E0D78'
+[00:06:55.869] Loading Plugins from '/storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/Plugins'...
+[00:06:55.871] ------------------------------
+[00:06:55.877] Melon Assembly loaded: './Plugins/ThunderstoreModAssistantPlugin.dll'
+[00:06:55.877] SHA256 Hash: 'B60F4E52164ED4729038EAF7A3DD359CBAEBCFDA9083869B5E420C0A474E0D78'
 
-[23:53:10.058] ------------------------------
-[23:53:10.061] ThunderstoreModAssistantPlugin v1.0.0
-[23:53:10.061] by notnotnotswipez
-[23:53:10.062] Assembly: ThunderstoreModAssistantPlugin.dll
-[23:53:10.062] ------------------------------
-[23:53:10.063] ------------------------------
-[23:53:10.064] 1 Plugin loaded.
-[23:53:12.768] Loading Il2CppAssemblyGenerator...
-[23:53:12.839] [Il2CppAssemblyGenerator] Contacting RemoteAPI...
-[23:53:13.089] [Il2CppAssemblyGenerator] Game Not Found on RemoteAPI Host (https://api.melonloader.com/api/v1/game/bonelab)
-[23:53:13.089] [Il2CppAssemblyGenerator] RemoteAPI.DumperVersion = null
-[23:53:13.089] [Il2CppAssemblyGenerator] RemoteAPI.ObfuscationRegex = null
-[23:53:13.090] [Il2CppAssemblyGenerator] RemoteAPI.MappingURL = null
-[23:53:13.090] [Il2CppAssemblyGenerator] RemoteAPI.MappingFileSHA512 = null
-[23:53:13.107] [Il2CppAssemblyGenerator] Using Cpp2IL Version: 2022.1.0-pre-release.16
-[23:53:13.108] [Il2CppAssemblyGenerator] Using Il2CppInterop Version = 1.4.6+5c0c44bfc31bc50023fb7426fc4a32b2086f672b
-[23:53:13.108] [Il2CppAssemblyGenerator] Using Unity Dependencies Version = 2021.3.16
-[23:53:13.108] [Il2CppAssemblyGenerator] Using Deobfuscation Regex = null
-[23:53:13.109] [Il2CppAssemblyGenerator] UnityDependencies is up to date.
-[23:53:13.110] [Il2CppAssemblyGenerator] Checking GameAssembly...
-[23:53:13.555] [Il2CppAssemblyGenerator] Assembly is up to date. No Generation Needed.
+[00:06:56.004] ------------------------------
+[00:06:56.006] ThunderstoreModAssistantPlugin v1.0.0
+[00:06:56.006] by notnotnotswipez
+[00:06:56.007] Assembly: ThunderstoreModAssistantPlugin.dll
+[00:06:56.007] ------------------------------
+[00:06:56.008] ------------------------------
+[00:06:56.008] 1 Plugin loaded.
+[00:06:58.547] Loading Il2CppAssemblyGenerator...
+[00:06:58.612] [Il2CppAssemblyGenerator] Contacting RemoteAPI...
+[00:06:58.855] [Il2CppAssemblyGenerator] Game Not Found on RemoteAPI Host (https://api.melonloader.com/api/v1/game/bonelab)
+[00:06:58.855] [Il2CppAssemblyGenerator] RemoteAPI.DumperVersion = null
+[00:06:58.856] [Il2CppAssemblyGenerator] RemoteAPI.ObfuscationRegex = null
+[00:06:58.856] [Il2CppAssemblyGenerator] RemoteAPI.MappingURL = null
+[00:06:58.856] [Il2CppAssemblyGenerator] RemoteAPI.MappingFileSHA512 = null
+[00:06:58.871] [Il2CppAssemblyGenerator] Using Cpp2IL Version: 2022.1.0-pre-release.16
+[00:06:58.871] [Il2CppAssemblyGenerator] Using Il2CppInterop Version = 1.4.6+5c0c44bfc31bc50023fb7426fc4a32b2086f672b
+[00:06:58.871] [Il2CppAssemblyGenerator] Using Unity Dependencies Version = 2021.3.16
+[00:06:58.871] [Il2CppAssemblyGenerator] Using Deobfuscation Regex = null
+[00:06:58.872] [Il2CppAssemblyGenerator] UnityDependencies is up to date.
+[00:06:58.873] [Il2CppAssemblyGenerator] Checking GameAssembly...
+[00:06:59.278] [Il2CppAssemblyGenerator] Assembly is up to date. No Generation Needed.
 
-[23:53:13.556] Loading Mods from '/storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/Mods'...
-[23:53:13.557] ------------------------------
-[23:53:13.566] Melon Assembly loaded: './Mods/UltimateRagdoll.dll'
-[23:53:13.566] SHA256 Hash: 'FDE492DFCC19D1A10651E6229DE4E44AA5EA1A376DC9D513982A1C0AC42D9FDA'
-[23:53:13.620] Melon Assembly loaded: './Mods/BoneLib.dll'
-[23:53:13.620] SHA256 Hash: '6E347AD57342979B22AB24D83F468DCCE3B201D56B9BA15CDC1F0301DD14A97A'
-[23:53:13.642] Melon Assembly loaded: './Mods/SpawnLab.dll'
-[23:53:13.643] SHA256 Hash: 'A5D4DD7A4DC46FAEC17B55366D169E01D107512F084EDD0173BCA9EB2013ADFB'
-[23:53:13.649] Melon Assembly loaded: './Mods/RagdollUtility.dll'
-[23:53:13.649] SHA256 Hash: 'C913A0C1CEBDF2E17B2D54A9F8C77A1E9F6DC9599BDB36F3D3853886A2C9B845'
-[23:53:13.652] Melon Assembly loaded: './Mods/BulletCleanup.dll'
-[23:53:13.652] SHA256 Hash: '46ACC083B960F4992C71CB39CFC13465897F725F1BC0A3EE6323FCF6385F9C45'
-[23:53:13.656] Melon Assembly loaded: './Mods/LabUtils.dll'
-[23:53:13.656] SHA256 Hash: '6E554EE034621E5973837A6398CE6B49DF8AABA3FE41A9943F92FD493BFC47FB'
-[23:53:13.666] Melon Assembly loaded: './Mods/SearchThing.dll'
-[23:53:13.666] SHA256 Hash: '941F462BCCE5BCC1985D11E506027F0059AF7ACE99AABBEE20EA3D692F8BECF8'
-[23:53:13.701] Melon Assembly loaded: './Mods/ModioModNetworker.dll'
-[23:53:13.701] SHA256 Hash: 'B9E0184CDE3898E7FA1AE0EFE76F8175504833147F8673D6783A8DB1DAB94025'
-[23:53:13.712] Melon Assembly loaded: './Mods/Doppel.dll'
-[23:53:13.712] SHA256 Hash: '7114BE14755F4E6910FD7E1CC6687CFF8DB79FC6793ACE77978E941D479E3B31'
-[23:53:13.760] Melon Assembly loaded: './Mods/BonelabCinematicCamera.dll'
-[23:53:13.760] SHA256 Hash: '98489FFAAE68652F677873A185CF030CFD0E446E4727C12FF84C4C5030361972'
-[23:53:13.763] Melon Assembly loaded: './Mods/GunModifier.dll'
-[23:53:13.763] SHA256 Hash: '1D2CD96F1830074809A5516762D10A77A14DE9A529F1EC3AF9F7292013355101'
-[23:53:13.766] Melon Assembly loaded: './Mods/SpawnLogger.dll'
-[23:53:13.766] SHA256 Hash: 'F5A3A82C2DACB7BFE1D2B3ECDDE27809CEF982B1566E5E5908CCF20860050898'
-[23:53:14.169] Melon Assembly loaded: './Mods/LabFusion.dll'
-[23:53:14.170] SHA256 Hash: '696D715C524508AD555C804F55F7831A596000B8F10AF156A3E5CD49D7CE3633'
-[23:53:14.202] Melon Assembly loaded: './Mods/ThunderstoreModAssistant.dll'
-[23:53:14.202] SHA256 Hash: '13D32ED6D7EBFAE2FA573973EBA22E9884343C2C829D31DFFDFB422CD0C20471'
-[23:53:14.225] Melon Assembly loaded: './Mods/RagdollPlayer.dll'
-[23:53:14.225] SHA256 Hash: '6C6078229707B48F968857B3DE0D9C2FC18DEEA893758FD6398AC5A8BCBFD656'
+[00:06:59.280] Loading Mods from '/storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/Mods'...
+[00:06:59.281] ------------------------------
+[00:06:59.292] Melon Assembly loaded: './Mods/UltimateRagdoll.dll'
+[00:06:59.292] SHA256 Hash: 'FDE492DFCC19D1A10651E6229DE4E44AA5EA1A376DC9D513982A1C0AC42D9FDA'
+[00:06:59.347] Melon Assembly loaded: './Mods/BoneLib.dll'
+[00:06:59.348] SHA256 Hash: '6E347AD57342979B22AB24D83F468DCCE3B201D56B9BA15CDC1F0301DD14A97A'
+[00:06:59.370] Melon Assembly loaded: './Mods/SpawnLab.dll'
+[00:06:59.371] SHA256 Hash: 'A5D4DD7A4DC46FAEC17B55366D169E01D107512F084EDD0173BCA9EB2013ADFB'
+[00:06:59.375] Melon Assembly loaded: './Mods/RagdollUtility.dll'
+[00:06:59.376] SHA256 Hash: 'C913A0C1CEBDF2E17B2D54A9F8C77A1E9F6DC9599BDB36F3D3853886A2C9B845'
+[00:06:59.379] Melon Assembly loaded: './Mods/BulletCleanup.dll'
+[00:06:59.380] SHA256 Hash: '46ACC083B960F4992C71CB39CFC13465897F725F1BC0A3EE6323FCF6385F9C45'
+[00:06:59.384] Melon Assembly loaded: './Mods/LabUtils.dll'
+[00:06:59.385] SHA256 Hash: '6E554EE034621E5973837A6398CE6B49DF8AABA3FE41A9943F92FD493BFC47FB'
+[00:06:59.398] Melon Assembly loaded: './Mods/SearchThing.dll'
+[00:06:59.398] SHA256 Hash: '941F462BCCE5BCC1985D11E506027F0059AF7ACE99AABBEE20EA3D692F8BECF8'
+[00:06:59.432] Melon Assembly loaded: './Mods/ModioModNetworker.dll'
+[00:06:59.433] SHA256 Hash: 'B9E0184CDE3898E7FA1AE0EFE76F8175504833147F8673D6783A8DB1DAB94025'
+[00:06:59.442] Melon Assembly loaded: './Mods/Doppel.dll'
+[00:06:59.443] SHA256 Hash: '7114BE14755F4E6910FD7E1CC6687CFF8DB79FC6793ACE77978E941D479E3B31'
+[00:06:59.487] Melon Assembly loaded: './Mods/BonelabCinematicCamera.dll'
+[00:06:59.487] SHA256 Hash: '98489FFAAE68652F677873A185CF030CFD0E446E4727C12FF84C4C5030361972'
+[00:06:59.490] Melon Assembly loaded: './Mods/GunModifier.dll'
+[00:06:59.490] SHA256 Hash: 'AFD573675E660E6F9B59811A7D65E019A997D0DB6EF60527E6A6DEEECA4F9E15'
+[00:06:59.494] Melon Assembly loaded: './Mods/SpawnLogger.dll'
+[00:06:59.494] SHA256 Hash: 'F5A3A82C2DACB7BFE1D2B3ECDDE27809CEF982B1566E5E5908CCF20860050898'
+[00:06:59.875] Melon Assembly loaded: './Mods/LabFusion.dll'
+[00:06:59.875] SHA256 Hash: '696D715C524508AD555C804F55F7831A596000B8F10AF156A3E5CD49D7CE3633'
+[00:06:59.906] Melon Assembly loaded: './Mods/ThunderstoreModAssistant.dll'
+[00:06:59.907] SHA256 Hash: '13D32ED6D7EBFAE2FA573973EBA22E9884343C2C829D31DFFDFB422CD0C20471'
+[00:06:59.925] Melon Assembly loaded: './Mods/RagdollPlayer.dll'
+[00:06:59.925] SHA256 Hash: '6C6078229707B48F968857B3DE0D9C2FC18DEEA893758FD6398AC5A8BCBFD656'
 
-[23:53:14.573] Some Melons are missing dependencies, which you may have to install.
+[00:07:00.260] Some Melons are missing dependencies, which you may have to install.
 If these are optional dependencies, mark them as optional using the MelonOptionalDependencies attribute.
 This warning will turn into an error and Melons with missing dependencies will not be loaded in the next version of MelonLoader.
 - 'Doppel' is missing the following dependencies:
     - 'Portals' v1.6.0.0
-[23:53:14.590] ------------------------------
-[23:53:14.590] BoneLib v3.2.2
-[23:53:14.590] by The BONELAB Modding Community
-[23:53:14.590] Assembly: BoneLib.dll
-[23:53:14.590] ------------------------------
-[23:53:14.617] [LabFusion] Data is at /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Fusion/.
-[23:53:14.619] [LabFusion] Loading embedded resource data LabFusion.dependencies.resources.lib.Facepunch.Steamworks.Win64.dll...
-[23:53:14.621] [LabFusion] Done!
-[23:53:14.625] [LabFusion] Loading embedded resource data LabFusion.dependencies.resources.lib.arm64.libEOSSDK.so...
-[23:53:14.704] [LabFusion] Done!
-[23:53:15.015] [LabFusion] EOSSDK already exists, skipping extraction.
-[23:53:15.046] [LabFusion] Successfully loaded EOSSDK into the application!
-[23:53:15.053] ------------------------------
-[23:53:15.053] LabFusion v1.14.2
-[23:53:15.053] by Lakatrazz
-[23:53:15.054] Assembly: LabFusion.dll
-[23:53:15.054] ------------------------------
-[23:53:15.059] ------------------------------
-[23:53:15.059] BulletCleanup v0.1.0
-[23:53:15.059] by Geozek (with Codex)
-[23:53:15.060] Assembly: BulletCleanup.dll
-[23:53:15.060] ------------------------------
-[23:53:15.068] ------------------------------
-[23:53:15.068] Cinematic Camera v1.15.2
-[23:53:15.068] by BonelabCamMod
-[23:53:15.069] Assembly: BonelabCinematicCamera.dll
-[23:53:15.069] ------------------------------
-[23:53:15.074] ------------------------------
-[23:53:15.074] Gun Modifier v1.2.6
-[23:53:15.074] by GunModifier
-[23:53:15.075] Assembly: GunModifier.dll
-[23:53:15.075] ------------------------------
-[23:53:15.081] ------------------------------
-[23:53:15.081] Doppel v1.3.0
-[23:53:15.081] by RUDYHILL
-[23:53:15.081] Assembly: Doppel.dll
-[23:53:15.082] ------------------------------
-[23:53:15.086] ------------------------------
-[23:53:15.087] LabUtils v1.0.0
-[23:53:15.087] by cheesy
-[23:53:15.087] Assembly: LabUtils.dll
-[23:53:15.087] ------------------------------
-[23:53:15.091] ------------------------------
-[23:53:15.092] ModioModNetworker v2.8.1
-[23:53:15.092] by notnotnotswipez
-[23:53:15.092] Assembly: ModioModNetworker.dll
-[23:53:15.092] ------------------------------
-[23:53:15.097] ------------------------------
-[23:53:15.097] Ragdoll Player v1.3.0
-[23:53:15.097] by Lakatrazz
-[23:53:15.098] Assembly: RagdollPlayer.dll
-[23:53:15.098] ------------------------------
-[23:53:15.103] ------------------------------
-[23:53:15.103] RagdollUtility v1.0.0
-[23:53:15.103] by notnotnotswipez
-[23:53:15.104] Assembly: RagdollUtility.dll
-[23:53:15.104] ------------------------------
-[23:53:15.110] ------------------------------
-[23:53:15.110] SearchThing v0.5.0
-[23:53:15.110] by Mash
-[23:53:15.110] Assembly: SearchThing.dll
-[23:53:15.111] ------------------------------
-[23:53:15.116] ------------------------------
-[23:53:15.116] Spawn Logger v2.5.0
-[23:53:15.116] by Local Utility
-[23:53:15.117] Assembly: SpawnLogger.dll
-[23:53:15.117] ------------------------------
-[23:53:15.123] ------------------------------
-[23:53:15.123] SpawnLab v1.0.2
-[23:53:15.123] by ChappieStudios
-[23:53:15.123] Assembly: SpawnLab.dll
-[23:53:15.124] ------------------------------
-[23:53:15.129] ------------------------------
-[23:53:15.129] ThunderstoreModAssistant v1.2.1
-[23:53:15.129] by notnotnotswipez
-[23:53:15.130] Assembly: ThunderstoreModAssistant.dll
-[23:53:15.130] ------------------------------
-[23:53:15.136] ------------------------------
-[23:53:15.136] Ultimate Ragdoll v5.4.1
-[23:53:15.136] by Int_Void
-[23:53:15.137] Assembly: UltimateRagdoll.dll
-[23:53:15.137] ------------------------------
-[23:53:15.137] ------------------------------
-[23:53:15.138] 15 Mods loaded.
+[00:07:00.275] ------------------------------
+[00:07:00.275] BoneLib v3.2.2
+[00:07:00.275] by The BONELAB Modding Community
+[00:07:00.276] Assembly: BoneLib.dll
+[00:07:00.276] ------------------------------
+[00:07:00.303] [LabFusion] Data is at /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Fusion/.
+[00:07:00.305] [LabFusion] Loading embedded resource data LabFusion.dependencies.resources.lib.Facepunch.Steamworks.Win64.dll...
+[00:07:00.307] [LabFusion] Done!
+[00:07:00.311] [LabFusion] Loading embedded resource data LabFusion.dependencies.resources.lib.arm64.libEOSSDK.so...
+[00:07:00.387] [LabFusion] Done!
+[00:07:00.671] [LabFusion] EOSSDK already exists, skipping extraction.
+[00:07:00.700] [LabFusion] Successfully loaded EOSSDK into the application!
+[00:07:00.707] ------------------------------
+[00:07:00.707] LabFusion v1.14.2
+[00:07:00.707] by Lakatrazz
+[00:07:00.707] Assembly: LabFusion.dll
+[00:07:00.707] ------------------------------
+[00:07:00.712] ------------------------------
+[00:07:00.712] BulletCleanup v0.1.0
+[00:07:00.712] by Geozek (with Codex)
+[00:07:00.712] Assembly: BulletCleanup.dll
+[00:07:00.713] ------------------------------
+[00:07:00.720] ------------------------------
+[00:07:00.720] Cinematic Camera v1.15.2
+[00:07:00.720] by BonelabCamMod
+[00:07:00.721] Assembly: BonelabCinematicCamera.dll
+[00:07:00.721] ------------------------------
+[00:07:00.725] ------------------------------
+[00:07:00.726] Gun Modifier v1.2.7
+[00:07:00.726] by GunModifier
+[00:07:00.726] Assembly: GunModifier.dll
+[00:07:00.726] ------------------------------
+[00:07:00.731] ------------------------------
+[00:07:00.731] Doppel v1.3.0
+[00:07:00.731] by RUDYHILL
+[00:07:00.731] Assembly: Doppel.dll
+[00:07:00.731] ------------------------------
+[00:07:00.736] ------------------------------
+[00:07:00.736] LabUtils v1.0.0
+[00:07:00.736] by cheesy
+[00:07:00.736] Assembly: LabUtils.dll
+[00:07:00.736] ------------------------------
+[00:07:00.740] ------------------------------
+[00:07:00.740] ModioModNetworker v2.8.1
+[00:07:00.741] by notnotnotswipez
+[00:07:00.741] Assembly: ModioModNetworker.dll
+[00:07:00.741] ------------------------------
+[00:07:00.746] ------------------------------
+[00:07:00.746] Ragdoll Player v1.3.0
+[00:07:00.746] by Lakatrazz
+[00:07:00.746] Assembly: RagdollPlayer.dll
+[00:07:00.746] ------------------------------
+[00:07:00.751] ------------------------------
+[00:07:00.751] RagdollUtility v1.0.0
+[00:07:00.751] by notnotnotswipez
+[00:07:00.752] Assembly: RagdollUtility.dll
+[00:07:00.752] ------------------------------
+[00:07:00.757] ------------------------------
+[00:07:00.757] SearchThing v0.5.0
+[00:07:00.757] by Mash
+[00:07:00.757] Assembly: SearchThing.dll
+[00:07:00.757] ------------------------------
+[00:07:00.762] ------------------------------
+[00:07:00.762] Spawn Logger v2.5.0
+[00:07:00.762] by Local Utility
+[00:07:00.763] Assembly: SpawnLogger.dll
+[00:07:00.763] ------------------------------
+[00:07:00.768] ------------------------------
+[00:07:00.768] SpawnLab v1.0.2
+[00:07:00.768] by ChappieStudios
+[00:07:00.768] Assembly: SpawnLab.dll
+[00:07:00.769] ------------------------------
+[00:07:00.773] ------------------------------
+[00:07:00.774] ThunderstoreModAssistant v1.2.1
+[00:07:00.774] by notnotnotswipez
+[00:07:00.774] Assembly: ThunderstoreModAssistant.dll
+[00:07:00.775] ------------------------------
+[00:07:00.779] ------------------------------
+[00:07:00.779] Ultimate Ragdoll v5.4.1
+[00:07:00.780] by Int_Void
+[00:07:00.780] Assembly: UltimateRagdoll.dll
+[00:07:00.780] ------------------------------
+[00:07:00.780] ------------------------------
+[00:07:00.780] 15 Mods loaded.
 
-[23:53:15.943] [Il2CppInterop] Registered mono type Il2CppInterop.Runtime.DelegateSupport+Il2CppToMonoDelegateReference in il2cpp domain
-[23:53:16.057] [Il2CppInterop] Registered mono type MelonLoader.Support.MonoEnumeratorWrapper in il2cpp domain
-[23:53:16.067] [Il2CppInterop] Registered mono type MelonLoader.Support.SM_Component in il2cpp domain
-[23:53:16.107] Support Module Loaded: /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/MelonLoader/Dependencies/SupportModules/Il2Cpp.dll
-[23:53:16.156] [Il2CppInterop] Registered mono type BoneLib.MonoBehaviours.PopupBox in il2cpp domain
-[23:53:16.220] [Il2CppInterop] Method Void DrawHeader(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
-[23:53:16.221] [Il2CppInterop] Method Void DrawBackground(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
-[23:53:16.221] [Il2CppInterop] Method Void DrawFooter(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
-[23:53:16.221] [Il2CppInterop] Method Void DrawElements(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
-[23:53:16.343] [Il2CppInterop] Method Void SetModInfo(ModioModNetworker.Data.ModInfo) on type ModIoModNetworker.Ui.ModInfoDisplay has unsupported parameter ModioModNetworker.Data.ModInfo modInfo of type ModioModNetworker.Data.ModInfo
-[23:53:16.358] [Il2CppInterop] Registered mono type ModIoModNetworker.Ui.ModInfoDisplay in il2cpp domain
-[23:53:16.360] [Il2CppInterop] Method Void TriggerModInfoPopup(Boolean, ModioModNetworker.Data.ModInfo) on type ModIoModNetworker.Ui.NetworkerMenuController has unsupported parameter ModioModNetworker.Data.ModInfo modInfo of type ModioModNetworker.Data.ModInfo
-[23:53:16.361] [Il2CppInterop] Method UnityEngine.GameObject MakeModInfoObject(UnityEngine.Transform, ModioModNetworker.Data.ModInfo, Boolean) on type ModIoModNetworker.Ui.NetworkerMenuController has unsupported parameter ModioModNetworker.Data.ModInfo modInfo of type ModioModNetworker.Data.ModInfo
-[23:53:16.363] [Il2CppInterop] Method Void SetKeyAction(System.String, System.Action) on type ModIoModNetworker.Ui.NetworkerMenuController has unsupported parameter System.Action action of type System.Action
-[23:53:16.399] [Il2CppInterop] Registered mono type ModIoModNetworker.Ui.NetworkerMenuController in il2cpp domain
-[23:53:16.502] [Il2CppInterop] Registered mono type LabFusion.Voice.VoiceSource in il2cpp domain
-[23:53:16.513] [Il2CppInterop] Registered mono type LabFusion.UI.FusionUIMachine in il2cpp domain
-[23:53:16.522] [Il2CppInterop] Registered mono type LabFusion.UI.CupBoard in il2cpp domain
-[23:53:16.527] [Il2CppInterop] Registered mono type LabFusion.UI.FusionPanelView in il2cpp domain
-[23:53:16.541] [Il2CppInterop] Registered mono type LabFusion.UI.CupBoardPanelView in il2cpp domain
-[23:53:16.547] [Il2CppInterop] Registered mono type LabFusion.UI.FusionUITrigger in il2cpp domain
-[23:53:16.551] [Il2CppInterop] Registered mono type LabFusion.UI.InfoBox in il2cpp domain
-[23:53:16.558] [Il2CppInterop] Registered mono type LabFusion.UI.InfoBoxPanelView in il2cpp domain
-[23:53:16.601] [Il2CppInterop] Registered mono type LabFusion.SDK.MonoBehaviours.GamemodeItem in il2cpp domain
-[23:53:16.604] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.AntiHasher in il2cpp domain
-[23:53:16.612] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.CollisionSyncer in il2cpp domain
-[23:53:16.616] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.DestroyOnDisconnect in il2cpp domain
-[23:53:16.619] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.DestroySensor in il2cpp domain
-[23:53:16.623] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.MirrorIdentifier in il2cpp domain
-[23:53:16.627] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.NotifyOnEnable in il2cpp domain
-[23:53:16.637] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.TimedDespawner in il2cpp domain
-[23:53:16.645] [Il2CppInterop] Registered mono type LabFusion.Audio.AudioStreamFilter in il2cpp domain
-[23:53:16.654] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.AnimatorSyncer in il2cpp domain
-[23:53:16.665] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.AvatarCosmeticPoint in il2cpp domain
-[23:53:16.681] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.CosmeticRoot in il2cpp domain
-[23:53:16.688] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.DeathTrigger in il2cpp domain
-[23:53:16.692] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.Desyncer in il2cpp domain
-[23:53:16.696] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.CelebrationEvents in il2cpp domain
-[23:53:16.702] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.OwnershipEvents in il2cpp domain
-[23:53:16.710] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.PlayerEvents in il2cpp domain
-[23:53:16.717] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.ServerEvents in il2cpp domain
-[23:53:16.724] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.BitTransactor in il2cpp domain
-[23:53:16.732] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeCrateSpawner in il2cpp domain
-[23:53:16.737] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeDropper in il2cpp domain
-[23:53:16.768] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeDropperSettings in il2cpp domain
-[23:53:16.772] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeEvents in il2cpp domain
-[23:53:16.780] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeMarker in il2cpp domain
-[23:53:16.793] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeMusicSettings in il2cpp domain
-[23:53:16.800] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodePlayerSettings in il2cpp domain
-[23:53:16.807] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeTeamSettings in il2cpp domain
-[23:53:16.834] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCEvent in il2cpp domain
-[23:53:16.844] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCVariable in il2cpp domain
-[23:53:16.851] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCVector3 in il2cpp domain
-[23:53:16.857] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCString in il2cpp domain
-[23:53:16.864] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCBool in il2cpp domain
-[23:53:16.870] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCFloat in il2cpp domain
-[23:53:16.876] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCInt in il2cpp domain
-[23:53:16.906] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.VoiceProxy in il2cpp domain
-[23:53:16.923] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.Keyboard in il2cpp domain
-[23:53:16.932] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.KeyboardButton in il2cpp domain
-[23:53:16.935] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.AchievementBoard in il2cpp domain
-[23:53:16.972] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitMart in il2cpp domain
-[23:53:16.975] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.InfoBoard in il2cpp domain
-[23:53:16.983] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuElement in il2cpp domain
-[23:53:17.126] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitCatalogElement in il2cpp domain
-[23:53:17.146] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitMartElement in il2cpp domain
-[23:53:17.158] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitResultElement in il2cpp domain
-[23:53:17.166] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitWelcomeElement in il2cpp domain
-[23:53:17.176] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.GamemodeResultElement in il2cpp domain
-[23:53:17.184] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelResultElement in il2cpp domain
-[23:53:17.195] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelRotationResultElement in il2cpp domain
-[23:53:17.211] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LabelElement in il2cpp domain
-[23:53:17.214] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.ButtonElement in il2cpp domain
-[23:53:17.221] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BoolElement in il2cpp domain
-[23:53:17.227] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.GroupElement in il2cpp domain
-[23:53:17.234] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.DropdownElement in il2cpp domain
-[23:53:17.240] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.ValueElement in il2cpp domain
-[23:53:17.246] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.EnumElement in il2cpp domain
-[23:53:17.255] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.FloatElement in il2cpp domain
-[23:53:17.260] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.FunctionElement in il2cpp domain
-[23:53:17.271] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.IntElement in il2cpp domain
-[23:53:17.287] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PageArrowsElement in il2cpp domain
-[23:53:17.296] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PageElement in il2cpp domain
-[23:53:17.306] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.StringElement in il2cpp domain
-[23:53:17.351] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LobbyElement in il2cpp domain
-[23:53:17.366] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LobbyResultElement in il2cpp domain
-[23:53:17.394] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PlayerElement in il2cpp domain
-[23:53:17.407] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PlayerResultElement in il2cpp domain
-[23:53:17.420] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.NotificationElement in il2cpp domain
-[23:53:17.423] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelNameLabel in il2cpp domain
-[23:53:17.436] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuPage in il2cpp domain
-[23:53:17.444] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuPopups in il2cpp domain
-[23:53:17.446] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuToolbar in il2cpp domain
-[23:53:17.464] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.ScrollButtonProxy in il2cpp domain
-[23:53:17.479] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelDownloadUI in il2cpp domain
-[23:53:17.483] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.UIPanel in il2cpp domain
-[23:53:17.500] [Il2CppInterop] Method System.Collections.Generic.List`1[ThunderstoreModAssistant.CodeModInfo] GetInstalledCodeModList() on type ThunderstoreModAssistant.Behaviors.AssistantMenuController has unsupported return type System.Collections.Generic.List`1[ThunderstoreModAssistant.CodeModInfo]
-[23:53:17.501] [Il2CppInterop] Method Void SetKeyAction(System.String, System.Action) on type ThunderstoreModAssistant.Behaviors.AssistantMenuController has unsupported parameter System.Action action of type System.Action
-[23:53:17.501] [Il2CppInterop] Method Void UpdateModDisplay(ThunderstoreModAssistant.CodeModInfo, Boolean) on type ThunderstoreModAssistant.Behaviors.AssistantMenuController has unsupported parameter ThunderstoreModAssistant.CodeModInfo info of type ThunderstoreModAssistant.CodeModInfo
-[23:53:17.525] [Il2CppInterop] Registered mono type ThunderstoreModAssistant.Behaviors.AssistantMenuController in il2cpp domain
-[23:53:17.526] [Il2CppInterop] Method Void SetModInfo(ThunderstoreModAssistant.CodeModInfo) on type ThunderstoreModAssistant.Behaviors.CodeModInfoDisplay has unsupported parameter ThunderstoreModAssistant.CodeModInfo modInfo of type ThunderstoreModAssistant.CodeModInfo
-[23:53:17.529] [Il2CppInterop] Registered mono type ThunderstoreModAssistant.Behaviors.CodeModInfoDisplay in il2cpp domain
-[23:53:20.365] [ModioModNetworker] HarmonyLib.HarmonyException: Patching exception in method null
+[00:07:01.441] [Il2CppInterop] Registered mono type Il2CppInterop.Runtime.DelegateSupport+Il2CppToMonoDelegateReference in il2cpp domain
+[00:07:01.549] [Il2CppInterop] Registered mono type MelonLoader.Support.MonoEnumeratorWrapper in il2cpp domain
+[00:07:01.560] [Il2CppInterop] Registered mono type MelonLoader.Support.SM_Component in il2cpp domain
+[00:07:01.600] Support Module Loaded: /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/MelonLoader/Dependencies/SupportModules/Il2Cpp.dll
+[00:07:01.644] [Il2CppInterop] Registered mono type BoneLib.MonoBehaviours.PopupBox in il2cpp domain
+[00:07:01.704] [Il2CppInterop] Method Void DrawHeader(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
+[00:07:01.704] [Il2CppInterop] Method Void DrawBackground(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
+[00:07:01.704] [Il2CppInterop] Method Void DrawFooter(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
+[00:07:01.704] [Il2CppInterop] Method Void DrawElements(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
+[00:07:01.819] [Il2CppInterop] Method Void SetModInfo(ModioModNetworker.Data.ModInfo) on type ModIoModNetworker.Ui.ModInfoDisplay has unsupported parameter ModioModNetworker.Data.ModInfo modInfo of type ModioModNetworker.Data.ModInfo
+[00:07:01.832] [Il2CppInterop] Registered mono type ModIoModNetworker.Ui.ModInfoDisplay in il2cpp domain
+[00:07:01.835] [Il2CppInterop] Method Void TriggerModInfoPopup(Boolean, ModioModNetworker.Data.ModInfo) on type ModIoModNetworker.Ui.NetworkerMenuController has unsupported parameter ModioModNetworker.Data.ModInfo modInfo of type ModioModNetworker.Data.ModInfo
+[00:07:01.835] [Il2CppInterop] Method UnityEngine.GameObject MakeModInfoObject(UnityEngine.Transform, ModioModNetworker.Data.ModInfo, Boolean) on type ModIoModNetworker.Ui.NetworkerMenuController has unsupported parameter ModioModNetworker.Data.ModInfo modInfo of type ModioModNetworker.Data.ModInfo
+[00:07:01.837] [Il2CppInterop] Method Void SetKeyAction(System.String, System.Action) on type ModIoModNetworker.Ui.NetworkerMenuController has unsupported parameter System.Action action of type System.Action
+[00:07:01.873] [Il2CppInterop] Registered mono type ModIoModNetworker.Ui.NetworkerMenuController in il2cpp domain
+[00:07:01.957] [Il2CppInterop] Registered mono type LabFusion.Voice.VoiceSource in il2cpp domain
+[00:07:01.968] [Il2CppInterop] Registered mono type LabFusion.UI.FusionUIMachine in il2cpp domain
+[00:07:01.977] [Il2CppInterop] Registered mono type LabFusion.UI.CupBoard in il2cpp domain
+[00:07:01.983] [Il2CppInterop] Registered mono type LabFusion.UI.FusionPanelView in il2cpp domain
+[00:07:01.994] [Il2CppInterop] Registered mono type LabFusion.UI.CupBoardPanelView in il2cpp domain
+[00:07:02.000] [Il2CppInterop] Registered mono type LabFusion.UI.FusionUITrigger in il2cpp domain
+[00:07:02.005] [Il2CppInterop] Registered mono type LabFusion.UI.InfoBox in il2cpp domain
+[00:07:02.011] [Il2CppInterop] Registered mono type LabFusion.UI.InfoBoxPanelView in il2cpp domain
+[00:07:02.049] [Il2CppInterop] Registered mono type LabFusion.SDK.MonoBehaviours.GamemodeItem in il2cpp domain
+[00:07:02.053] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.AntiHasher in il2cpp domain
+[00:07:02.059] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.CollisionSyncer in il2cpp domain
+[00:07:02.063] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.DestroyOnDisconnect in il2cpp domain
+[00:07:02.066] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.DestroySensor in il2cpp domain
+[00:07:02.070] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.MirrorIdentifier in il2cpp domain
+[00:07:02.073] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.NotifyOnEnable in il2cpp domain
+[00:07:02.083] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.TimedDespawner in il2cpp domain
+[00:07:02.089] [Il2CppInterop] Registered mono type LabFusion.Audio.AudioStreamFilter in il2cpp domain
+[00:07:02.098] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.AnimatorSyncer in il2cpp domain
+[00:07:02.109] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.AvatarCosmeticPoint in il2cpp domain
+[00:07:02.124] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.CosmeticRoot in il2cpp domain
+[00:07:02.131] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.DeathTrigger in il2cpp domain
+[00:07:02.135] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.Desyncer in il2cpp domain
+[00:07:02.139] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.CelebrationEvents in il2cpp domain
+[00:07:02.144] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.OwnershipEvents in il2cpp domain
+[00:07:02.151] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.PlayerEvents in il2cpp domain
+[00:07:02.158] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.ServerEvents in il2cpp domain
+[00:07:02.163] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.BitTransactor in il2cpp domain
+[00:07:02.171] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeCrateSpawner in il2cpp domain
+[00:07:02.176] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeDropper in il2cpp domain
+[00:07:02.203] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeDropperSettings in il2cpp domain
+[00:07:02.206] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeEvents in il2cpp domain
+[00:07:02.212] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeMarker in il2cpp domain
+[00:07:02.220] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeMusicSettings in il2cpp domain
+[00:07:02.225] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodePlayerSettings in il2cpp domain
+[00:07:02.232] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeTeamSettings in il2cpp domain
+[00:07:02.256] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCEvent in il2cpp domain
+[00:07:02.265] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCVariable in il2cpp domain
+[00:07:02.270] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCVector3 in il2cpp domain
+[00:07:02.276] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCString in il2cpp domain
+[00:07:02.280] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCBool in il2cpp domain
+[00:07:02.284] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCFloat in il2cpp domain
+[00:07:02.289] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCInt in il2cpp domain
+[00:07:02.315] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.VoiceProxy in il2cpp domain
+[00:07:02.331] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.Keyboard in il2cpp domain
+[00:07:02.339] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.KeyboardButton in il2cpp domain
+[00:07:02.342] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.AchievementBoard in il2cpp domain
+[00:07:02.377] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitMart in il2cpp domain
+[00:07:02.380] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.InfoBoard in il2cpp domain
+[00:07:02.388] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuElement in il2cpp domain
+[00:07:02.516] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitCatalogElement in il2cpp domain
+[00:07:02.530] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitMartElement in il2cpp domain
+[00:07:02.540] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitResultElement in il2cpp domain
+[00:07:02.548] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitWelcomeElement in il2cpp domain
+[00:07:02.557] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.GamemodeResultElement in il2cpp domain
+[00:07:02.565] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelResultElement in il2cpp domain
+[00:07:02.574] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelRotationResultElement in il2cpp domain
+[00:07:02.591] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LabelElement in il2cpp domain
+[00:07:02.594] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.ButtonElement in il2cpp domain
+[00:07:02.600] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BoolElement in il2cpp domain
+[00:07:02.605] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.GroupElement in il2cpp domain
+[00:07:02.611] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.DropdownElement in il2cpp domain
+[00:07:02.616] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.ValueElement in il2cpp domain
+[00:07:02.620] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.EnumElement in il2cpp domain
+[00:07:02.629] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.FloatElement in il2cpp domain
+[00:07:02.635] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.FunctionElement in il2cpp domain
+[00:07:02.643] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.IntElement in il2cpp domain
+[00:07:02.655] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PageArrowsElement in il2cpp domain
+[00:07:02.662] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PageElement in il2cpp domain
+[00:07:02.671] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.StringElement in il2cpp domain
+[00:07:02.706] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LobbyElement in il2cpp domain
+[00:07:02.720] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LobbyResultElement in il2cpp domain
+[00:07:02.745] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PlayerElement in il2cpp domain
+[00:07:02.757] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PlayerResultElement in il2cpp domain
+[00:07:02.769] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.NotificationElement in il2cpp domain
+[00:07:02.772] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelNameLabel in il2cpp domain
+[00:07:02.784] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuPage in il2cpp domain
+[00:07:02.790] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuPopups in il2cpp domain
+[00:07:02.791] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuToolbar in il2cpp domain
+[00:07:02.810] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.ScrollButtonProxy in il2cpp domain
+[00:07:02.824] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelDownloadUI in il2cpp domain
+[00:07:02.827] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.UIPanel in il2cpp domain
+[00:07:02.841] [Il2CppInterop] Method System.Collections.Generic.List`1[ThunderstoreModAssistant.CodeModInfo] GetInstalledCodeModList() on type ThunderstoreModAssistant.Behaviors.AssistantMenuController has unsupported return type System.Collections.Generic.List`1[ThunderstoreModAssistant.CodeModInfo]
+[00:07:02.842] [Il2CppInterop] Method Void SetKeyAction(System.String, System.Action) on type ThunderstoreModAssistant.Behaviors.AssistantMenuController has unsupported parameter System.Action action of type System.Action
+[00:07:02.842] [Il2CppInterop] Method Void UpdateModDisplay(ThunderstoreModAssistant.CodeModInfo, Boolean) on type ThunderstoreModAssistant.Behaviors.AssistantMenuController has unsupported parameter ThunderstoreModAssistant.CodeModInfo info of type ThunderstoreModAssistant.CodeModInfo
+[00:07:02.864] [Il2CppInterop] Registered mono type ThunderstoreModAssistant.Behaviors.AssistantMenuController in il2cpp domain
+[00:07:02.865] [Il2CppInterop] Method Void SetModInfo(ThunderstoreModAssistant.CodeModInfo) on type ThunderstoreModAssistant.Behaviors.CodeModInfoDisplay has unsupported parameter ThunderstoreModAssistant.CodeModInfo modInfo of type ThunderstoreModAssistant.CodeModInfo
+[00:07:02.868] [Il2CppInterop] Registered mono type ThunderstoreModAssistant.Behaviors.CodeModInfoDisplay in il2cpp domain
+[00:07:05.479] [ModioModNetworker] HarmonyLib.HarmonyException: Patching exception in method null
  ---> System.ArgumentException: Undefined target method for patch method static void ModioModNetworker.Patches.LevelLoadPatch+SendLevelPatchClass::Prefix(string barcode, string loadBarcode, ulong userId)
    at HarmonyLib.PatchClassProcessor.PatchWithAttributes(MethodBase& lastOriginal, Boolean unpatch)
    at HarmonyLib.PatchClassProcessor.Patch()
@@ -315,1127 +315,188 @@ This warning will turn into an error and Melons with missing dependencies will n
    at MelonLoader.MelonMod.HarmonyInit()
    at MelonLoader.MelonEvent.<>c.<Invoke>b__1_0(LemonAction x)
    at MelonLoader.MelonEventBase`1[[MelonLoader.LemonAction, MelonLoader, Version=0.6.5.0, Culture=neutral, PublicKeyToken=null]].Invoke(Action`1 delegateInvoker)
-[23:53:21.757] [BoneLib] BoneLib loaded
-[23:53:21.778] [LabFusion] PermissionList was found, attempting to read it!
-[23:53:21.867] [LabFusion] Contacts was found, attempting to read it!
-[23:53:22.294] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.raw_changelog.txt...
-[23:53:22.295] [LabFusion] Done!
-[23:53:22.295] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.credits.raw_credits_01.txt...
-[23:53:22.296] [LabFusion] Done!
-[23:53:22.297] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.credits.raw_credits_02.txt...
-[23:53:22.297] [LabFusion] Done!
-[23:53:22.297] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.credits.raw_credits_03.txt...
-[23:53:22.297] [LabFusion] Done!
-[23:53:22.303] [LabFusion] ListFetcher - Fetching profanityList.json from url https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/profanityList.json...
-[23:53:22.316] [LabFusion] ListFetcher - Fetching globalModBlacklist.json from url https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/globalModBlacklist.json...
-[23:53:22.318] [LabFusion] ListFetcher - Fetching urlWhitelist.json from url https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/urlWhitelist.json...
-[23:53:22.351] [LabFusion] --==== Loaded Fusion Module ====--
-[23:53:22.351] [LabFusion] Fusion SDK - v1.14.2
-[23:53:22.351] [LabFusion] by Lakatrazz
-[23:53:22.352] [LabFusion] --=============================--
-[23:53:22.371] [LabFusion] --==== Loaded Fusion Module ====--
-[23:53:22.372] [LabFusion] Marrow - v1.14.2
-[23:53:22.372] [LabFusion] by Lakatrazz
-[23:53:22.372] [LabFusion] --=============================--
-[23:53:22.446] [LabFusion] Loading embedded resource data LabFusion.SupportModules.BonelabSupport.dll...
-[23:53:22.446] [LabFusion] Done!
-[23:53:22.451] [LabFusion] --==== Loaded Fusion Module ====--
-[23:53:22.451] [LabFusion] BONELAB - v1.14.2
-[23:53:22.452] [LabFusion] by Lakatrazz
-[23:53:22.452] [LabFusion] --=============================--
-[23:53:26.107] [BulletCleanup] LOOSE ITEM CLEANUP: casings, unfired rounds and optional dropped magazines share timer and cap. Cleanup follows the saved enabled setting; magazines also require their own toggle.
-[23:53:26.138] MelonPreferences Loaded from /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/CinematicCamera/CinematicCamera.cfg
-[23:53:26.226] [Cinematic_Camera] Headset detected: Quest 3S (model 'Quest 3S', device 'panther'). Automatic settings: Res540p at Fps60.
-[23:53:26.546] [Cinematic_Camera] Camera model loaded: 906 verts / 1022 tris, bounds 8.90x6.10x6.15
-[23:53:26.597] [Cinematic_Camera] Handle model loaded: 744 verts / 248 tris, bounds 290.97x97.58x100.56, bar 128.03 long x 64.96 thick
-[23:53:26.787] [Cinematic_Camera] Video gallery model loaded: 1034 verts / 980 tris.
-[23:53:26.795] [Cinematic_Camera] LabFusion detected: multiplayer identity and prop ownership tracking enabled.
-[23:53:26.844] [Cinematic_Camera] Fusion prop transport ready (reflection-only, protocol BCCPROP1).
-[23:53:26.938] [Cinematic_Camera] BoneMenu category created.
-[23:53:26.940] [Cinematic_Camera] Recordings: /sdcard/Movies/BonelabCinematicCamera (visible to the headset's media apps)
-[23:53:26.947] [Cinematic_Camera] Async GPU readback: True, graphics API: Vulkan
-[23:53:26.947] [Cinematic_Camera] Controls: Trigger: record | A or X: freeze | B or Y: preset | Both sticks: record anywhere | off: swap camera | off: photo | Stick in + Trigger (holding hand): mount on surface
-[23:53:26.957] [Cinematic_Camera] Cinematic Camera v1.15.2 initialised. Loaded from BonelabCinematicCamera.dll, 4740608 bytes, written 2026-10-28 19:02:06.
-[23:53:26.958] [Gun_Modifier] Gun Modifier loaded!
-[23:53:26.958] [Gun_Modifier] Waiting for BoneLib BoneMenu to initialize...
-[23:53:26.995] [Doppel] Bot brain: 0 earlier builds in memory
-[23:53:27.331] [Doppel] Bot Player: Fusion is here: bots are shown to the other players
-[23:53:27.384] [Doppel] Bot brain started
-[23:53:27.385] [Doppel] Doppel ready (BoneMenu > Doppel)
-[23:53:27.385] [LabUtils] Loaded LabUtils.
-[23:53:27.630] [LabUtils] Loading DevUtils from Melons
-[23:53:27.648] [LabUtils] Loaded LabUtils.Utils.InfiniteAmmoUtil.AmmoUtility Util
-[23:53:27.657] [LabUtils] Loaded LabUtils.Utils.AssetWarehouseUtil.AssetWarehouseUtility Util
-[23:53:27.661] [LabUtils] Loaded LabUtils.Utils.All.FunUtility Util
-[23:53:27.668] [LabUtils] Loaded LabUtils.Utils.All.HealthUtility Util
-[23:53:27.674] [LabUtils] Loaded LabUtils.Utils.All.RagdollUtility Util
-[23:53:27.704] [LabUtils] Loaded LabUtils.Utils.All.Developer.SceneUtility Util
-[23:53:27.705] [LabUtils] Loaded LabUtils.Utils.Dangerous.AchivementUtility Util
-[23:53:27.729] [LabUtils] Loaded LabUtils.Utils.Dangerous.SaveDataUtility Util
-[23:53:27.776] MelonPreferences Loaded from /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/ModioModNetworker.cfg
-[23:53:28.034] [ModioModNetworker] Loaded blacklist with 0 entries.
-[23:53:28.089] [ModioModNetworker] Loading internal module...
-[23:53:28.092] [LabFusion] --==== Loaded Fusion Module ====--
-[23:53:28.092] [LabFusion] ModIoModNetworkerModule - v2.8.1
-[23:53:28.093] [LabFusion] by notnotnotswipez
-[23:53:28.093] [LabFusion] --=============================--
-[23:53:28.120] [RagdollUtility] Initialized.
-[23:53:29.440] [Spawn_Logger] EOS network layer detected; attributing spawns by ProductUserId.
-[23:53:29.441] [SpawnLab] SpawnLab 1.0.2: bounded lists and keyboard search enabled.
-[23:53:31.453] [Ultimate_Ragdoll] Harmony patches applied.
-[23:53:31.453] [Ultimate_Ragdoll] UltimateRagdoll v5.4.1 initialized.
-[23:53:32.121] [BulletCleanup] Tracking probe heartbeat: updates=1, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
-[23:53:32.124] [BulletCleanup] BoneMenu setup begin.
-[23:53:32.124] [BulletCleanup] BoneMenu setup complete.
-[23:53:32.205] [Cinematic_Camera] Recording badge layer resolved to the UI layer, index 5. Lenses have always excluded it, and the player's cameras draw it.
-[23:53:32.211] [Cinematic_Camera] Recording badge now rides the player's view camera 'Main Camera'.
-[23:53:32.317] [Gun_Modifier] Gun Modifier: NPC damage hook installed.
-[23:53:32.445] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugEnter (prefix).
-[23:53:32.502] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugEnter (postfix).
-[23:53:32.551] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugLocked (prefix).
-[23:53:32.605] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugLocked (postfix).
-[23:53:32.725] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugExit (postfix).
-[23:53:32.807] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugUnlocked (postfix).
-[23:53:32.807] [Gun_Modifier] Gun Modifier: Any Mag lifecycle hooks installed: 6.
-[23:53:32.902] [Gun_Modifier] Gun Modifier: physical recoil hooks installed on Gun.Fire.
-[23:53:32.902] [Gun_Modifier] Gun Modifier: fire-rate hook installed.
-[23:53:32.912] [Gun_Modifier] Gun Modifier menu created successfully!
-[23:53:33.273] [LabFusion] ListFetcher - Finished fetching https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/profanityList.json!
-[23:53:33.311] [LabFusion] ListFetcher - Finished fetching https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/globalModBlacklist.json!
-[23:53:33.356] [LabFusion] ListFetcher - Finished fetching https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/urlWhitelist.json!
-[23:53:33.396] [ModioModNetworker] Populating currently installed mods via this mod.
-[23:53:33.673] [ModioModNetworker] Checking mod.io account subscriptions
-[23:53:33.678] [ModioModNetworker] Registered on mod.io with auth key!
-[23:53:34.627] [ModioModNetworker] Total subscriptions: 72
-[23:53:35.011] [ModioModNetworker] Finished refreshing mod.io subscriptions!
-[23:53:35.025] [ModioModNetworker] Downloading mod fpv-drone1
-[23:53:36.121] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
-[23:53:36.132] [ModioModNetworker] Error while downloading mod fpv-drone1: System.IO.InvalidDataException: End of Central Directory record could not be found.
+[00:07:06.688] [BoneLib] BoneLib loaded
+[00:07:06.701] [LabFusion] PermissionList was found, attempting to read it!
+[00:07:06.766] [LabFusion] Contacts was found, attempting to read it!
+[00:07:07.087] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.raw_changelog.txt...
+[00:07:07.087] [LabFusion] Done!
+[00:07:07.087] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.credits.raw_credits_01.txt...
+[00:07:07.089] [LabFusion] Done!
+[00:07:07.089] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.credits.raw_credits_02.txt...
+[00:07:07.089] [LabFusion] Done!
+[00:07:07.089] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.credits.raw_credits_03.txt...
+[00:07:07.089] [LabFusion] Done!
+[00:07:07.095] [LabFusion] ListFetcher - Fetching profanityList.json from url https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/profanityList.json...
+[00:07:07.105] [LabFusion] ListFetcher - Fetching globalModBlacklist.json from url https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/globalModBlacklist.json...
+[00:07:07.106] [LabFusion] ListFetcher - Fetching urlWhitelist.json from url https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/urlWhitelist.json...
+[00:07:07.124] [LabFusion] --==== Loaded Fusion Module ====--
+[00:07:07.124] [LabFusion] Fusion SDK - v1.14.2
+[00:07:07.124] [LabFusion] by Lakatrazz
+[00:07:07.124] [LabFusion] --=============================--
+[00:07:07.138] [LabFusion] --==== Loaded Fusion Module ====--
+[00:07:07.138] [LabFusion] Marrow - v1.14.2
+[00:07:07.138] [LabFusion] by Lakatrazz
+[00:07:07.138] [LabFusion] --=============================--
+[00:07:07.197] [LabFusion] Loading embedded resource data LabFusion.SupportModules.BonelabSupport.dll...
+[00:07:07.197] [LabFusion] Done!
+[00:07:07.202] [LabFusion] --==== Loaded Fusion Module ====--
+[00:07:07.202] [LabFusion] BONELAB - v1.14.2
+[00:07:07.202] [LabFusion] by Lakatrazz
+[00:07:07.203] [LabFusion] --=============================--
+[00:07:10.464] [BulletCleanup] LOOSE ITEM CLEANUP: casings, unfired rounds and optional dropped magazines share timer and cap. Cleanup follows the saved enabled setting; magazines also require their own toggle.
+[00:07:10.492] MelonPreferences Loaded from /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/CinematicCamera/CinematicCamera.cfg
+[00:07:10.575] [Cinematic_Camera] Headset detected: Quest 3S (model 'Quest 3S', device 'panther'). Automatic settings: Res540p at Fps60.
+[00:07:10.872] [Cinematic_Camera] Camera model loaded: 906 verts / 1022 tris, bounds 8.90x6.10x6.15
+[00:07:10.920] [Cinematic_Camera] Handle model loaded: 744 verts / 248 tris, bounds 290.97x97.58x100.56, bar 128.03 long x 64.96 thick
+[00:07:11.101] [Cinematic_Camera] Video gallery model loaded: 1034 verts / 980 tris.
+[00:07:11.108] [Cinematic_Camera] LabFusion detected: multiplayer identity and prop ownership tracking enabled.
+[00:07:11.157] [Cinematic_Camera] Fusion prop transport ready (reflection-only, protocol BCCPROP1).
+[00:07:11.247] [Cinematic_Camera] BoneMenu category created.
+[00:07:11.249] [Cinematic_Camera] Recordings: /sdcard/Movies/BonelabCinematicCamera (visible to the headset's media apps)
+[00:07:11.256] [Cinematic_Camera] Async GPU readback: True, graphics API: Vulkan
+[00:07:11.256] [Cinematic_Camera] Controls: Trigger: record | A or X: freeze | B or Y: preset | Both sticks: record anywhere | off: swap camera | off: photo | Stick in + Trigger (holding hand): mount on surface
+[00:07:11.266] [Cinematic_Camera] Cinematic Camera v1.15.2 initialised. Loaded from BonelabCinematicCamera.dll, 4740608 bytes, written 2026-10-28 19:02:06.
+[00:07:11.267] [Gun_Modifier] Gun Modifier loaded!
+[00:07:11.267] [Gun_Modifier] Waiting for BoneLib BoneMenu to initialize...
+[00:07:11.293] [Doppel] Bot brain: 0 earlier builds in memory
+[00:07:11.635] [Doppel] Bot Player: Fusion is here: bots are shown to the other players
+[00:07:11.681] [Doppel] Bot brain started
+[00:07:11.681] [Doppel] Doppel ready (BoneMenu > Doppel)
+[00:07:11.682] [LabUtils] Loaded LabUtils.
+[00:07:11.899] [LabUtils] Loading DevUtils from Melons
+[00:07:11.914] [LabUtils] Loaded LabUtils.Utils.InfiniteAmmoUtil.AmmoUtility Util
+[00:07:11.921] [LabUtils] Loaded LabUtils.Utils.AssetWarehouseUtil.AssetWarehouseUtility Util
+[00:07:11.925] [LabUtils] Loaded LabUtils.Utils.All.FunUtility Util
+[00:07:11.932] [LabUtils] Loaded LabUtils.Utils.All.HealthUtility Util
+[00:07:11.936] [LabUtils] Loaded LabUtils.Utils.All.RagdollUtility Util
+[00:07:11.963] [LabUtils] Loaded LabUtils.Utils.All.Developer.SceneUtility Util
+[00:07:11.966] [LabUtils] Loaded LabUtils.Utils.Dangerous.AchivementUtility Util
+[00:07:11.989] [LabUtils] Loaded LabUtils.Utils.Dangerous.SaveDataUtility Util
+[00:07:12.047] MelonPreferences Loaded from /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/ModioModNetworker.cfg
+[00:07:12.289] [ModioModNetworker] Loaded blacklist with 0 entries.
+[00:07:12.331] [ModioModNetworker] Loading internal module...
+[00:07:12.332] [LabFusion] --==== Loaded Fusion Module ====--
+[00:07:12.332] [LabFusion] ModIoModNetworkerModule - v2.8.1
+[00:07:12.332] [LabFusion] by notnotnotswipez
+[00:07:12.332] [LabFusion] --=============================--
+[00:07:12.355] [RagdollUtility] Initialized.
+[00:07:13.424] [Spawn_Logger] EOS network layer detected; attributing spawns by ProductUserId.
+[00:07:13.425] [SpawnLab] SpawnLab 1.0.2: bounded lists and keyboard search enabled.
+[00:07:15.067] [Ultimate_Ragdoll] Harmony patches applied.
+[00:07:15.068] [Ultimate_Ragdoll] UltimateRagdoll v5.4.1 initialized.
+[00:07:15.580] [BulletCleanup] Tracking probe heartbeat: updates=1, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[00:07:15.582] [BulletCleanup] BoneMenu setup begin.
+[00:07:15.582] [BulletCleanup] BoneMenu setup complete.
+[00:07:15.663] [Cinematic_Camera] Recording badge layer resolved to the UI layer, index 5. Lenses have always excluded it, and the player's cameras draw it.
+[00:07:15.668] [Cinematic_Camera] Recording badge now rides the player's view camera 'Main Camera'.
+[00:07:15.712] [Gun_Modifier] Gun Modifier: NPC damage hook installed.
+[00:07:15.732] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugEnter (prefix).
+[00:07:15.783] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugEnter (postfix).
+[00:07:15.802] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugLocked (prefix).
+[00:07:15.824] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugLocked (postfix).
+[00:07:15.874] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugExit (postfix).
+[00:07:15.891] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugUnlocked (postfix).
+[00:07:15.892] [Gun_Modifier] Gun Modifier: Any Mag lifecycle hooks installed: 6.
+[00:07:15.959] [Gun_Modifier] Gun Modifier: physical recoil hooks installed on Gun.Fire.
+[00:07:15.960] [Gun_Modifier] Gun Modifier: fire-rate hook installed.
+[00:07:15.965] [Gun_Modifier] Gun Modifier menu created successfully!
+[00:07:16.147] [LabFusion] ListFetcher - Finished fetching https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/profanityList.json!
+[00:07:16.175] [LabFusion] ListFetcher - Finished fetching https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/globalModBlacklist.json!
+[00:07:16.196] [LabFusion] ListFetcher - Finished fetching https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/urlWhitelist.json!
+[00:07:16.216] [ModioModNetworker] Populating currently installed mods via this mod.
+[00:07:16.417] [ModioModNetworker] Checking mod.io account subscriptions
+[00:07:16.423] [ModioModNetworker] Registered on mod.io with auth key!
+[00:07:17.154] [ModioModNetworker] Total subscriptions: 72
+[00:07:17.174] [ModioModNetworker] Finished refreshing mod.io subscriptions!
+[00:07:17.189] [ModioModNetworker] Downloading mod fpv-drone1
+[00:07:18.655] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
+[00:07:18.664] [ModioModNetworker] Error while downloading mod fpv-drone1: System.IO.InvalidDataException: End of Central Directory record could not be found.
    at System.IO.Compression.ZipArchive.ReadEndOfCentralDirectory()
    at System.IO.Compression.ZipArchive..ctor(Stream stream, ZipArchiveMode mode, Boolean leaveOpen, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode)
    at System.IO.Compression.ZipFile.OpenRead(String archiveFileName)
    at DownloadAction.<>c.<Handle>b__3_0()
-[23:53:36.148] [ModioModNetworker] Downloading mod police-french-hood-rp
-[23:53:36.585] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
-[23:53:36.585] [ModioModNetworker] Error while downloading mod police-french-hood-rp: System.IO.InvalidDataException: End of Central Directory record could not be found.
+[00:07:18.680] [ModioModNetworker] Downloading mod police-french-hood-rp
+[00:07:19.113] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
+[00:07:19.114] [ModioModNetworker] Error while downloading mod police-french-hood-rp: System.IO.InvalidDataException: End of Central Directory record could not be found.
    at System.IO.Compression.ZipArchive.ReadEndOfCentralDirectory()
    at System.IO.Compression.ZipArchive..ctor(Stream stream, ZipArchiveMode mode, Boolean leaveOpen, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode)
    at System.IO.Compression.ZipFile.OpenRead(String archiveFileName)
    at DownloadAction.<>c.<Handle>b__3_0()
-[23:53:36.615] [ModioModNetworker] Downloading mod ghosts-of-tabor-gun-pack
-[23:53:37.084] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
-[23:53:37.085] [ModioModNetworker] Error while downloading mod ghosts-of-tabor-gun-pack: System.IO.InvalidDataException: End of Central Directory record could not be found.
+[00:07:19.146] [ModioModNetworker] Downloading mod ghosts-of-tabor-gun-pack
+[00:07:19.580] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
+[00:07:19.581] [ModioModNetworker] Error while downloading mod ghosts-of-tabor-gun-pack: System.IO.InvalidDataException: End of Central Directory record could not be found.
    at System.IO.Compression.ZipArchive.ReadEndOfCentralDirectory()
    at System.IO.Compression.ZipArchive..ctor(Stream stream, ZipArchiveMode mode, Boolean leaveOpen, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode)
    at System.IO.Compression.ZipFile.OpenRead(String archiveFileName)
    at DownloadAction.<>c.<Handle>b__3_0()
-[23:53:37.116] [ModioModNetworker] Downloading mod taborite-ghost-of-tabor-avatar
-[23:53:37.548] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
-[23:53:37.549] [ModioModNetworker] Error while downloading mod taborite-ghost-of-tabor-avatar: System.IO.InvalidDataException: End of Central Directory record could not be found.
+[00:07:19.613] [ModioModNetworker] Downloading mod taborite-ghost-of-tabor-avatar
+[00:07:20.046] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
+[00:07:20.047] [ModioModNetworker] Error while downloading mod taborite-ghost-of-tabor-avatar: System.IO.InvalidDataException: End of Central Directory record could not be found.
    at System.IO.Compression.ZipArchive.ReadEndOfCentralDirectory()
    at System.IO.Compression.ZipArchive..ctor(Stream stream, ZipArchiveMode mode, Boolean leaveOpen, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode)
    at System.IO.Compression.ZipFile.OpenRead(String archiveFileName)
    at DownloadAction.<>c.<Handle>b__3_0()
-[23:53:37.582] [ModioModNetworker] Downloading mod ukr-war-test-still-in-development
-[23:53:38.015] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
-[23:53:38.023] [ModioModNetworker] Error while downloading mod ukr-war-test-still-in-development: System.IO.InvalidDataException: End of Central Directory record could not be found.
+[00:07:20.080] [ModioModNetworker] Downloading mod ukr-war-test-still-in-development
+[00:07:20.547] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
+[00:07:20.547] [ModioModNetworker] Error while downloading mod ukr-war-test-still-in-development: System.IO.InvalidDataException: End of Central Directory record could not be found.
    at System.IO.Compression.ZipArchive.ReadEndOfCentralDirectory()
    at System.IO.Compression.ZipArchive..ctor(Stream stream, ZipArchiveMode mode, Boolean leaveOpen, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode)
    at System.IO.Compression.ZipFile.OpenRead(String archiveFileName)
    at DownloadAction.<>c.<Handle>b__3_0()
-[23:53:42.147] [BulletCleanup] Tracking probe heartbeat: updates=205, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
-[23:53:52.154] [BulletCleanup] Tracking probe heartbeat: updates=454, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
-[23:53:58.085] [LabUtils] MelonPreferences Saved to /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/MelonPreferences.cfg
-[23:53:58.127] [LabUtils] Preferences Saved!
-[23:53:58.171] [SearchThing] Fusion integration: Successfully applied RegisterSpawnHistory patch
-[23:54:17.383] [BulletCleanup] Tracking probe heartbeat: updates=560, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
-[23:54:35.470] [BulletCleanup] Tracking probe heartbeat: updates=877, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
-[23:54:36.621] [Cinematic_Camera] Recording badge layer added to camera 'Main Camera'.
-[23:54:36.622] [Cinematic_Camera] Recording badge now rides the player's view camera 'Main Camera'.
-[23:54:36.622] [Cinematic_Camera] The operator's view now renders the recording badge layer.
-[23:54:41.299] [BoneLib] Finding player object references
-[23:54:41.486] [BulletCleanup] Level-loaded callback received.
-[23:54:41.520] [Ultimate_Ragdoll] Level loaded: 15 - Void G114
-[23:54:41.520] [Doppel] Bot Player: a player body was spawned (SLZ.BONELAB.Core.Spawnable.RigManagerBlank)
-[23:54:44.018] [Doppel] Moves: now those of ChillNew (0 recorded)
-[23:54:44.480] [Cinematic_Camera] Recording badge now rides the player's view camera 'Headset'.
-[23:54:45.477] [BulletCleanup] Tracking probe heartbeat: updates=1374, ready=True, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
-[23:54:46.891] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:46.892] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:46.900] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:46.901] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:46.904] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:46.905] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:46.906] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:46.906] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:47.060] [BulletCleanup] Creating cleanup worker after grab.
-[23:54:47.069] [BulletCleanup] Tracking unfired round type: Rexmeck.WeaponPackLT.Spawnable.Cartridge9x19mm
-[23:54:47.069] [BulletCleanup] Tracking spent casing type: Rexmeck.WeaponPackLT.Spawnable.Cartridge9x19mmCase
-[23:54:47.071] [BulletCleanup] Casing scan begin.
-[23:54:47.094] [BulletCleanup] Casing scan complete: tracked=0, removed=0, scanned=8, ammo types=2, unfired types=1, magazine types=0, passes=1
-[23:54:47.314] [BulletCleanup] Casing scan begin.
-[23:54:47.315] [BulletCleanup] Casing scan complete: tracked=0, removed=0, scanned=16, ammo types=2, unfired types=1, magazine types=0, passes=2
-[23:54:47.574] [BulletCleanup] Casing scan begin.
-[23:54:47.576] [BulletCleanup] Casing scan complete: tracked=0, removed=0, scanned=24, ammo types=2, unfired types=1, magazine types=0, passes=3
-[23:54:48.927] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:48.928] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:48.929] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:48.929] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:48.932] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:48.932] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:48.933] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:48.933] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:48.936] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:48.936] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:48.937] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:48.937] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:48.953] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:48.954] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:48.955] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:48.955] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:48.966] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:48.967] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:48.967] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:48.968] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:48.979] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:48.980] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:48.980] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:48.981] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:48.996] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:48.997] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:48.998] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:48.998] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.010] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.011] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.012] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.012] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.023] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.024] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.024] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.025] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.037] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.037] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.038] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.039] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.053] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.054] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.054] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.055] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.197] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.198] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.199] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.199] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.202] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.203] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.203] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.204] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.207] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.207] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.208] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.208] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.242] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.242] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.243] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.243] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.257] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.257] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.258] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.258] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.270] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.270] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.271] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.271] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.285] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.285] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.286] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.286] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.297] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.297] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.298] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.298] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.310] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.311] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.311] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.312] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.323] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.324] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.324] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.325] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.337] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.337] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:49.338] [Il2CppInterop] During invoking native->managed trampoline
-[23:54:49.338] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:54:55.498] [BulletCleanup] Tracking probe heartbeat: updates=2169, ready=True, worker=True, cleanup=True; tracked=0, removed=0, scanned=264, ammo types=2, unfired types=1, magazine types=0, passes=33
-[23:55:05.216] [Gun_Modifier] Gun Modifier: gun layout Il2CppSLZ.Marrow.Gun => isWrapped, pooledPtr, _magState, _hasMagState, isSilenced, roundsPerMinute, muzzleVelocity, fireMode, fireCurve, returnCurve, isSlideReleaseOnCollision, allowFireOnSlideGrabbed, isCharged, isSlideLockedOnEmpty, isLoaded, isMagEjectOnEmpty, muzzleFlareSpawnable, weaponSlot, ammoSocket, animator, host, entity, internalMagazine, defaultMagazine, defaultCartridge, slideVirtualController, chargingHelperHighRes, magazineHelperHighRes, chargingHelperLowRes, magazineHelperLowRes, _chargingHandleHelperRenderer, _magazineHelperRenderer, triggerGrip, otherGrips, gunSFX, proxyOverride, shellSpawnTransform, shellOrientationTransform, firePointTransform, nextCartridgeGameObject, chamberedCaseGameObject, chamberedCatridgeGameObject, _hasChamberedCartArt, _chamberedCartridgeArt, _hasChamberedCaseArt, _chamberedCartridgeCaseArt, _hasNextCartArt, _nextCartridgeArt, onFireDelegate, OnSlideUpdate, OnSlideGrabbed, OnSlideReleased, OnMagazineEjectDelegate, isTriggerPulledOnAttach, isFiring, isTriggerPulled, isTriggerPressed, hasFiredOnce, fireSpeedHash, neutralHash, slidePullHash, slideReturnHash, slideLockedHash, pullAnimationPerc, returnAnimationPerc, pullAnimationSpeed, returnAnimationSpeed, roundsPerSecond, fireDuration, slideLockDuration, chamberedCartridge, _wasInstaLoaded, _isUpdatingArt, _waitForEOF, _ammoInventory, animationState, slideState, hammerState, cartridgeState, cachedVelocity, blinkHighlightCoroutine, overridePerc, isSlideOverride, _isSlideGrabbed, lastCompletedAnimation, leftOverTime, playAnimationStateCoroutine, MagazineState, _poolee, ID, IsDespawned, useGUILayout, enabled, isActiveAndEnabled, transform, gameObject, tag, m_CachedPtr, name, hideFlags
-[23:55:05.220] [Gun_Modifier] Gun Modifier: ammoSocket=Il2CppSLZ.Marrow.AmmoSocket; socket platform=EDER; plug=Il2CppSLZ.Marrow.AmmoPlug; magazine=Il2CppSLZ.Marrow.Magazine; inserted=True; magazineData=Il2CppSLZ.Marrow.Data.MagazineData; mag platform=EDER; mag rounds=17; loaded ammo=16; default platform=EDER; default rounds=17; internal rounds=null
-[23:55:05.502] [BulletCleanup] Tracking probe heartbeat: updates=3038, ready=True, worker=True, cleanup=True; tracked=0, removed=0, scanned=602, ammo types=2, unfired types=1, magazine types=0, passes=72
-[23:55:10.639] [BulletCleanup] Despawning loose item ID=169
-[23:55:10.893] [BulletCleanup] Despawning loose item ID=182
-[23:55:11.146] [BulletCleanup] Despawning loose item ID=192
-[23:55:11.147] [BulletCleanup] Despawning loose item ID=203
-[23:55:15.510] [BulletCleanup] Tracking probe heartbeat: updates=3898, ready=True, worker=True, cleanup=True; tracked=6, removed=4, scanned=1509, ammo types=2, unfired types=1, magazine types=0, passes=111
-[23:55:25.519] [BulletCleanup] Tracking probe heartbeat: updates=4782, ready=True, worker=True, cleanup=True; tracked=6, removed=4, scanned=2445, ammo types=2, unfired types=1, magazine types=0, passes=150
-[23:55:35.523] [BulletCleanup] Tracking probe heartbeat: updates=5678, ready=True, worker=True, cleanup=True; tracked=6, removed=4, scanned=3381, ammo types=2, unfired types=1, magazine types=0, passes=189
-[23:55:45.530] [BulletCleanup] Tracking probe heartbeat: updates=6575, ready=True, worker=True, cleanup=True; tracked=6, removed=4, scanned=4317, ammo types=2, unfired types=1, magazine types=0, passes=228
-[23:55:55.536] [BulletCleanup] Tracking probe heartbeat: updates=7465, ready=True, worker=True, cleanup=True; tracked=6, removed=4, scanned=5253, ammo types=2, unfired types=1, magazine types=0, passes=267
-[23:55:57.126] [BulletCleanup] Despawning loose item ID=242
-[23:55:57.641] [BulletCleanup] Despawning loose item ID=254
-[23:55:57.896] [BulletCleanup] Despawning loose item ID=265
-[23:55:57.897] [BulletCleanup] Despawning loose item ID=275
-[23:56:05.551] [BulletCleanup] Tracking probe heartbeat: updates=8293, ready=True, worker=True, cleanup=True; tracked=0, removed=14, scanned=5980, ammo types=2, unfired types=1, magazine types=0, passes=306
-[23:56:06.296] [Gun_Modifier] Gun Modifier: Any Mag set to True. Magazine compatibility hook status will be reported by GunController.
-[23:56:06.343] [Gun_Modifier] Gun Modifier: Any Mag matched socket and gun magazine platform to incoming magazine platform 'MP5'.
-[23:56:06.352] [Gun_Modifier] Gun Modifier: Any Mag deferred waiting for attached magazine data. plug=null; magazine=null; magazineState=null; magazineData=null; plug members=null
-[23:56:15.552] [BulletCleanup] Tracking probe heartbeat: updates=9138, ready=True, worker=True, cleanup=True; tracked=8, removed=15, scanned=6627, ammo types=2, unfired types=1, magazine types=0, passes=345
-[23:56:24.624] [BulletCleanup] Tracking unfired round type: Mango.MGP2Proto.Spawnable.22LR
-[23:56:24.624] [BulletCleanup] Tracking spent casing type: Mango.MGP2Proto.Spawnable.22LRCasing
-[23:56:24.962] [Gun_Modifier] Gun Modifier: Any Mag matched socket and gun magazine platform to incoming magazine platform 'Ruger'.
-[23:56:25.561] [BulletCleanup] Tracking probe heartbeat: updates=9963, ready=True, worker=True, cleanup=True; tracked=0, removed=23, scanned=6763, ammo types=4, unfired types=2, magazine types=0, passes=383
-[23:56:34.211] [Gun_Modifier] Gun Modifier: Any Mag matched socket and gun magazine platform to incoming magazine platform 'EDER'.
-[23:56:35.567] [BulletCleanup] Tracking probe heartbeat: updates=10835, ready=True, worker=True, cleanup=True; tracked=10, removed=23, scanned=7460, ammo types=4, unfired types=2, magazine types=0, passes=422
-[23:56:45.575] [BulletCleanup] Tracking probe heartbeat: updates=11703, ready=True, worker=True, cleanup=True; tracked=8, removed=33, scanned=8142, ammo types=4, unfired types=2, magazine types=0, passes=461
-[23:56:55.584] [BulletCleanup] Tracking probe heartbeat: updates=12574, ready=True, worker=True, cleanup=True; tracked=0, removed=49, scanned=9053, ammo types=4, unfired types=2, magazine types=0, passes=500
-[23:57:02.476] [LabUtils] MelonPreferences Saved to /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/MelonPreferences.cfg
-[23:57:02.488] [LabUtils] Preferences Saved!
-[23:57:05.585] [BulletCleanup] Tracking probe heartbeat: updates=13438, ready=True, worker=True, cleanup=True; tracked=0, removed=59, scanned=9951, ammo types=4, unfired types=2, magazine types=0, passes=539
-[23:57:15.588] [BulletCleanup] Tracking probe heartbeat: updates=14303, ready=True, worker=True, cleanup=True; tracked=5, removed=59, scanned=10781, ammo types=4, unfired types=2, magazine types=0, passes=578
-[23:57:25.591] [BulletCleanup] Tracking probe heartbeat: updates=15180, ready=True, worker=True, cleanup=True; tracked=6, removed=59, scanned=11834, ammo types=4, unfired types=2, magazine types=0, passes=617
-[23:57:29.154] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:29.155] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:29.157] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:29.157] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:29.161] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:29.161] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:29.162] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:29.162] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.221] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.222] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.222] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.223] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.226] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.226] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.227] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.227] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.416] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.416] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.417] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.417] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.420] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.420] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.421] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.441] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.538] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.538] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.539] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.539] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.543] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.543] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.544] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.544] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.714] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.714] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.715] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.715] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.718] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.719] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.720] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.720] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.857] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.857] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.858] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.859] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.862] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.862] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:31.863] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:31.863] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:32.047] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:32.047] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:32.048] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:32.048] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:32.051] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:32.052] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:32.052] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:32.053] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:32.213] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:32.214] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:32.215] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:32.215] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:32.218] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:32.218] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:32.219] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:32.219] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:32.477] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:32.477] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:32.478] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:32.478] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:32.481] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:32.481] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:32.482] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:32.482] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:32.921] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:32.921] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:32.922] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:32.924] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:35.042] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:35.042] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:35.043] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:35.043] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:35.224] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:35.225] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:35.226] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:35.226] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:35.601] [BulletCleanup] Tracking probe heartbeat: updates=16021, ready=True, worker=True, cleanup=True; tracked=12, removed=65, scanned=13008, ammo types=4, unfired types=2, magazine types=0, passes=656
-[23:57:35.886] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:35.886] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:35.887] [Il2CppInterop] During invoking native->managed trampoline
-[23:57:35.887] [Il2CppInterop] Il2CppInterop.Runtime.Il2CppException: System.NullReferenceException: Object reference not set to an instance of an object.
---- BEGIN IL2CPP STACK TRACE ---
-System.NullReferenceException: Object reference not set to an instance of an object.
-  at SLZ.Marrow.Gun.AmmoCount () [0x00000] in <00000000000000000000000000000000>:0 
---- END IL2CPP STACK TRACE ---
-
-   at Il2CppInterop.Runtime.Il2CppException.RaiseExceptionIfNecessary(IntPtr returnedException)
-   at DMD<AmmoCount>?321297043._UnhollowedWrapper_Il2CppSLZ_Marrow_Gun::AmmoCount(Gun this)
-   at DMD<>?321297043.(il2cpp -> managed) AmmoCount(IntPtr , Il2CppMethodInfo* )
-[23:57:45.610] [BulletCleanup] Tracking probe heartbeat: updates=16847, ready=True, worker=True, cleanup=True; tracked=16, removed=65, scanned=14757, ammo types=4, unfired types=2, magazine types=0, passes=695
-[23:57:55.611] [BulletCleanup] Tracking probe heartbeat: updates=17744, ready=True, worker=True, cleanup=True; tracked=16, removed=65, scanned=16557, ammo types=4, unfired types=2, magazine types=0, passes=735
-[23:58:05.616] [BulletCleanup] Tracking probe heartbeat: updates=18601, ready=True, worker=True, cleanup=True; tracked=16, removed=65, scanned=18312, ammo types=4, unfired types=2, magazine types=0, passes=774
-[23:58:15.620] [BulletCleanup] Tracking probe heartbeat: updates=19485, ready=True, worker=True, cleanup=True; tracked=16, removed=65, scanned=20067, ammo types=4, unfired types=2, magazine types=0, passes=813
+[00:07:25.580] [BulletCleanup] Tracking probe heartbeat: updates=233, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[00:07:35.594] [BulletCleanup] Tracking probe heartbeat: updates=480, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[00:07:40.582] [LabUtils] MelonPreferences Saved to /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/MelonPreferences.cfg
+[00:07:40.608] [LabUtils] Preferences Saved!
+[00:07:40.638] [SearchThing] Fusion integration: Successfully applied RegisterSpawnHistory patch
+[00:07:58.017] [BulletCleanup] Tracking probe heartbeat: updates=631, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[00:08:10.379] [BulletCleanup] Tracking probe heartbeat: updates=636, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[00:08:10.970] [Cinematic_Camera] Recording badge layer added to camera 'Main Camera'.
+[00:08:10.970] [Cinematic_Camera] Recording badge now rides the player's view camera 'Main Camera'.
+[00:08:10.970] [Cinematic_Camera] The operator's view now renders the recording badge layer.
+[00:08:15.884] [BoneLib] Finding player object references
+[00:08:16.073] [BulletCleanup] Level-loaded callback received.
+[00:08:16.123] [Ultimate_Ragdoll] Level loaded: 15 - Void G114
+[00:08:16.124] [Doppel] Bot Player: a player body was spawned (SLZ.BONELAB.Core.Spawnable.RigManagerBlank)
+[00:08:18.719] [Doppel] Moves: now those of ChillNew (0 recorded)
+[00:08:18.930] [Cinematic_Camera] Recording badge now rides the player's view camera 'Headset'.
+[00:08:20.731] [BulletCleanup] Tracking probe heartbeat: updates=1089, ready=True, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[00:08:28.431] [BulletCleanup] Creating cleanup worker after grab.
+[00:08:28.441] [BulletCleanup] Tracking unfired round type: Rexmeck.WeaponPackLT.Spawnable.Cartridge9x19mm
+[00:08:28.441] [BulletCleanup] Tracking spent casing type: Rexmeck.WeaponPackLT.Spawnable.Cartridge9x19mmCase
+[00:08:28.443] [BulletCleanup] Casing scan begin.
+[00:08:28.466] [BulletCleanup] Casing scan complete: tracked=0, removed=0, scanned=8, ammo types=2, unfired types=1, magazine types=0, passes=1
+[00:08:28.687] [BulletCleanup] Casing scan begin.
+[00:08:28.691] [BulletCleanup] Casing scan complete: tracked=0, removed=0, scanned=18, ammo types=2, unfired types=1, magazine types=0, passes=2
+[00:08:28.931] [BulletCleanup] Casing scan begin.
+[00:08:28.932] [BulletCleanup] Casing scan complete: tracked=0, removed=0, scanned=31, ammo types=2, unfired types=1, magazine types=0, passes=3
+[00:08:29.803] [Gun_Modifier] Gun Modifier: gun layout Il2CppSLZ.Marrow.Gun => isWrapped, pooledPtr, _magState, _hasMagState, isSilenced, roundsPerMinute, muzzleVelocity, fireMode, fireCurve, returnCurve, isSlideReleaseOnCollision, allowFireOnSlideGrabbed, isCharged, isSlideLockedOnEmpty, isLoaded, isMagEjectOnEmpty, muzzleFlareSpawnable, weaponSlot, ammoSocket, animator, host, entity, internalMagazine, defaultMagazine, defaultCartridge, slideVirtualController, chargingHelperHighRes, magazineHelperHighRes, chargingHelperLowRes, magazineHelperLowRes, _chargingHandleHelperRenderer, _magazineHelperRenderer, triggerGrip, otherGrips, gunSFX, proxyOverride, shellSpawnTransform, shellOrientationTransform, firePointTransform, nextCartridgeGameObject, chamberedCaseGameObject, chamberedCatridgeGameObject, _hasChamberedCartArt, _chamberedCartridgeArt, _hasChamberedCaseArt, _chamberedCartridgeCaseArt, _hasNextCartArt, _nextCartridgeArt, onFireDelegate, OnSlideUpdate, OnSlideGrabbed, OnSlideReleased, OnMagazineEjectDelegate, isTriggerPulledOnAttach, isFiring, isTriggerPulled, isTriggerPressed, hasFiredOnce, fireSpeedHash, neutralHash, slidePullHash, slideReturnHash, slideLockedHash, pullAnimationPerc, returnAnimationPerc, pullAnimationSpeed, returnAnimationSpeed, roundsPerSecond, fireDuration, slideLockDuration, chamberedCartridge, _wasInstaLoaded, _isUpdatingArt, _waitForEOF, _ammoInventory, animationState, slideState, hammerState, cartridgeState, cachedVelocity, blinkHighlightCoroutine, overridePerc, isSlideOverride, _isSlideGrabbed, lastCompletedAnimation, leftOverTime, playAnimationStateCoroutine, MagazineState, _poolee, ID, IsDespawned, useGUILayout, enabled, isActiveAndEnabled, transform, gameObject, tag, m_CachedPtr, name, hideFlags
+[00:08:29.807] [Gun_Modifier] Gun Modifier: ammoSocket=Il2CppSLZ.Marrow.AmmoSocket; socket platform=EDER; plug=Il2CppSLZ.Marrow.AmmoPlug; magazine=Il2CppSLZ.Marrow.Magazine; inserted=True; magazineData=Il2CppSLZ.Marrow.Data.MagazineData; mag platform=EDER; mag rounds=17; loaded ammo=16; default platform=EDER; default rounds=17; internal rounds=null
+[00:08:30.736] [BulletCleanup] Tracking probe heartbeat: updates=1924, ready=True, worker=True, cleanup=True; tracked=2, removed=0, scanned=113, ammo types=2, unfired types=1, magazine types=0, passes=9
+[00:08:40.744] [BulletCleanup] Tracking probe heartbeat: updates=2798, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=846, ammo types=2, unfired types=1, magazine types=0, passes=48
+[00:08:50.751] [BulletCleanup] Tracking probe heartbeat: updates=3684, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=1587, ammo types=2, unfired types=1, magazine types=0, passes=87
+[00:09:00.751] [BulletCleanup] Tracking probe heartbeat: updates=4579, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=2328, ammo types=2, unfired types=1, magazine types=0, passes=126
+[00:09:10.752] [BulletCleanup] Tracking probe heartbeat: updates=5457, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=3069, ammo types=2, unfired types=1, magazine types=0, passes=165
+[00:09:20.762] [BulletCleanup] Tracking probe heartbeat: updates=6350, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=3810, ammo types=2, unfired types=1, magazine types=0, passes=204
+[00:09:30.764] [BulletCleanup] Tracking probe heartbeat: updates=7231, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=4551, ammo types=2, unfired types=1, magazine types=0, passes=243
+[00:09:40.770] [BulletCleanup] Tracking probe heartbeat: updates=8123, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=5292, ammo types=2, unfired types=1, magazine types=0, passes=282
+[00:09:50.780] [BulletCleanup] Tracking probe heartbeat: updates=9017, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=6033, ammo types=2, unfired types=1, magazine types=0, passes=321
+[00:10:00.791] [BulletCleanup] Tracking probe heartbeat: updates=9916, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=6774, ammo types=2, unfired types=1, magazine types=0, passes=360
+[00:10:10.793] [BulletCleanup] Tracking probe heartbeat: updates=10811, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=7515, ammo types=2, unfired types=1, magazine types=0, passes=399
+[00:10:20.794] [BulletCleanup] Tracking probe heartbeat: updates=11706, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=8256, ammo types=2, unfired types=1, magazine types=0, passes=438
+[00:10:30.803] [BulletCleanup] Tracking probe heartbeat: updates=12591, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=8997, ammo types=2, unfired types=1, magazine types=0, passes=477
+[00:10:40.808] [BulletCleanup] Tracking probe heartbeat: updates=13482, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=9738, ammo types=2, unfired types=1, magazine types=0, passes=516
+[00:10:50.814] [BulletCleanup] Tracking probe heartbeat: updates=14372, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=10479, ammo types=2, unfired types=1, magazine types=0, passes=555
+[00:11:00.819] [BulletCleanup] Tracking probe heartbeat: updates=15258, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=11220, ammo types=2, unfired types=1, magazine types=0, passes=594
+[00:11:10.822] [BulletCleanup] Tracking probe heartbeat: updates=16149, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=11961, ammo types=2, unfired types=1, magazine types=0, passes=633
+[00:11:20.824] [BulletCleanup] Tracking probe heartbeat: updates=17048, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=12702, ammo types=2, unfired types=1, magazine types=0, passes=672
+[00:11:30.833] [BulletCleanup] Tracking probe heartbeat: updates=17943, ready=True, worker=True, cleanup=True; tracked=6, removed=0, scanned=13443, ammo types=2, unfired types=1, magazine types=0, passes=711
