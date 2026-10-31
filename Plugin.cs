@@ -1,5 +1,4 @@
 using MelonLoader;
-using BoneLib;
 
 [assembly: MelonInfo(
     typeof(GunModifier.Plugin),
@@ -16,7 +15,7 @@ namespace GunModifier
         public override void OnInitializeMelon()
         {
             MelonLogger.Msg("Gun Modifier loaded!");
-            MelonLogger.Msg("Initializing Gun Modifier...");
+            MelonLogger.Msg("Plugin initialized successfully.");
         }
     }
 }
