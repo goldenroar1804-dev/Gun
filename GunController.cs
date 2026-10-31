@@ -27,10 +27,9 @@ namespace GunModifier
         private sealed class RecoilSnapshot
         {
             public object Rigidbody;
-            public MemberInfo VelocityMember;
-            public MemberInfo AngularVelocityMember;
-            public float[] Velocity;
-            public float[] AngularVelocity;
+            public object FireTransform;
+            public int AmmoBefore;
+            public bool HasAmmoBefore;
         }
 
         private sealed class PendingAnyMagRetry
@@ -164,7 +163,7 @@ namespace GunModifier
 
         private static void RecoilPrefix(object __instance)
         {
-            if (__instance == null || Math.Abs(GunSettings.RecoilMultiplier - 1f) < 0.001f)
+            if (__instance == null || GunSettings.RecoilMultiplier <= 0f)
                 return;
 
             try
@@ -174,38 +173,37 @@ namespace GunModifier
                     .Select(a => a.GetType("UnityEngine.Rigidbody"))
                     .FirstOrDefault(t => t != null);
                 if (rigidbodyType == null)
+                {
+                    LogOnce("recoil-no-rigidbody-type", "Gun Modifier: recoil could not find UnityEngine.Rigidbody.");
                     return;
+                }
 
-                // Search the socket, gun object, their transforms, and the gun's
-                // host/entity roots. Unity components can expose lookup methods on
-                // their GameObject or Transform rather than on the IL2CPP wrapper.
                 object socket = GetMemberValue(__instance, "ammoSocket");
                 object body = FindGunRigidbody(__instance, socket, rigidbodyType);
                 if (body == null)
                 {
-                    LogOnce("recoil-no-rigidbody", "Gun Modifier: recoil could not locate a Rigidbody on the gun, its parents, or its children.");
+                    LogOnce("recoil-no-rigidbody", "Gun Modifier: recoil could not locate a Rigidbody on the gun hierarchy.");
                     return;
                 }
-                LogOnce("recoil-rigidbody-found", "Gun Modifier: recoil found a Rigidbody on the gun hierarchy.");
 
-                MemberInfo velocity = FindMember(body.GetType(), "velocity");
-                MemberInfo angularVelocity = FindMember(body.GetType(), "angularVelocity");
-                if (velocity == null || angularVelocity == null)
-                    return;
+                object fireTransform = GetMemberValue(__instance, "firePointTransform");
+                if (fireTransform == null)
+                    fireTransform = GetMemberValue(__instance, "transform");
 
+                int ammoBefore;
+                bool hasAmmoBefore = TryReadAmmoCount(__instance, out ammoBefore);
                 int id = GetInstanceId(__instance, __instance.GetType());
                 RecoilSnapshots[id] = new RecoilSnapshot
                 {
                     Rigidbody = body,
-                    VelocityMember = velocity,
-                    AngularVelocityMember = angularVelocity,
-                    Velocity = ReadVector(ReadMember(body, velocity)),
-                    AngularVelocity = ReadVector(ReadMember(body, angularVelocity))
+                    FireTransform = fireTransform,
+                    AmmoBefore = hasAmmoBefore ? ammoBefore : -1,
+                    HasAmmoBefore = hasAmmoBefore
                 };
             }
             catch (Exception ex)
             {
-                LogOnce("recoil-prefix-error", "Gun Modifier: recoil capture failed: " + ex.Message);
+                LogOnce("recoil-prefix-error", "Gun Modifier: recoil preparation failed: " + ex.Message);
             }
         }
 
@@ -217,25 +215,145 @@ namespace GunModifier
             try
             {
                 int id = GetInstanceId(__instance, __instance.GetType());
-                if (!RecoilSnapshots.TryGetValue(id, out RecoilSnapshot before))
+                if (!RecoilSnapshots.TryGetValue(id, out RecoilSnapshot shot))
                     return;
                 RecoilSnapshots.Remove(id);
 
                 float multiplier = GunSettings.RecoilMultiplier;
-                if (Math.Abs(multiplier - 1f) < 0.001f || before.Rigidbody == null)
+                if (multiplier <= 0f || shot.Rigidbody == null)
                     return;
 
-                float[] velocityAfter = ReadVector(ReadMember(before.Rigidbody, before.VelocityMember));
-                float[] angularAfter = ReadVector(ReadMember(before.Rigidbody, before.AngularVelocityMember));
-                float[] velocityTarget = ScaleDelta(before.Velocity, velocityAfter, multiplier);
-                float[] angularTarget = ScaleDelta(before.AngularVelocity, angularAfter, multiplier);
+                // Match the working BONELAB Gun.Fire recoil pattern: only apply
+                // recoil when Fire actually consumed ammunition.
+                if (shot.HasAmmoBefore)
+                {
+                    int ammoAfter;
+                    if (!TryReadAmmoCount(__instance, out ammoAfter) || ammoAfter >= shot.AmmoBefore)
+                        return;
+                }
 
-                WriteMemberValue(before.Rigidbody, before.VelocityMember, CreateVector(before.VelocityMember, velocityTarget));
-                WriteMemberValue(before.Rigidbody, before.AngularVelocityMember, CreateVector(before.AngularVelocityMember, angularTarget));
+                ApplyDirectRecoil(shot.Rigidbody, shot.FireTransform, multiplier);
             }
             catch (Exception ex)
             {
-                LogOnce("recoil-postfix-error", "Gun Modifier: recoil adjustment failed: " + ex.Message);
+                LogOnce("recoil-postfix-error", "Gun Modifier: direct recoil failed: " + ex.Message);
+            }
+        }
+
+        private static bool TryReadAmmoCount(object gun, out int count)
+        {
+            count = -1;
+            if (gun == null) return false;
+            try
+            {
+                MethodInfo ammoMethod = gun.GetType().GetMethods(InstanceFlags)
+                    .FirstOrDefault(m => m.Name == "AmmoCount" && m.GetParameters().Length == 0);
+                if (ammoMethod != null)
+                {
+                    count = Convert.ToInt32(ammoMethod.Invoke(gun, null));
+                    return true;
+                }
+
+                object value = GetMemberValue(gun, "ammoCount") ??
+                    GetMemberValue(gun, "_ammoCount") ??
+                    GetMemberValue(gun, "currentAmmo");
+                if (value == null) return false;
+                count = Convert.ToInt32(value);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private static void ApplyDirectRecoil(object body, object fireTransform, float multiplier)
+        {
+            if (body == null || fireTransform == null) return;
+
+            object isKinematicValue = GetMemberValue(body, "isKinematic");
+            if (isKinematicValue != null && Convert.ToBoolean(isKinematicValue))
+            {
+                LogOnce("recoil-kinematic", "Gun Modifier: recoil Rigidbody is kinematic; impulse skipped.");
+                return;
+            }
+
+            MemberInfo forwardMember = FindMember(fireTransform.GetType(), "forward");
+            MemberInfo upMember = FindMember(fireTransform.GetType(), "up");
+            if (forwardMember == null || upMember == null)
+            {
+                LogOnce("recoil-no-fire-directions", "Gun Modifier: fire transform has no forward/up directions.");
+                return;
+            }
+
+            float[] forward = ReadVector(ReadMember(fireTransform, forwardMember));
+            float[] up = ReadVector(ReadMember(fireTransform, upMember));
+
+            // A direct impulse works even when Gun.Fire does not change the
+            // Rigidbody velocity itself. Values are scaled by the BoneMenu
+            // Recoil (%) setting: 0 disables it, 100 is standard, 300 is 3x.
+            const float recoilKick = 0.25f;
+            const float recoilRise = 0.035f;
+            float[] force =
+            {
+                -forward[0] * recoilKick * multiplier,
+                -forward[1] * recoilKick * multiplier,
+                -forward[2] * recoilKick * multiplier
+            };
+
+            float[] torque =
+            {
+                (forward[1] * up[2] - forward[2] * up[1]),
+                (forward[2] * up[0] - forward[0] * up[2]),
+                (forward[0] * up[1] - forward[1] * up[0])
+            };
+            float magnitude = (float)Math.Sqrt(
+                torque[0] * torque[0] + torque[1] * torque[1] + torque[2] * torque[2]);
+            if (magnitude > 0.0001f)
+            {
+                for (int i = 0; i < 3; i++)
+                    torque[i] = torque[i] / magnitude * recoilRise * multiplier;
+            }
+
+            object forceVector = CreateVector(forwardMember, force);
+            object torqueVector = CreateVector(forwardMember, torque);
+            bool forceApplied = InvokeImpulse(body, "AddForce", forceVector);
+            bool torqueApplied = InvokeImpulse(body, "AddTorque", torqueVector);
+
+            if (forceApplied)
+                LogOnce("recoil-direct-applied", "Gun Modifier: direct recoil impulses are being applied on Gun.Fire.");
+            else
+                LogOnce("recoil-addforce-failed", "Gun Modifier: could not call Rigidbody.AddForce(Vector3, ForceMode).");
+
+            if (!torqueApplied)
+                LogOnce("recoil-addtorque-failed", "Gun Modifier: could not call Rigidbody.AddTorque(Vector3, ForceMode).");
+        }
+
+        private static bool InvokeImpulse(object body, string methodName, object vector)
+        {
+            if (body == null || vector == null) return false;
+            try
+            {
+                MethodInfo method = body.GetType().GetMethods(InstanceFlags)
+                    .FirstOrDefault(m =>
+                    {
+                        if (m.Name != methodName) return false;
+                        ParameterInfo[] parameters = m.GetParameters();
+                        return parameters.Length == 2 &&
+                            parameters[0].ParameterType.IsInstanceOfType(vector) &&
+                            parameters[1].ParameterType.IsEnum;
+                    });
+                if (method == null) return false;
+
+                object impulseMode = Enum.ToObject(method.GetParameters()[1].ParameterType, 2);
+                method.Invoke(body, new[] { vector, impulseMode });
+                return true;
+            }
+            catch (Exception ex)
+            {
+                LogOnce("recoil-" + methodName.ToLowerInvariant() + "-exception",
+                    "Gun Modifier: " + methodName + " impulse failed: " + ex.Message);
+                return false;
             }
         }
 
