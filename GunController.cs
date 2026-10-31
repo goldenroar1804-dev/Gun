@@ -15,6 +15,8 @@ namespace GunModifier
         private sealed class PlatformSnapshot
         {
             public object Socket;
+            public object Plug;
+            public int PlugId;
             public MemberInfo SocketPlatformMember;
             public object SocketPlatformValue;
             public object DefaultMagazine;
@@ -40,7 +42,7 @@ namespace GunModifier
         private static MethodInfo _createHookMethod;
         private static readonly Dictionary<string, float> OriginalValues = new Dictionary<string, float>();
         private static readonly Dictionary<string, int> AppliedMagazineCapacity = new Dictionary<string, int>();
-        private static readonly Dictionary<int, Stack<PlatformSnapshot>> PlatformSnapshots = new Dictionary<int, Stack<PlatformSnapshot>>();
+        private static readonly Dictionary<int, PlatformSnapshot> PlatformSnapshots = new Dictionary<int, PlatformSnapshot>();
         private static readonly Dictionary<int, RecoilSnapshot> RecoilSnapshots = new Dictionary<int, RecoilSnapshot>();
         private static readonly HashSet<string> LoggedMembers = new HashSet<string>();
         private static bool _infiniteAmmoLogWritten;
@@ -158,19 +160,27 @@ namespace GunModifier
 
             try
             {
-                object grip = GetMemberValue(__instance, "triggerGrip");
-                Type rigidbodyType = AppDomain.CurrentDomain.GetAssemblies()
+                Type rigidbodyType = AppDomain.CurrentDomain
+                    .GetAssemblies()
                     .Select(a => a.GetType("UnityEngine.Rigidbody"))
                     .FirstOrDefault(t => t != null);
                 if (rigidbodyType == null)
                     return;
 
-                object body = GetComponentInParentByType(grip ?? __instance, rigidbodyType);
+                // BONELAB gun mods locate the gun body from its ammo socket parent.
+                // triggerGrip can lead to the player's hand rather than the gun.
+                object socket = GetMemberValue(__instance, "ammoSocket");
+                object body = GetComponentInParentByType(socket, rigidbodyType);
+                if (body == null && socket != null)
+                    body = GetComponentInParentByType(GetMemberValue(socket, "gameObject"), rigidbodyType);
+                if (body == null)
+                    body = GetComponentInParentByType(__instance, rigidbodyType);
                 if (body == null)
                 {
-                    LogOnce("recoil-no-rigidbody", "Gun Modifier: recoil hook found no gun Rigidbody.");
+                    LogOnce("recoil-no-rigidbody", "Gun Modifier: recoil could not find the Rigidbody above the gun's AmmoSocket.");
                     return;
                 }
+                LogOnce("recoil-rigidbody-found", "Gun Modifier: recoil found the gun Rigidbody through its AmmoSocket parent.");
 
                 MemberInfo velocity = FindMember(body.GetType(), "velocity");
                 MemberInfo angularVelocity = FindMember(body.GetType(), "angularVelocity");
@@ -284,27 +294,17 @@ namespace GunModifier
                 }
 
                 MethodInfo prefix = typeof(GunController).GetMethod(nameof(AnyMagPrefix), StaticFlags);
-                MethodInfo postfix = typeof(GunController).GetMethod(nameof(AnyMagPostfix), StaticFlags);
+                MethodInfo restorePostfix = typeof(GunController).GetMethod(nameof(AnyMagRestorePostfix), StaticFlags);
                 int installed = 0;
 
-                foreach (string methodName in new[] { "OnPlugEnter", "OnPlugLocked" })
-                {
-                    MethodInfo target = socketType.GetMethods(InstanceFlags)
-                        .FirstOrDefault(m => m.Name == methodName && m.GetParameters().Length == 1);
-                    if (target == null)
-                    {
-                        MelonLogger.Warning("Gun Modifier: AmmoSocket." + methodName + " was not found.");
-                        continue;
-                    }
+                // Match platforms before lock and keep the match until the plug exits/unlocks.
+                installed += HookAnyMagMethod(socketType, "OnPlugEnter", 1, prefix, true);
+                installed += HookAnyMagMethod(socketType, "OnPlugLocked", 1, prefix, true);
+                installed += HookAnyMagMethod(socketType, "OnPlugExit", 1, restorePostfix, false);
+                installed += HookAnyMagMethod(socketType, "OnPlugUnlocked", 0, restorePostfix, false);
 
-                    _createHookMethod.Invoke(null, new object[] { target, prefix, true });
-                    _createHookMethod.Invoke(null, new object[] { target, postfix, false });
-                    installed++;
-                    MelonLogger.Msg("Gun Modifier: Any Mag hooked AmmoSocket." + methodName + ".");
-                }
-
-                _anyMagHooksInstalled = installed > 0;
-                MelonLogger.Msg("Gun Modifier: targeted Any Mag hooks installed: " + installed + ".");
+                _anyMagHooksInstalled = installed >= 2;
+                MelonLogger.Msg("Gun Modifier: Any Mag lifecycle hooks installed: " + installed + ".");
             }
             catch (Exception ex)
             {
@@ -312,9 +312,34 @@ namespace GunModifier
             }
         }
 
+        private static int HookAnyMagMethod(Type socketType, string methodName, int parameterCount, MethodInfo hook, bool isPrefix)
+        {
+            MethodInfo target = socketType.GetMethods(InstanceFlags)
+                .FirstOrDefault(m => m.Name == methodName && m.GetParameters().Length == parameterCount);
+            if (target == null)
+            {
+                MelonLogger.Warning("Gun Modifier: AmmoSocket." + methodName + " was not found.");
+                return 0;
+            }
+
+            _createHookMethod.Invoke(null, new object[] { target, hook, isPrefix });
+            MelonLogger.Msg("Gun Modifier: Any Mag hooked AmmoSocket." + methodName + (isPrefix ? " (prefix)." : " (postfix)."));
+            return 1;
+        }
+
         private static void AnyMagPrefix(object __instance, object[] __args)
         {
-            if (!GunSettings.AnyMag || __instance == null || __args == null || __args.Length == 0)
+            if (__instance == null)
+                return;
+
+            int socketId = GetInstanceId(__instance, __instance.GetType());
+            if (!GunSettings.AnyMag)
+            {
+                RestoreAnyMagPlatforms(socketId);
+                return;
+            }
+
+            if (__args == null || __args.Length == 0 || __args[0] == null)
                 return;
 
             try
@@ -325,49 +350,58 @@ namespace GunModifier
                 object magazineData = GetMemberValue(magazineState, "magazineData");
                 string incomingPlatform = GetMemberValue(magazineData, "platform") as string;
                 if (string.IsNullOrEmpty(incomingPlatform))
+                {
+                    LogOnce("anymag-no-platform", "Gun Modifier: Any Mag saw a plug, but its magazine platform was empty or unavailable.");
                     return;
+                }
 
                 object gun = GetMemberValue(__instance, "gun");
                 object defaultMagazine = GetMemberValue(gun, "defaultMagazine");
-                int socketId = GetInstanceId(__instance, __instance.GetType());
-
-                PlatformSnapshot snapshot = new PlatformSnapshot
+                if (gun == null || defaultMagazine == null)
                 {
-                    Socket = __instance,
-                    SocketPlatformMember = FindMember(__instance.GetType(), "platform"),
-                    SocketPlatformValue = null,
-                    DefaultMagazine = defaultMagazine,
-                    DefaultPlatformMember = defaultMagazine != null ? FindMember(defaultMagazine.GetType(), "platform") : null,
-                    DefaultPlatformValue = null
-                };
-
-                if (snapshot.SocketPlatformMember != null)
-                    snapshot.SocketPlatformValue = ReadMember(__instance, snapshot.SocketPlatformMember);
-                if (defaultMagazine != null && snapshot.DefaultPlatformMember != null)
-                    snapshot.DefaultPlatformValue = ReadMember(defaultMagazine, snapshot.DefaultPlatformMember);
-
-                if (!PlatformSnapshots.TryGetValue(socketId, out Stack<PlatformSnapshot> stack))
-                {
-                    stack = new Stack<PlatformSnapshot>();
-                    PlatformSnapshots[socketId] = stack;
+                    LogOnce("anymag-no-gun-default", "Gun Modifier: Any Mag could not find the gun's default magazine data.");
+                    return;
                 }
-                stack.Push(snapshot);
+
+                int plugId = GetInstanceId(plug, plug.GetType());
+                if (PlatformSnapshots.TryGetValue(socketId, out PlatformSnapshot existing) && existing.PlugId != plugId)
+                    RestoreAnyMagPlatforms(socketId);
+
+                if (!PlatformSnapshots.TryGetValue(socketId, out PlatformSnapshot snapshot))
+                {
+                    snapshot = new PlatformSnapshot
+                    {
+                        Socket = __instance,
+                        Plug = plug,
+                        PlugId = plugId,
+                        SocketPlatformMember = FindMember(__instance.GetType(), "platform"),
+                        DefaultMagazine = defaultMagazine,
+                        DefaultPlatformMember = FindMember(defaultMagazine.GetType(), "platform")
+                    };
+
+                    if (snapshot.SocketPlatformMember != null)
+                        snapshot.SocketPlatformValue = ReadMember(__instance, snapshot.SocketPlatformMember);
+                    if (snapshot.DefaultPlatformMember != null)
+                        snapshot.DefaultPlatformValue = ReadMember(defaultMagazine, snapshot.DefaultPlatformMember);
+
+                    PlatformSnapshots[socketId] = snapshot;
+                }
 
                 if (snapshot.SocketPlatformMember != null)
                     WriteMemberValue(__instance, snapshot.SocketPlatformMember, incomingPlatform);
-                if (defaultMagazine != null && snapshot.DefaultPlatformMember != null)
-                    WriteMemberValue(defaultMagazine, snapshot.DefaultPlatformMember, incomingPlatform);
+                if (snapshot.DefaultMagazine != null && snapshot.DefaultPlatformMember != null)
+                    WriteMemberValue(snapshot.DefaultMagazine, snapshot.DefaultPlatformMember, incomingPlatform);
 
                 LogOnce("anymag-platform:" + incomingPlatform,
-                    "Gun Modifier: Any Mag temporarily matching magazine platform '" + incomingPlatform + "'.");
+                    "Gun Modifier: Any Mag matched socket and gun magazine platform to incoming magazine platform '" + incomingPlatform + "'. The match stays active until exit/unlock.");
             }
             catch (Exception ex)
             {
-                LogOnce("anymag-prefix-error", "Gun Modifier: Any Mag compatibility check failed: " + ex.Message);
+                LogOnce("anymag-prefix-error", "Gun Modifier: Any Mag compatibility match failed: " + ex.Message);
             }
         }
 
-        private static void AnyMagPostfix(object __instance)
+        private static void AnyMagRestorePostfix(object __instance)
         {
             if (__instance == null)
                 return;
@@ -375,22 +409,25 @@ namespace GunModifier
             try
             {
                 int socketId = GetInstanceId(__instance, __instance.GetType());
-                if (!PlatformSnapshots.TryGetValue(socketId, out Stack<PlatformSnapshot> stack) || stack.Count == 0)
-                    return;
-
-                PlatformSnapshot snapshot = stack.Pop();
-                if (stack.Count == 0)
-                    PlatformSnapshots.Remove(socketId);
-
-                if (snapshot.SocketPlatformMember != null && snapshot.Socket != null)
-                    WriteMemberValue(snapshot.Socket, snapshot.SocketPlatformMember, snapshot.SocketPlatformValue);
-                if (snapshot.DefaultMagazine != null && snapshot.DefaultPlatformMember != null)
-                    WriteMemberValue(snapshot.DefaultMagazine, snapshot.DefaultPlatformMember, snapshot.DefaultPlatformValue);
+                RestoreAnyMagPlatforms(socketId);
             }
             catch (Exception ex)
             {
                 LogOnce("anymag-restore-error", "Gun Modifier: Any Mag platform restore failed: " + ex.Message);
             }
+        }
+
+        private static void RestoreAnyMagPlatforms(int socketId)
+        {
+            if (!PlatformSnapshots.TryGetValue(socketId, out PlatformSnapshot snapshot))
+                return;
+
+            PlatformSnapshots.Remove(socketId);
+
+            if (snapshot.SocketPlatformMember != null && snapshot.Socket != null)
+                WriteMemberValue(snapshot.Socket, snapshot.SocketPlatformMember, snapshot.SocketPlatformValue);
+            if (snapshot.DefaultMagazine != null && snapshot.DefaultPlatformMember != null)
+                WriteMemberValue(snapshot.DefaultMagazine, snapshot.DefaultPlatformMember, snapshot.DefaultPlatformValue);
         }
 
         private static void DamagePrefix(object[] __args)
