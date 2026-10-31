@@ -8,7 +8,7 @@ namespace GunModifier
         public static float MagazineMultiplier = 1.0f;
 
         public static bool InfiniteAmmo = false;
-        public static bool ExtendedMagazine = false;
+        public static bool AnyMag = false;
 
         public static void Reset()
         {
@@ -16,9 +16,8 @@ namespace GunModifier
             FireRateMultiplier = 1.0f;
             RecoilMultiplier = 1.0f;
             MagazineMultiplier = 1.0f;
-
             InfiniteAmmo = false;
-            ExtendedMagazine = false;
+            AnyMag = false;
         }
     }
 }
