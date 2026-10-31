@@ -1,30 +1,31 @@
-[23:09:02.028] Initialized JNI
-[23:09:02.361] ------------------------------
-[23:09:02.363] MelonLoader v0.6.5 Open-Beta
-[23:09:02.367] OS: Android 14
-[23:09:02.368] Hash Code: 5CD70450DB040884645CC87694335EB2DEFBB8CE840FC149EED709EAD3D2B03F
-[23:09:02.368] ------------------------------
-[23:09:02.368] Game Type: Il2cpp
-[23:09:02.368] Game Arch: x64
-[23:09:02.368] ------------------------------
-[23:09:02.370] Command-Line: 
-[23:09:02.371] ------------------------------
-[23:09:02.372] Core::BasePath = /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB
-[23:09:02.372] Game::BasePath = /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB
-[23:09:02.372] Game::DataPath = bin/Data/
-[23:09:02.373] Game::ApplicationPath = /system/bin/app_process64
-[23:09:02.373] Runtime Type: net8
-[23:09:02.761] ------------------------------
-[23:09:02.761] Game Name: BONELAB
-[23:09:02.761] Game Developer: Stress Level Zero
-[23:09:02.772] Unity Version: 2021.3.16f1
-[23:09:02.772] Game Version: 1.2974.57485
-[23:09:02.773] ------------------------------
-[23:09:04.056] DotnetAssemblyLoadContextFix Exception: System.NullReferenceException: Null method for MelonLoader
+﻿[23:27:43.868] Initialized JNI
+[23:27:44.289] ------------------------------
+[23:27:44.292] MelonLoader v0.6.5 Open-Beta
+[23:27:44.297] OS: Android 14
+[23:27:44.297] Hash Code: 5CD70450DB040884645CC87694335EB2DEFBB8CE840FC149EED709EAD3D2B03F
+[23:27:44.297] ------------------------------
+[23:27:44.298] Game Type: Il2cpp
+[23:27:44.298] Game Arch: x64
+[23:27:44.298] ------------------------------
+[23:27:44.300] Command-Line: 
+[23:27:44.300] ------------------------------
+[23:27:44.301] Core::BasePath = /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB
+[23:27:44.301] Game::BasePath = /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB
+[23:27:44.302] Game::DataPath = bin/Data/
+[23:27:44.303] Game::ApplicationPath = /system/bin/app_process64
+[23:27:44.304] Runtime Type: net8
+[23:27:44.769] ------------------------------
+[23:27:44.769] Game Name: BONELAB
+[23:27:44.769] Game Developer: Stress Level Zero
+[23:27:44.781] Unity Version: 2021.3.16f1
+[23:27:44.781] Game Version: 1.2974.57485
+[23:27:44.782] ------------------------------
+
+[23:27:46.242] DotnetAssemblyLoadContextFix Exception: System.NullReferenceException: Null method for MelonLoader
    at HarmonyLib.PatchProcessor.Patch()
    at HarmonyLib.Harmony.Patch(MethodBase original, HarmonyMethod prefix, HarmonyMethod postfix, HarmonyMethod transpiler, HarmonyMethod finalizer, HarmonyMethod ilmanipulator)
    at MelonLoader.Fixes.DotnetAssemblyLoadContextFix.Install()
-[23:09:04.620] HarmonyLib.HarmonyException: IL Compile Error (unknown location)
+[23:27:46.910] HarmonyLib.HarmonyException: IL Compile Error (unknown location)
  ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location)
  ---> System.MissingMethodException: Method not found: void Il2CppInterop.Runtime.Injection.RegisterTypeOptions.set_LogSuccess(bool)
    at System.RuntimeMethodHandle.GetFunctionPointer()
@@ -42,263 +43,266 @@
    at HarmonyLib.PatchProcessor.Patch()
    at HarmonyLib.Harmony.Patch(MethodBase original, HarmonyMethod prefix, HarmonyMethod postfix, HarmonyMethod transpiler, HarmonyMethod finalizer, HarmonyMethod ilmanipulator)
    at MelonLoader.Fixes.Il2CppInteropFixes.Install()
-[23:09:04.936] Preferences Loaded!
+[23:27:47.275] Preferences Loaded!
 
-[23:09:05.070] Loading UserLibs from '/storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserLibs'...
-[23:09:05.072] ------------------------------
-[23:09:05.087] Melon Assembly loaded: './UserLibs/System.Speech.dll'
-[23:09:05.087] SHA256 Hash: '09ED245882F438A164D20C2FA59ABAEBDC1FEAACC32BA9756DB731E388EA45A6'
+[23:27:47.480] Loading UserLibs from '/storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserLibs'...
+[23:27:47.483] ------------------------------
+[23:27:47.500] Melon Assembly loaded: './UserLibs/System.Speech.dll'
+[23:27:47.501] SHA256 Hash: '09ED245882F438A164D20C2FA59ABAEBDC1FEAACC32BA9756DB731E388EA45A6'
 
-[23:09:05.094] Loading Plugins from '/storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/Plugins'...
-[23:09:05.097] ------------------------------
-[23:09:05.100] Melon Assembly loaded: './Plugins/ThunderstoreModAssistantPlugin.dll'
-[23:09:05.100] SHA256 Hash: 'B60F4E52164ED4729038EAF7A3DD359CBAEBCFDA9083869B5E420C0A474E0D78'
+[23:27:47.510] Loading Plugins from '/storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/Plugins'...
+[23:27:47.513] ------------------------------
+[23:27:47.516] Melon Assembly loaded: './Plugins/ThunderstoreModAssistantPlugin.dll'
+[23:27:47.517] SHA256 Hash: 'B60F4E52164ED4729038EAF7A3DD359CBAEBCFDA9083869B5E420C0A474E0D78'
 
-[23:09:05.225] ------------------------------
-[23:09:05.227] ThunderstoreModAssistantPlugin v1.0.0
-[23:09:05.227] by notnotnotswipez
-[23:09:05.228] Assembly: ThunderstoreModAssistantPlugin.dll
-[23:09:05.228] ------------------------------
-[23:09:05.230] ------------------------------
-[23:09:05.230] 1 Plugin loaded.
-[23:09:07.367] Loading Il2CppAssemblyGenerator...
-[23:09:07.424] [Il2CppAssemblyGenerator] Contacting RemoteAPI...
-[23:09:07.617] [Il2CppAssemblyGenerator] Game Not Found on RemoteAPI Host (https://api.melonloader.com/api/v1/game/bonelab)
-[23:09:07.617] [Il2CppAssemblyGenerator] RemoteAPI.DumperVersion = null
-[23:09:07.617] [Il2CppAssemblyGenerator] RemoteAPI.ObfuscationRegex = null
-[23:09:07.617] [Il2CppAssemblyGenerator] RemoteAPI.MappingURL = null
-[23:09:07.617] [Il2CppAssemblyGenerator] RemoteAPI.MappingFileSHA512 = null
-[23:09:07.632] [Il2CppAssemblyGenerator] Using Cpp2IL Version: 2022.1.0-pre-release.16
-[23:09:07.632] [Il2CppAssemblyGenerator] Using Il2CppInterop Version = 1.4.6+5c0c44bfc31bc50023fb7426fc4a32b2086f672b
-[23:09:07.633] [Il2CppAssemblyGenerator] Using Unity Dependencies Version = 2021.3.16
-[23:09:07.633] [Il2CppAssemblyGenerator] Using Deobfuscation Regex = null
-[23:09:07.633] [Il2CppAssemblyGenerator] UnityDependencies is up to date.
-[23:09:07.634] [Il2CppAssemblyGenerator] Checking GameAssembly...
-[23:09:08.020] [Il2CppAssemblyGenerator] Assembly is up to date. No Generation Needed.
-[23:09:08.021] Loading Mods from '/storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/Mods'...
-[23:09:08.023] ------------------------------
-[23:09:08.032] Melon Assembly loaded: './Mods/UltimateRagdoll.dll'
-[23:09:08.032] SHA256 Hash: 'FDE492DFCC19D1A10651E6229DE4E44AA5EA1A376DC9D513982A1C0AC42D9FDA'
-[23:09:08.081] Melon Assembly loaded: './Mods/BoneLib.dll'
-[23:09:08.081] SHA256 Hash: '6E347AD57342979B22AB24D83F468DCCE3B201D56B9BA15CDC1F0301DD14A97A'
-[23:09:08.103] Melon Assembly loaded: './Mods/SpawnLab.dll'
-[23:09:08.104] SHA256 Hash: 'A5D4DD7A4DC46FAEC17B55366D169E01D107512F084EDD0173BCA9EB2013ADFB'
-[23:09:08.109] Melon Assembly loaded: './Mods/RagdollUtility.dll'
-[23:09:08.110] SHA256 Hash: 'C913A0C1CEBDF2E17B2D54A9F8C77A1E9F6DC9599BDB36F3D3853886A2C9B845'
-[23:09:08.112] Melon Assembly loaded: './Mods/BulletCleanup.dll'
-[23:09:08.112] SHA256 Hash: '46ACC083B960F4992C71CB39CFC13465897F725F1BC0A3EE6323FCF6385F9C45'
-[23:09:08.116] Melon Assembly loaded: './Mods/LabUtils.dll'
-[23:09:08.116] SHA256 Hash: '6E554EE034621E5973837A6398CE6B49DF8AABA3FE41A9943F92FD493BFC47FB'
-[23:09:08.126] Melon Assembly loaded: './Mods/SearchThing.dll'
-[23:09:08.126] SHA256 Hash: '941F462BCCE5BCC1985D11E506027F0059AF7ACE99AABBEE20EA3D692F8BECF8'
-[23:09:08.159] Melon Assembly loaded: './Mods/ModioModNetworker.dll'
-[23:09:08.159] SHA256 Hash: 'B9E0184CDE3898E7FA1AE0EFE76F8175504833147F8673D6783A8DB1DAB94025'
-[23:09:08.168] Melon Assembly loaded: './Mods/Doppel.dll'
-[23:09:08.168] SHA256 Hash: '7114BE14755F4E6910FD7E1CC6687CFF8DB79FC6793ACE77978E941D479E3B31'
-[23:09:08.212] Melon Assembly loaded: './Mods/BonelabCinematicCamera.dll'
-[23:09:08.212] SHA256 Hash: '98489FFAAE68652F677873A185CF030CFD0E446E4727C12FF84C4C5030361972'
-[23:09:08.215] Melon Assembly loaded: './Mods/GunModifier.dll'
-[23:09:08.215] SHA256 Hash: '973817F6AA4EDE275E021E114D3020B4254CA82A51DBC666723A0D085423C856'
-[23:09:08.219] Melon Assembly loaded: './Mods/SpawnLogger.dll'
-[23:09:08.219] SHA256 Hash: 'F5A3A82C2DACB7BFE1D2B3ECDDE27809CEF982B1566E5E5908CCF20860050898'
-[23:09:08.586] Melon Assembly loaded: './Mods/LabFusion.dll'
-[23:09:08.586] SHA256 Hash: '696D715C524508AD555C804F55F7831A596000B8F10AF156A3E5CD49D7CE3633'
-[23:09:08.617] Melon Assembly loaded: './Mods/ThunderstoreModAssistant.dll'
-[23:09:08.617] SHA256 Hash: '13D32ED6D7EBFAE2FA573973EBA22E9884343C2C829D31DFFDFB422CD0C20471'
-[23:09:08.637] Melon Assembly loaded: './Mods/RagdollPlayer.dll'
-[23:09:08.638] SHA256 Hash: '6C6078229707B48F968857B3DE0D9C2FC18DEEA893758FD6398AC5A8BCBFD656'
+[23:27:47.653] ------------------------------
+[23:27:47.655] ThunderstoreModAssistantPlugin v1.0.0
+[23:27:47.655] by notnotnotswipez
+[23:27:47.657] Assembly: ThunderstoreModAssistantPlugin.dll
+[23:27:47.657] ------------------------------
+[23:27:47.659] ------------------------------
+[23:27:47.660] 1 Plugin loaded.
+[23:27:50.143] Loading Il2CppAssemblyGenerator...
+[23:27:50.215] [Il2CppAssemblyGenerator] Contacting RemoteAPI...
+[23:27:50.427] [Il2CppAssemblyGenerator] Game Not Found on RemoteAPI Host (https://api.melonloader.com/api/v1/game/bonelab)
+[23:27:50.428] [Il2CppAssemblyGenerator] RemoteAPI.DumperVersion = null
+[23:27:50.428] [Il2CppAssemblyGenerator] RemoteAPI.ObfuscationRegex = null
+[23:27:50.428] [Il2CppAssemblyGenerator] RemoteAPI.MappingURL = null
+[23:27:50.428] [Il2CppAssemblyGenerator] RemoteAPI.MappingFileSHA512 = null
+[23:27:50.448] [Il2CppAssemblyGenerator] Using Cpp2IL Version: 2022.1.0-pre-release.16
+[23:27:50.448] [Il2CppAssemblyGenerator] Using Il2CppInterop Version = 1.4.6+5c0c44bfc31bc50023fb7426fc4a32b2086f672b
+[23:27:50.448] [Il2CppAssemblyGenerator] Using Unity Dependencies Version = 2021.3.16
+[23:27:50.448] [Il2CppAssemblyGenerator] Using Deobfuscation Regex = null
+[23:27:50.449] [Il2CppAssemblyGenerator] UnityDependencies is up to date.
+[23:27:50.450] [Il2CppAssemblyGenerator] Checking GameAssembly...
+[23:27:50.881] [Il2CppAssemblyGenerator] Assembly is up to date. No Generation Needed.
 
-[23:09:08.960] Some Melons are missing dependencies, which you may have to install.
+[23:27:50.882] Loading Mods from '/storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/Mods'...
+[23:27:50.890] ------------------------------
+[23:27:50.903] Melon Assembly loaded: './Mods/UltimateRagdoll.dll'
+[23:27:50.903] SHA256 Hash: 'FDE492DFCC19D1A10651E6229DE4E44AA5EA1A376DC9D513982A1C0AC42D9FDA'
+[23:27:50.957] Melon Assembly loaded: './Mods/BoneLib.dll'
+[23:27:50.957] SHA256 Hash: '6E347AD57342979B22AB24D83F468DCCE3B201D56B9BA15CDC1F0301DD14A97A'
+[23:27:50.978] Melon Assembly loaded: './Mods/SpawnLab.dll'
+[23:27:50.979] SHA256 Hash: 'A5D4DD7A4DC46FAEC17B55366D169E01D107512F084EDD0173BCA9EB2013ADFB'
+[23:27:50.984] Melon Assembly loaded: './Mods/RagdollUtility.dll'
+[23:27:50.984] SHA256 Hash: 'C913A0C1CEBDF2E17B2D54A9F8C77A1E9F6DC9599BDB36F3D3853886A2C9B845'
+[23:27:50.986] Melon Assembly loaded: './Mods/BulletCleanup.dll'
+[23:27:50.986] SHA256 Hash: '46ACC083B960F4992C71CB39CFC13465897F725F1BC0A3EE6323FCF6385F9C45'
+[23:27:50.990] Melon Assembly loaded: './Mods/LabUtils.dll'
+[23:27:50.991] SHA256 Hash: '6E554EE034621E5973837A6398CE6B49DF8AABA3FE41A9943F92FD493BFC47FB'
+[23:27:50.998] Melon Assembly loaded: './Mods/SearchThing.dll'
+[23:27:50.999] SHA256 Hash: '941F462BCCE5BCC1985D11E506027F0059AF7ACE99AABBEE20EA3D692F8BECF8'
+[23:27:51.030] Melon Assembly loaded: './Mods/ModioModNetworker.dll'
+[23:27:51.030] SHA256 Hash: 'B9E0184CDE3898E7FA1AE0EFE76F8175504833147F8673D6783A8DB1DAB94025'
+[23:27:51.040] Melon Assembly loaded: './Mods/Doppel.dll'
+[23:27:51.040] SHA256 Hash: '7114BE14755F4E6910FD7E1CC6687CFF8DB79FC6793ACE77978E941D479E3B31'
+[23:27:51.086] Melon Assembly loaded: './Mods/BonelabCinematicCamera.dll'
+[23:27:51.086] SHA256 Hash: '98489FFAAE68652F677873A185CF030CFD0E446E4727C12FF84C4C5030361972'
+[23:27:51.089] Melon Assembly loaded: './Mods/GunModifier.dll'
+[23:27:51.089] SHA256 Hash: '4B69AB263F4D5E27A6B4B1B8D389192615BFD289E7A4EA20884BD6EBEF2AA8F5'
+[23:27:51.091] Melon Assembly loaded: './Mods/SpawnLogger.dll'
+[23:27:51.092] SHA256 Hash: 'F5A3A82C2DACB7BFE1D2B3ECDDE27809CEF982B1566E5E5908CCF20860050898'
+[23:27:51.504] Melon Assembly loaded: './Mods/LabFusion.dll'
+[23:27:51.505] SHA256 Hash: '696D715C524508AD555C804F55F7831A596000B8F10AF156A3E5CD49D7CE3633'
+[23:27:51.538] Melon Assembly loaded: './Mods/ThunderstoreModAssistant.dll'
+[23:27:51.539] SHA256 Hash: '13D32ED6D7EBFAE2FA573973EBA22E9884343C2C829D31DFFDFB422CD0C20471'
+[23:27:51.562] Melon Assembly loaded: './Mods/RagdollPlayer.dll'
+[23:27:51.562] SHA256 Hash: '6C6078229707B48F968857B3DE0D9C2FC18DEEA893758FD6398AC5A8BCBFD656'
+
+[23:27:51.889] Some Melons are missing dependencies, which you may have to install.
 If these are optional dependencies, mark them as optional using the MelonOptionalDependencies attribute.
 This warning will turn into an error and Melons with missing dependencies will not be loaded in the next version of MelonLoader.
 - 'Doppel' is missing the following dependencies:
     - 'Portals' v1.6.0.0
-[23:09:08.973] ------------------------------
-[23:09:08.973] BoneLib v3.2.2
-[23:09:08.973] by The BONELAB Modding Community
-[23:09:08.974] Assembly: BoneLib.dll
-[23:09:08.974] ------------------------------
-[23:09:08.998] [LabFusion] Data is at /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Fusion/.
-[23:09:09.000] [LabFusion] Loading embedded resource data LabFusion.dependencies.resources.lib.Facepunch.Steamworks.Win64.dll...
-[23:09:09.002] [LabFusion] Done!
-[23:09:09.005] [LabFusion] Loading embedded resource data LabFusion.dependencies.resources.lib.arm64.libEOSSDK.so...
-[23:09:09.073] [LabFusion] Done!
-[23:09:09.349] [LabFusion] EOSSDK already exists, skipping extraction.
-[23:09:09.417] [LabFusion] Successfully loaded EOSSDK into the application!
-[23:09:09.424] ------------------------------
-[23:09:09.424] LabFusion v1.14.2
-[23:09:09.424] by Lakatrazz
-[23:09:09.425] Assembly: LabFusion.dll
-[23:09:09.425] ------------------------------
-[23:09:09.429] ------------------------------
-[23:09:09.429] BulletCleanup v0.1.0
-[23:09:09.429] by Geozek (with Codex)
-[23:09:09.430] Assembly: BulletCleanup.dll
-[23:09:09.430] ------------------------------
-[23:09:09.436] ------------------------------
-[23:09:09.437] Cinematic Camera v1.15.2
-[23:09:09.437] by BonelabCamMod
-[23:09:09.437] Assembly: BonelabCinematicCamera.dll
-[23:09:09.437] ------------------------------
-[23:09:09.441] ------------------------------
-[23:09:09.442] Gun Modifier v1.2.3
-[23:09:09.442] by GunModifier
-[23:09:09.442] Assembly: GunModifier.dll
-[23:09:09.442] ------------------------------
-[23:09:09.446] ------------------------------
-[23:09:09.447] Doppel v1.3.0
-[23:09:09.447] by RUDYHILL
-[23:09:09.447] Assembly: Doppel.dll
-[23:09:09.447] ------------------------------
-[23:09:09.451] ------------------------------
-[23:09:09.451] LabUtils v1.0.0
-[23:09:09.451] by cheesy
-[23:09:09.452] Assembly: LabUtils.dll
-[23:09:09.452] ------------------------------
-[23:09:09.456] ------------------------------
-[23:09:09.456] ModioModNetworker v2.8.1
-[23:09:09.456] by notnotnotswipez
-[23:09:09.456] Assembly: ModioModNetworker.dll
-[23:09:09.457] ------------------------------
-[23:09:09.461] ------------------------------
-[23:09:09.461] Ragdoll Player v1.3.0
-[23:09:09.461] by Lakatrazz
-[23:09:09.461] Assembly: RagdollPlayer.dll
-[23:09:09.462] ------------------------------
-[23:09:09.466] ------------------------------
-[23:09:09.466] RagdollUtility v1.0.0
-[23:09:09.466] by notnotnotswipez
-[23:09:09.466] Assembly: RagdollUtility.dll
-[23:09:09.466] ------------------------------
-[23:09:09.470] ------------------------------
-[23:09:09.471] SearchThing v0.5.0
-[23:09:09.471] by Mash
-[23:09:09.471] Assembly: SearchThing.dll
-[23:09:09.471] ------------------------------
-[23:09:09.475] ------------------------------
-[23:09:09.475] Spawn Logger v2.5.0
-[23:09:09.475] by Local Utility
-[23:09:09.476] Assembly: SpawnLogger.dll
-[23:09:09.476] ------------------------------
-[23:09:09.480] ------------------------------
-[23:09:09.480] SpawnLab v1.0.2
-[23:09:09.480] by ChappieStudios
-[23:09:09.481] Assembly: SpawnLab.dll
-[23:09:09.481] ------------------------------
-[23:09:09.485] ------------------------------
-[23:09:09.485] ThunderstoreModAssistant v1.2.1
-[23:09:09.485] by notnotnotswipez
-[23:09:09.485] Assembly: ThunderstoreModAssistant.dll
-[23:09:09.486] ------------------------------
-[23:09:09.490] ------------------------------
-[23:09:09.490] Ultimate Ragdoll v5.4.1
-[23:09:09.490] by Int_Void
-[23:09:09.490] Assembly: UltimateRagdoll.dll
-[23:09:09.490] ------------------------------
-[23:09:09.491] ------------------------------
-[23:09:09.491] 15 Mods loaded.
-[23:09:10.103] [Il2CppInterop] Registered mono type Il2CppInterop.Runtime.DelegateSupport+Il2CppToMonoDelegateReference in il2cpp domain
-[23:09:10.203] [Il2CppInterop] Registered mono type MelonLoader.Support.MonoEnumeratorWrapper in il2cpp domain
-[23:09:10.213] [Il2CppInterop] Registered mono type MelonLoader.Support.SM_Component in il2cpp domain
-[23:09:10.250] Support Module Loaded: /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/MelonLoader/Dependencies/SupportModules/Il2Cpp.dll
-[23:09:10.293] [Il2CppInterop] Registered mono type BoneLib.MonoBehaviours.PopupBox in il2cpp domain
-[23:09:10.348] [Il2CppInterop] Method Void DrawHeader(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
-[23:09:10.348] [Il2CppInterop] Method Void DrawBackground(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
-[23:09:10.349] [Il2CppInterop] Method Void DrawFooter(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
-[23:09:10.349] [Il2CppInterop] Method Void DrawElements(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
-[23:09:10.449] [Il2CppInterop] Method Void SetModInfo(ModioModNetworker.Data.ModInfo) on type ModIoModNetworker.Ui.ModInfoDisplay has unsupported parameter ModioModNetworker.Data.ModInfo modInfo of type ModioModNetworker.Data.ModInfo
-[23:09:10.461] [Il2CppInterop] Registered mono type ModIoModNetworker.Ui.ModInfoDisplay in il2cpp domain
-[23:09:10.463] [Il2CppInterop] Method Void TriggerModInfoPopup(Boolean, ModioModNetworker.Data.ModInfo) on type ModIoModNetworker.Ui.NetworkerMenuController has unsupported parameter ModioModNetworker.Data.ModInfo modInfo of type ModioModNetworker.Data.ModInfo
-[23:09:10.464] [Il2CppInterop] Method UnityEngine.GameObject MakeModInfoObject(UnityEngine.Transform, ModioModNetworker.Data.ModInfo, Boolean) on type ModIoModNetworker.Ui.NetworkerMenuController has unsupported parameter ModioModNetworker.Data.ModInfo modInfo of type ModioModNetworker.Data.ModInfo
-[23:09:10.465] [Il2CppInterop] Method Void SetKeyAction(System.String, System.Action) on type ModIoModNetworker.Ui.NetworkerMenuController has unsupported parameter System.Action action of type System.Action
-[23:09:10.496] [Il2CppInterop] Registered mono type ModIoModNetworker.Ui.NetworkerMenuController in il2cpp domain
-[23:09:10.573] [Il2CppInterop] Registered mono type LabFusion.Voice.VoiceSource in il2cpp domain
-[23:09:10.583] [Il2CppInterop] Registered mono type LabFusion.UI.FusionUIMachine in il2cpp domain
-[23:09:10.590] [Il2CppInterop] Registered mono type LabFusion.UI.CupBoard in il2cpp domain
-[23:09:10.595] [Il2CppInterop] Registered mono type LabFusion.UI.FusionPanelView in il2cpp domain
-[23:09:10.606] [Il2CppInterop] Registered mono type LabFusion.UI.CupBoardPanelView in il2cpp domain
-[23:09:10.610] [Il2CppInterop] Registered mono type LabFusion.UI.FusionUITrigger in il2cpp domain
-[23:09:10.614] [Il2CppInterop] Registered mono type LabFusion.UI.InfoBox in il2cpp domain
-[23:09:10.620] [Il2CppInterop] Registered mono type LabFusion.UI.InfoBoxPanelView in il2cpp domain
-[23:09:10.655] [Il2CppInterop] Registered mono type LabFusion.SDK.MonoBehaviours.GamemodeItem in il2cpp domain
-[23:09:10.659] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.AntiHasher in il2cpp domain
-[23:09:10.664] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.CollisionSyncer in il2cpp domain
-[23:09:10.668] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.DestroyOnDisconnect in il2cpp domain
-[23:09:10.671] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.DestroySensor in il2cpp domain
-[23:09:10.674] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.MirrorIdentifier in il2cpp domain
-[23:09:10.677] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.NotifyOnEnable in il2cpp domain
-[23:09:10.685] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.TimedDespawner in il2cpp domain
-[23:09:10.692] [Il2CppInterop] Registered mono type LabFusion.Audio.AudioStreamFilter in il2cpp domain
-[23:09:10.699] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.AnimatorSyncer in il2cpp domain
-[23:09:10.709] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.AvatarCosmeticPoint in il2cpp domain
-[23:09:10.722] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.CosmeticRoot in il2cpp domain
-[23:09:10.727] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.DeathTrigger in il2cpp domain
-[23:09:10.731] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.Desyncer in il2cpp domain
-[23:09:10.734] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.CelebrationEvents in il2cpp domain
-[23:09:10.738] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.OwnershipEvents in il2cpp domain
-[23:09:10.745] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.PlayerEvents in il2cpp domain
-[23:09:10.751] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.ServerEvents in il2cpp domain
-[23:09:10.756] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.BitTransactor in il2cpp domain
-[23:09:10.763] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeCrateSpawner in il2cpp domain
-[23:09:10.766] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeDropper in il2cpp domain
-[23:09:10.792] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeDropperSettings in il2cpp domain
-[23:09:10.795] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeEvents in il2cpp domain
-[23:09:10.800] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeMarker in il2cpp domain
-[23:09:10.808] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeMusicSettings in il2cpp domain
-[23:09:10.812] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodePlayerSettings in il2cpp domain
-[23:09:10.817] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeTeamSettings in il2cpp domain
-[23:09:10.839] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCEvent in il2cpp domain
-[23:09:10.847] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCVariable in il2cpp domain
-[23:09:10.852] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCVector3 in il2cpp domain
-[23:09:10.856] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCString in il2cpp domain
-[23:09:10.860] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCBool in il2cpp domain
-[23:09:10.865] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCFloat in il2cpp domain
-[23:09:10.870] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCInt in il2cpp domain
-[23:09:10.893] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.VoiceProxy in il2cpp domain
-[23:09:10.907] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.Keyboard in il2cpp domain
-[23:09:10.914] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.KeyboardButton in il2cpp domain
-[23:09:10.917] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.AchievementBoard in il2cpp domain
-[23:09:10.951] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitMart in il2cpp domain
-[23:09:10.953] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.InfoBoard in il2cpp domain
-[23:09:10.959] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuElement in il2cpp domain
-[23:09:11.081] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitCatalogElement in il2cpp domain
-[23:09:11.094] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitMartElement in il2cpp domain
-[23:09:11.105] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitResultElement in il2cpp domain
-[23:09:11.112] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitWelcomeElement in il2cpp domain
-[23:09:11.120] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.GamemodeResultElement in il2cpp domain
-[23:09:11.127] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelResultElement in il2cpp domain
-[23:09:11.137] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelRotationResultElement in il2cpp domain
-[23:09:11.151] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LabelElement in il2cpp domain
-[23:09:11.154] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.ButtonElement in il2cpp domain
-[23:09:11.159] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BoolElement in il2cpp domain
-[23:09:11.163] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.GroupElement in il2cpp domain
-[23:09:11.168] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.DropdownElement in il2cpp domain
-[23:09:11.173] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.ValueElement in il2cpp domain
-[23:09:11.177] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.EnumElement in il2cpp domain
-[23:09:11.186] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.FloatElement in il2cpp domain
-[23:09:11.189] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.FunctionElement in il2cpp domain
-[23:09:11.198] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.IntElement in il2cpp domain
-[23:09:11.210] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PageArrowsElement in il2cpp domain
-[23:09:11.217] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PageElement in il2cpp domain
-[23:09:11.225] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.StringElement in il2cpp domain
-[23:09:11.261] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LobbyElement in il2cpp domain
-[23:09:11.274] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LobbyResultElement in il2cpp domain
-[23:09:11.297] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PlayerElement in il2cpp domain
-[23:09:11.309] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PlayerResultElement in il2cpp domain
-[23:09:11.319] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.NotificationElement in il2cpp domain
-[23:09:11.321] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelNameLabel in il2cpp domain
-[23:09:11.332] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuPage in il2cpp domain
-[23:09:11.339] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuPopups in il2cpp domain
-[23:09:11.340] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuToolbar in il2cpp domain
-[23:09:11.355] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.ScrollButtonProxy in il2cpp domain
-[23:09:11.367] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelDownloadUI in il2cpp domain
-[23:09:11.370] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.UIPanel in il2cpp domain
-[23:09:11.385] [Il2CppInterop] Method Void SetKeyAction(System.String, System.Action) on type ThunderstoreModAssistant.Behaviors.AssistantMenuController has unsupported parameter System.Action action of type System.Action
-[23:09:11.386] [Il2CppInterop] Method Void UpdateModDisplay(ThunderstoreModAssistant.CodeModInfo, Boolean) on type ThunderstoreModAssistant.Behaviors.AssistantMenuController has unsupported parameter ThunderstoreModAssistant.CodeModInfo info of type ThunderstoreModAssistant.CodeModInfo
-[23:09:11.406] [Il2CppInterop] Registered mono type ThunderstoreModAssistant.Behaviors.AssistantMenuController in il2cpp domain
-[23:09:11.407] [Il2CppInterop] Method Void SetModInfo(ThunderstoreModAssistant.CodeModInfo) on type ThunderstoreModAssistant.Behaviors.CodeModInfoDisplay has unsupported parameter ThunderstoreModAssistant.CodeModInfo modInfo of type ThunderstoreModAssistant.CodeModInfo
-[23:09:11.410] [Il2CppInterop] Registered mono type ThunderstoreModAssistant.Behaviors.CodeModInfoDisplay in il2cpp domain
-[23:09:13.819] [ModioModNetworker] HarmonyLib.HarmonyException: Patching exception in method null
+[23:27:51.905] ------------------------------
+[23:27:51.905] BoneLib v3.2.2
+[23:27:51.905] by The BONELAB Modding Community
+[23:27:51.906] Assembly: BoneLib.dll
+[23:27:51.906] ------------------------------
+[23:27:51.937] [LabFusion] Data is at /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Fusion/.
+[23:27:51.940] [LabFusion] Loading embedded resource data LabFusion.dependencies.resources.lib.Facepunch.Steamworks.Win64.dll...
+[23:27:51.942] [LabFusion] Done!
+[23:27:51.949] [LabFusion] Loading embedded resource data LabFusion.dependencies.resources.lib.arm64.libEOSSDK.so...
+[23:27:52.028] [LabFusion] Done!
+[23:27:52.352] [LabFusion] EOSSDK already exists, skipping extraction.
+[23:27:52.423] [LabFusion] Successfully loaded EOSSDK into the application!
+[23:27:52.431] ------------------------------
+[23:27:52.431] LabFusion v1.14.2
+[23:27:52.432] by Lakatrazz
+[23:27:52.432] Assembly: LabFusion.dll
+[23:27:52.432] ------------------------------
+[23:27:52.438] ------------------------------
+[23:27:52.438] BulletCleanup v0.1.0
+[23:27:52.438] by Geozek (with Codex)
+[23:27:52.438] Assembly: BulletCleanup.dll
+[23:27:52.439] ------------------------------
+[23:27:52.446] ------------------------------
+[23:27:52.447] Cinematic Camera v1.15.2
+[23:27:52.447] by BonelabCamMod
+[23:27:52.447] Assembly: BonelabCinematicCamera.dll
+[23:27:52.447] ------------------------------
+[23:27:52.453] ------------------------------
+[23:27:52.453] Gun Modifier v1.2.4
+[23:27:52.453] by GunModifier
+[23:27:52.453] Assembly: GunModifier.dll
+[23:27:52.453] ------------------------------
+[23:27:52.459] ------------------------------
+[23:27:52.459] Doppel v1.3.0
+[23:27:52.459] by RUDYHILL
+[23:27:52.459] Assembly: Doppel.dll
+[23:27:52.460] ------------------------------
+[23:27:52.465] ------------------------------
+[23:27:52.465] LabUtils v1.0.0
+[23:27:52.465] by cheesy
+[23:27:52.465] Assembly: LabUtils.dll
+[23:27:52.465] ------------------------------
+[23:27:52.471] ------------------------------
+[23:27:52.471] ModioModNetworker v2.8.1
+[23:27:52.471] by notnotnotswipez
+[23:27:52.472] Assembly: ModioModNetworker.dll
+[23:27:52.472] ------------------------------
+[23:27:52.477] ------------------------------
+[23:27:52.477] Ragdoll Player v1.3.0
+[23:27:52.477] by Lakatrazz
+[23:27:52.477] Assembly: RagdollPlayer.dll
+[23:27:52.478] ------------------------------
+[23:27:52.484] ------------------------------
+[23:27:52.484] RagdollUtility v1.0.0
+[23:27:52.484] by notnotnotswipez
+[23:27:52.484] Assembly: RagdollUtility.dll
+[23:27:52.485] ------------------------------
+[23:27:52.490] ------------------------------
+[23:27:52.490] SearchThing v0.5.0
+[23:27:52.490] by Mash
+[23:27:52.491] Assembly: SearchThing.dll
+[23:27:52.491] ------------------------------
+[23:27:52.497] ------------------------------
+[23:27:52.497] Spawn Logger v2.5.0
+[23:27:52.497] by Local Utility
+[23:27:52.498] Assembly: SpawnLogger.dll
+[23:27:52.498] ------------------------------
+[23:27:52.503] ------------------------------
+[23:27:52.504] SpawnLab v1.0.2
+[23:27:52.504] by ChappieStudios
+[23:27:52.504] Assembly: SpawnLab.dll
+[23:27:52.504] ------------------------------
+[23:27:52.509] ------------------------------
+[23:27:52.510] ThunderstoreModAssistant v1.2.1
+[23:27:52.510] by notnotnotswipez
+[23:27:52.510] Assembly: ThunderstoreModAssistant.dll
+[23:27:52.510] ------------------------------
+[23:27:52.516] ------------------------------
+[23:27:52.516] Ultimate Ragdoll v5.4.1
+[23:27:52.516] by Int_Void
+[23:27:52.517] Assembly: UltimateRagdoll.dll
+[23:27:52.517] ------------------------------
+[23:27:52.517] ------------------------------
+[23:27:52.517] 15 Mods loaded.
+
+[23:27:53.231] [Il2CppInterop] Registered mono type Il2CppInterop.Runtime.DelegateSupport+Il2CppToMonoDelegateReference in il2cpp domain
+[23:27:53.344] [Il2CppInterop] Registered mono type MelonLoader.Support.MonoEnumeratorWrapper in il2cpp domain
+[23:27:53.355] [Il2CppInterop] Registered mono type MelonLoader.Support.SM_Component in il2cpp domain
+[23:27:53.405] Support Module Loaded: /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/MelonLoader/Dependencies/SupportModules/Il2Cpp.dll
+[23:27:53.458] [Il2CppInterop] Registered mono type BoneLib.MonoBehaviours.PopupBox in il2cpp domain
+[23:27:53.528] [Il2CppInterop] Method Void DrawHeader(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
+[23:27:53.529] [Il2CppInterop] Method Void DrawBackground(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
+[23:27:53.529] [Il2CppInterop] Method Void DrawFooter(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
+[23:27:53.529] [Il2CppInterop] Method Void DrawElements(BoneLib.BoneMenu.Page) on type BoneLib.BoneMenu.UI.GUIMenu has unsupported parameter BoneLib.BoneMenu.Page page of type BoneLib.BoneMenu.Page
+[23:27:53.660] [Il2CppInterop] Method Void SetModInfo(ModioModNetworker.Data.ModInfo) on type ModIoModNetworker.Ui.ModInfoDisplay has unsupported parameter ModioModNetworker.Data.ModInfo modInfo of type ModioModNetworker.Data.ModInfo
+[23:27:53.675] [Il2CppInterop] Registered mono type ModIoModNetworker.Ui.ModInfoDisplay in il2cpp domain
+[23:27:53.677] [Il2CppInterop] Method Void TriggerModInfoPopup(Boolean, ModioModNetworker.Data.ModInfo) on type ModIoModNetworker.Ui.NetworkerMenuController has unsupported parameter ModioModNetworker.Data.ModInfo modInfo of type ModioModNetworker.Data.ModInfo
+[23:27:53.677] [Il2CppInterop] Method UnityEngine.GameObject MakeModInfoObject(UnityEngine.Transform, ModioModNetworker.Data.ModInfo, Boolean) on type ModIoModNetworker.Ui.NetworkerMenuController has unsupported parameter ModioModNetworker.Data.ModInfo modInfo of type ModioModNetworker.Data.ModInfo
+[23:27:53.680] [Il2CppInterop] Method Void SetKeyAction(System.String, System.Action) on type ModIoModNetworker.Ui.NetworkerMenuController has unsupported parameter System.Action action of type System.Action
+[23:27:53.718] [Il2CppInterop] Registered mono type ModIoModNetworker.Ui.NetworkerMenuController in il2cpp domain
+[23:27:53.811] [Il2CppInterop] Registered mono type LabFusion.Voice.VoiceSource in il2cpp domain
+[23:27:53.825] [Il2CppInterop] Registered mono type LabFusion.UI.FusionUIMachine in il2cpp domain
+[23:27:53.834] [Il2CppInterop] Registered mono type LabFusion.UI.CupBoard in il2cpp domain
+[23:27:53.841] [Il2CppInterop] Registered mono type LabFusion.UI.FusionPanelView in il2cpp domain
+[23:27:53.852] [Il2CppInterop] Registered mono type LabFusion.UI.CupBoardPanelView in il2cpp domain
+[23:27:53.857] [Il2CppInterop] Registered mono type LabFusion.UI.FusionUITrigger in il2cpp domain
+[23:27:53.862] [Il2CppInterop] Registered mono type LabFusion.UI.InfoBox in il2cpp domain
+[23:27:53.868] [Il2CppInterop] Registered mono type LabFusion.UI.InfoBoxPanelView in il2cpp domain
+[23:27:53.912] [Il2CppInterop] Registered mono type LabFusion.SDK.MonoBehaviours.GamemodeItem in il2cpp domain
+[23:27:53.917] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.AntiHasher in il2cpp domain
+[23:27:53.922] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.CollisionSyncer in il2cpp domain
+[23:27:53.927] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.DestroyOnDisconnect in il2cpp domain
+[23:27:53.930] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.DestroySensor in il2cpp domain
+[23:27:53.934] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.MirrorIdentifier in il2cpp domain
+[23:27:53.938] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.NotifyOnEnable in il2cpp domain
+[23:27:53.950] [Il2CppInterop] Registered mono type LabFusion.MonoBehaviours.TimedDespawner in il2cpp domain
+[23:27:53.957] [Il2CppInterop] Registered mono type LabFusion.Audio.AudioStreamFilter in il2cpp domain
+[23:27:53.965] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.AnimatorSyncer in il2cpp domain
+[23:27:53.976] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.AvatarCosmeticPoint in il2cpp domain
+[23:27:53.991] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.CosmeticRoot in il2cpp domain
+[23:27:53.999] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.DeathTrigger in il2cpp domain
+[23:27:54.003] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.Desyncer in il2cpp domain
+[23:27:54.007] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.CelebrationEvents in il2cpp domain
+[23:27:54.011] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.OwnershipEvents in il2cpp domain
+[23:27:54.019] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.PlayerEvents in il2cpp domain
+[23:27:54.026] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.ServerEvents in il2cpp domain
+[23:27:54.032] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.BitTransactor in il2cpp domain
+[23:27:54.041] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeCrateSpawner in il2cpp domain
+[23:27:54.046] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeDropper in il2cpp domain
+[23:27:54.076] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeDropperSettings in il2cpp domain
+[23:27:54.080] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeEvents in il2cpp domain
+[23:27:54.087] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeMarker in il2cpp domain
+[23:27:54.098] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeMusicSettings in il2cpp domain
+[23:27:54.104] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodePlayerSettings in il2cpp domain
+[23:27:54.110] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.GamemodeTeamSettings in il2cpp domain
+[23:27:54.137] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCEvent in il2cpp domain
+[23:27:54.147] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCVariable in il2cpp domain
+[23:27:54.153] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCVector3 in il2cpp domain
+[23:27:54.161] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCString in il2cpp domain
+[23:27:54.166] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCBool in il2cpp domain
+[23:27:54.172] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCFloat in il2cpp domain
+[23:27:54.176] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.RPCInt in il2cpp domain
+[23:27:54.205] [Il2CppInterop] Registered mono type LabFusion.Marrow.Integration.VoiceProxy in il2cpp domain
+[23:27:54.223] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.Keyboard in il2cpp domain
+[23:27:54.232] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.KeyboardButton in il2cpp domain
+[23:27:54.235] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.AchievementBoard in il2cpp domain
+[23:27:54.274] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitMart in il2cpp domain
+[23:27:54.276] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.InfoBoard in il2cpp domain
+[23:27:54.285] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuElement in il2cpp domain
+[23:27:54.428] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitCatalogElement in il2cpp domain
+[23:27:54.443] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitMartElement in il2cpp domain
+[23:27:54.455] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitResultElement in il2cpp domain
+[23:27:54.463] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BitWelcomeElement in il2cpp domain
+[23:27:54.474] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.GamemodeResultElement in il2cpp domain
+[23:27:54.483] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelResultElement in il2cpp domain
+[23:27:54.495] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelRotationResultElement in il2cpp domain
+[23:27:54.511] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LabelElement in il2cpp domain
+[23:27:54.515] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.ButtonElement in il2cpp domain
+[23:27:54.521] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.BoolElement in il2cpp domain
+[23:27:54.527] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.GroupElement in il2cpp domain
+[23:27:54.534] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.DropdownElement in il2cpp domain
+[23:27:54.540] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.ValueElement in il2cpp domain
+[23:27:54.545] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.EnumElement in il2cpp domain
+[23:27:54.555] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.FloatElement in il2cpp domain
+[23:27:54.560] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.FunctionElement in il2cpp domain
+[23:27:54.572] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.IntElement in il2cpp domain
+[23:27:54.585] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PageArrowsElement in il2cpp domain
+[23:27:54.593] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PageElement in il2cpp domain
+[23:27:54.603] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.StringElement in il2cpp domain
+[23:27:54.644] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LobbyElement in il2cpp domain
+[23:27:54.660] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LobbyResultElement in il2cpp domain
+[23:27:54.690] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PlayerElement in il2cpp domain
+[23:27:54.704] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.PlayerResultElement in il2cpp domain
+[23:27:54.716] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.NotificationElement in il2cpp domain
+[23:27:54.719] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelNameLabel in il2cpp domain
+[23:27:54.734] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuPage in il2cpp domain
+[23:27:54.742] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuPopups in il2cpp domain
+[23:27:54.744] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.MenuToolbar in il2cpp domain
+[23:27:54.761] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.ScrollButtonProxy in il2cpp domain
+[23:27:54.776] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.LevelDownloadUI in il2cpp domain
+[23:27:54.779] [Il2CppInterop] Registered mono type LabFusion.Marrow.Proxies.UIPanel in il2cpp domain
+[23:27:54.796] [Il2CppInterop] Method System.Collections.Generic.List`1[ThunderstoreModAssistant.CodeModInfo] GetInstalledCodeModList() on type ThunderstoreModAssistant.Behaviors.AssistantMenuController has unsupported return type System.Collections.Generic.List`1[ThunderstoreModAssistant.CodeModInfo]
+[23:27:54.796] [Il2CppInterop] Method Void SetKeyAction(System.String, System.Action) on type ThunderstoreModAssistant.Behaviors.AssistantMenuController has unsupported parameter System.Action action of type System.Action
+[23:27:54.797] [Il2CppInterop] Method Void UpdateModDisplay(ThunderstoreModAssistant.CodeModInfo, Boolean) on type ThunderstoreModAssistant.Behaviors.AssistantMenuController has unsupported parameter ThunderstoreModAssistant.CodeModInfo info of type ThunderstoreModAssistant.CodeModInfo
+[23:27:54.822] [Il2CppInterop] Registered mono type ThunderstoreModAssistant.Behaviors.AssistantMenuController in il2cpp domain
+[23:27:54.823] [Il2CppInterop] Method Void SetModInfo(ThunderstoreModAssistant.CodeModInfo) on type ThunderstoreModAssistant.Behaviors.CodeModInfoDisplay has unsupported parameter ThunderstoreModAssistant.CodeModInfo modInfo of type ThunderstoreModAssistant.CodeModInfo
+[23:27:54.827] [Il2CppInterop] Registered mono type ThunderstoreModAssistant.Behaviors.CodeModInfoDisplay in il2cpp domain
+[23:27:57.760] [ModioModNetworker] HarmonyLib.HarmonyException: Patching exception in method null
  ---> System.ArgumentException: Undefined target method for patch method static void ModioModNetworker.Patches.LevelLoadPatch+SendLevelPatchClass::Prefix(string barcode, string loadBarcode, ulong userId)
    at HarmonyLib.PatchClassProcessor.PatchWithAttributes(MethodBase& lastOriginal, Boolean unpatch)
    at HarmonyLib.PatchClassProcessor.Patch()
@@ -311,212 +315,338 @@ This warning will turn into an error and Melons with missing dependencies will n
    at MelonLoader.MelonMod.HarmonyInit()
    at MelonLoader.MelonEvent.<>c.<Invoke>b__1_0(LemonAction x)
    at MelonLoader.MelonEventBase`1[[MelonLoader.LemonAction, MelonLoader, Version=0.6.5.0, Culture=neutral, PublicKeyToken=null]].Invoke(Action`1 delegateInvoker)
-[23:09:14.911] [BoneLib] BoneLib loaded
-[23:09:14.931] [LabFusion] PermissionList was found, attempting to read it!
-[23:09:14.988] [LabFusion] Contacts was found, attempting to read it!
-[23:09:15.267] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.raw_changelog.txt...
-[23:09:15.267] [LabFusion] Done!
-[23:09:15.267] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.credits.raw_credits_01.txt...
-[23:09:15.268] [LabFusion] Done!
-[23:09:15.268] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.credits.raw_credits_02.txt...
-[23:09:15.268] [LabFusion] Done!
-[23:09:15.269] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.credits.raw_credits_03.txt...
-[23:09:15.269] [LabFusion] Done!
-[23:09:15.274] [LabFusion] ListFetcher - Fetching profanityList.json from url https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/profanityList.json...
-[23:09:15.284] [LabFusion] ListFetcher - Fetching globalModBlacklist.json from url https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/globalModBlacklist.json...
-[23:09:15.285] [LabFusion] ListFetcher - Fetching urlWhitelist.json from url https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/urlWhitelist.json...
-[23:09:15.303] [LabFusion] --==== Loaded Fusion Module ====--
-[23:09:15.303] [LabFusion] Fusion SDK - v1.14.2
-[23:09:15.304] [LabFusion] by Lakatrazz
-[23:09:15.304] [LabFusion] --=============================--
-[23:09:15.316] [LabFusion] --==== Loaded Fusion Module ====--
-[23:09:15.317] [LabFusion] Marrow - v1.14.2
-[23:09:15.317] [LabFusion] by Lakatrazz
-[23:09:15.317] [LabFusion] --=============================--
-[23:09:15.368] [LabFusion] Loading embedded resource data LabFusion.SupportModules.BonelabSupport.dll...
-[23:09:15.369] [LabFusion] Done!
-[23:09:15.373] [LabFusion] --==== Loaded Fusion Module ====--
-[23:09:15.374] [LabFusion] BONELAB - v1.14.2
-[23:09:15.374] [LabFusion] by Lakatrazz
-[23:09:15.374] [LabFusion] --=============================--
-[23:09:18.365] [BulletCleanup] LOOSE ITEM CLEANUP: casings, unfired rounds and optional dropped magazines share timer and cap. Cleanup follows the saved enabled setting; magazines also require their own toggle.
-[23:09:18.392] MelonPreferences Loaded from /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/CinematicCamera/CinematicCamera.cfg
-[23:09:18.470] [Cinematic_Camera] Headset detected: Quest 3S (model 'Quest 3S', device 'panther'). Automatic settings: Res540p at Fps60.
-[23:09:18.749] [Cinematic_Camera] Camera model loaded: 906 verts / 1022 tris, bounds 8.90x6.10x6.15
-[23:09:18.795] [Cinematic_Camera] Handle model loaded: 744 verts / 248 tris, bounds 290.97x97.58x100.56, bar 128.03 long x 64.96 thick
-[23:09:18.988] [Cinematic_Camera] Video gallery model loaded: 1034 verts / 980 tris.
-[23:09:18.994] [Cinematic_Camera] LabFusion detected: multiplayer identity and prop ownership tracking enabled.
-[23:09:19.050] [Cinematic_Camera] Fusion prop transport ready (reflection-only, protocol BCCPROP1).
-[23:09:19.128] [Cinematic_Camera] BoneMenu category created.
-[23:09:19.130] [Cinematic_Camera] Recordings: /sdcard/Movies/BonelabCinematicCamera (visible to the headset's media apps)
-[23:09:19.136] [Cinematic_Camera] Async GPU readback: True, graphics API: Vulkan
-[23:09:19.136] [Cinematic_Camera] Controls: Trigger: record | A or X: freeze | B or Y: preset | Both sticks: record anywhere | off: swap camera | off: photo | Stick in + Trigger (holding hand): mount on surface
-[23:09:19.145] [Cinematic_Camera] Cinematic Camera v1.15.2 initialised. Loaded from BonelabCinematicCamera.dll, 4740608 bytes, written 2026-10-28 19:02:06.
-[23:09:19.146] [Gun_Modifier] Gun Modifier loaded!
-[23:09:19.146] [Gun_Modifier] Waiting for BoneLib BoneMenu to initialize...
-[23:09:19.171] [Doppel] Bot brain: 0 earlier builds in memory
-[23:09:19.435] [Doppel] Bot Player: Fusion is here: bots are shown to the other players
-[23:09:19.481] [Doppel] Bot brain started
-[23:09:19.481] [Doppel] Doppel ready (BoneMenu > Doppel)
-[23:09:19.482] [LabUtils] Loaded LabUtils.
-[23:09:19.667] [LabUtils] Loading DevUtils from Melons
-[23:09:19.681] [LabUtils] Loaded LabUtils.Utils.InfiniteAmmoUtil.AmmoUtility Util
-[23:09:19.687] [LabUtils] Loaded LabUtils.Utils.AssetWarehouseUtil.AssetWarehouseUtility Util
-[23:09:19.690] [LabUtils] Loaded LabUtils.Utils.All.FunUtility Util
-[23:09:19.696] [LabUtils] Loaded LabUtils.Utils.All.HealthUtility Util
-[23:09:19.700] [LabUtils] Loaded LabUtils.Utils.All.RagdollUtility Util
-[23:09:19.725] [LabUtils] Loaded LabUtils.Utils.All.Developer.SceneUtility Util
-[23:09:19.727] [LabUtils] Loaded LabUtils.Utils.Dangerous.AchivementUtility Util
-[23:09:19.748] [LabUtils] Loaded LabUtils.Utils.Dangerous.SaveDataUtility Util
-[23:09:19.784] MelonPreferences Loaded from /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/ModioModNetworker.cfg
-[23:09:20.028] [ModioModNetworker] Loaded blacklist with 0 entries.
-[23:09:20.065] [ModioModNetworker] Loading internal module...
-[23:09:20.065] [LabFusion] --==== Loaded Fusion Module ====--
-[23:09:20.066] [LabFusion] ModIoModNetworkerModule - v2.8.1
-[23:09:20.066] [LabFusion] by notnotnotswipez
-[23:09:20.066] [LabFusion] --=============================--
-[23:09:20.088] [RagdollUtility] Initialized.
-[23:09:21.077] [Spawn_Logger] EOS network layer detected; attributing spawns by ProductUserId.
-[23:09:21.078] [SpawnLab] SpawnLab 1.0.2: bounded lists and keyboard search enabled.
-[23:09:22.554] [Ultimate_Ragdoll] Harmony patches applied.
-[23:09:22.554] [Ultimate_Ragdoll] UltimateRagdoll v5.4.1 initialized.
-[23:09:23.057] [BulletCleanup] Tracking probe heartbeat: updates=1, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
-[23:09:23.059] [BulletCleanup] BoneMenu setup begin.
-[23:09:23.060] [BulletCleanup] BoneMenu setup complete.
-[23:09:23.127] [Cinematic_Camera] Recording badge layer resolved to the UI layer, index 5. Lenses have always excluded it, and the player's cameras draw it.
-[23:09:23.132] [Cinematic_Camera] Recording badge now rides the player's view camera 'Main Camera'.
-[23:09:23.207] [Gun_Modifier] Gun Modifier: NPC damage hook installed.
-[23:09:23.227] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugEnter (prefix).
-[23:09:23.241] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugEnter (postfix).
-[23:09:23.293] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugLocked (prefix).
-[23:09:23.311] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugLocked (postfix).
-[23:09:23.327] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugExit (postfix).
-[23:09:23.344] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugUnlocked (postfix).
-[23:09:23.345] [Gun_Modifier] Gun Modifier: Any Mag lifecycle hooks installed: 6.
-[23:09:23.422] [Gun_Modifier] Gun Modifier: physical recoil hooks installed on Gun.OnFire.
-[23:09:23.422] [Gun_Modifier] Gun Modifier: fire-rate hook installed.
-[23:09:23.428] [Gun_Modifier] Gun Modifier menu created successfully!
-[23:09:23.581] [LabFusion] ListFetcher - Finished fetching https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/profanityList.json!
-[23:09:23.607] [LabFusion] ListFetcher - Finished fetching https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/globalModBlacklist.json!
-[23:09:23.622] [LabFusion] ListFetcher - Finished fetching https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/urlWhitelist.json!
-[23:09:23.641] [ModioModNetworker] Populating currently installed mods via this mod.
-[23:09:23.857] [ModioModNetworker] Checking mod.io account subscriptions
-[23:09:23.861] [ModioModNetworker] Registered on mod.io with auth key!
-[23:09:25.059] [ModioModNetworker] Total subscriptions: 72
-[23:09:25.291] [ModioModNetworker] Finished refreshing mod.io subscriptions!
-[23:09:25.305] [ModioModNetworker] Downloading mod fpv-drone1
-[23:09:26.079] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
-[23:09:26.088] [ModioModNetworker] Error while downloading mod fpv-drone1: System.IO.InvalidDataException: End of Central Directory record could not be found.
+[23:27:59.072] [BoneLib] BoneLib loaded
+[23:27:59.095] [LabFusion] PermissionList was found, attempting to read it!
+[23:27:59.163] [LabFusion] Contacts was found, attempting to read it!
+[23:27:59.504] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.raw_changelog.txt...
+[23:27:59.505] [LabFusion] Done!
+[23:27:59.505] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.credits.raw_credits_01.txt...
+[23:27:59.506] [LabFusion] Done!
+[23:27:59.506] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.credits.raw_credits_02.txt...
+[23:27:59.506] [LabFusion] Done!
+[23:27:59.506] [LabFusion] Loading embedded resource text LabFusion.dependencies.resources.text.credits.raw_credits_03.txt...
+[23:27:59.507] [LabFusion] Done!
+[23:27:59.513] [LabFusion] ListFetcher - Fetching profanityList.json from url https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/profanityList.json...
+[23:27:59.523] [LabFusion] ListFetcher - Fetching globalModBlacklist.json from url https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/globalModBlacklist.json...
+[23:27:59.525] [LabFusion] ListFetcher - Fetching urlWhitelist.json from url https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/urlWhitelist.json...
+[23:27:59.545] [LabFusion] --==== Loaded Fusion Module ====--
+[23:27:59.546] [LabFusion] Fusion SDK - v1.14.2
+[23:27:59.546] [LabFusion] by Lakatrazz
+[23:27:59.546] [LabFusion] --=============================--
+[23:27:59.563] [LabFusion] --==== Loaded Fusion Module ====--
+[23:27:59.563] [LabFusion] Marrow - v1.14.2
+[23:27:59.564] [LabFusion] by Lakatrazz
+[23:27:59.564] [LabFusion] --=============================--
+[23:27:59.640] [LabFusion] Loading embedded resource data LabFusion.SupportModules.BonelabSupport.dll...
+[23:27:59.640] [LabFusion] Done!
+[23:27:59.645] [LabFusion] --==== Loaded Fusion Module ====--
+[23:27:59.645] [LabFusion] BONELAB - v1.14.2
+[23:27:59.646] [LabFusion] by Lakatrazz
+[23:27:59.646] [LabFusion] --=============================--
+[23:28:03.154] [BulletCleanup] LOOSE ITEM CLEANUP: casings, unfired rounds and optional dropped magazines share timer and cap. Cleanup follows the saved enabled setting; magazines also require their own toggle.
+[23:28:03.185] MelonPreferences Loaded from /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/CinematicCamera/CinematicCamera.cfg
+[23:28:03.276] [Cinematic_Camera] Headset detected: Quest 3S (model 'Quest 3S', device 'panther'). Automatic settings: Res540p at Fps60.
+[23:28:03.600] [Cinematic_Camera] Camera model loaded: 906 verts / 1022 tris, bounds 8.90x6.10x6.15
+[23:28:03.651] [Cinematic_Camera] Handle model loaded: 744 verts / 248 tris, bounds 290.97x97.58x100.56, bar 128.03 long x 64.96 thick
+[23:28:03.866] [Cinematic_Camera] Video gallery model loaded: 1034 verts / 980 tris.
+[23:28:03.873] [Cinematic_Camera] LabFusion detected: multiplayer identity and prop ownership tracking enabled.
+[23:28:03.937] [Cinematic_Camera] Fusion prop transport ready (reflection-only, protocol BCCPROP1).
+[23:28:04.035] [Cinematic_Camera] BoneMenu category created.
+[23:28:04.038] [Cinematic_Camera] Recordings: /sdcard/Movies/BonelabCinematicCamera (visible to the headset's media apps)
+[23:28:04.045] [Cinematic_Camera] Async GPU readback: True, graphics API: Vulkan
+[23:28:04.045] [Cinematic_Camera] Controls: Trigger: record | A or X: freeze | B or Y: preset | Both sticks: record anywhere | off: swap camera | off: photo | Stick in + Trigger (holding hand): mount on surface
+[23:28:04.056] [Cinematic_Camera] Cinematic Camera v1.15.2 initialised. Loaded from BonelabCinematicCamera.dll, 4740608 bytes, written 2026-10-28 19:02:06.
+[23:28:04.057] [Gun_Modifier] Gun Modifier loaded!
+[23:28:04.057] [Gun_Modifier] Waiting for BoneLib BoneMenu to initialize...
+[23:28:04.089] [Doppel] Bot brain: 0 earlier builds in memory
+[23:28:04.406] [Doppel] Bot Player: Fusion is here: bots are shown to the other players
+[23:28:04.457] [Doppel] Bot brain started
+[23:28:04.458] [Doppel] Doppel ready (BoneMenu > Doppel)
+[23:28:04.459] [LabUtils] Loaded LabUtils.
+[23:28:04.719] [LabUtils] Loading DevUtils from Melons
+[23:28:04.737] [LabUtils] Loaded LabUtils.Utils.InfiniteAmmoUtil.AmmoUtility Util
+[23:28:04.745] [LabUtils] Loaded LabUtils.Utils.AssetWarehouseUtil.AssetWarehouseUtility Util
+[23:28:04.749] [LabUtils] Loaded LabUtils.Utils.All.FunUtility Util
+[23:28:04.756] [LabUtils] Loaded LabUtils.Utils.All.HealthUtility Util
+[23:28:04.761] [LabUtils] Loaded LabUtils.Utils.All.RagdollUtility Util
+[23:28:04.791] [LabUtils] Loaded LabUtils.Utils.All.Developer.SceneUtility Util
+[23:28:04.794] [LabUtils] Loaded LabUtils.Utils.Dangerous.AchivementUtility Util
+[23:28:04.820] [LabUtils] Loaded LabUtils.Utils.Dangerous.SaveDataUtility Util
+[23:28:04.891] MelonPreferences Loaded from /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/ModioModNetworker.cfg
+[23:28:05.195] [ModioModNetworker] Loaded blacklist with 0 entries.
+[23:28:05.245] [ModioModNetworker] Loading internal module...
+[23:28:05.246] [LabFusion] --==== Loaded Fusion Module ====--
+[23:28:05.247] [LabFusion] ModIoModNetworkerModule - v2.8.1
+[23:28:05.247] [LabFusion] by notnotnotswipez
+[23:28:05.247] [LabFusion] --=============================--
+[23:28:05.275] [RagdollUtility] Initialized.
+[23:28:06.492] [Spawn_Logger] EOS network layer detected; attributing spawns by ProductUserId.
+[23:28:06.493] [SpawnLab] SpawnLab 1.0.2: bounded lists and keyboard search enabled.
+[23:28:08.341] [Ultimate_Ragdoll] Harmony patches applied.
+[23:28:08.341] [Ultimate_Ragdoll] UltimateRagdoll v5.4.1 initialized.
+[23:28:08.923] [BulletCleanup] Tracking probe heartbeat: updates=1, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[23:28:08.926] [BulletCleanup] BoneMenu setup begin.
+[23:28:08.927] [BulletCleanup] BoneMenu setup complete.
+[23:28:09.005] [Cinematic_Camera] Recording badge layer resolved to the UI layer, index 5. Lenses have always excluded it, and the player's cameras draw it.
+[23:28:09.014] [Cinematic_Camera] Recording badge now rides the player's view camera 'Main Camera'.
+[23:28:09.091] [Gun_Modifier] Gun Modifier: NPC damage hook installed.
+[23:28:09.115] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugEnter (prefix).
+[23:28:09.171] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugEnter (postfix).
+[23:28:09.191] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugLocked (prefix).
+[23:28:09.219] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugLocked (postfix).
+[23:28:09.286] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugExit (postfix).
+[23:28:09.303] [Gun_Modifier] Gun Modifier: Any Mag hooked AmmoSocket.OnPlugUnlocked (postfix).
+[23:28:09.304] [Gun_Modifier] Gun Modifier: Any Mag lifecycle hooks installed: 6.
+[23:28:09.374] [Gun_Modifier] Gun Modifier: physical recoil hooks installed on Gun.OnFire.
+[23:28:09.374] [Gun_Modifier] Gun Modifier: fire-rate hook installed.
+[23:28:09.379] [Gun_Modifier] Gun Modifier menu created successfully!
+[23:28:09.575] [LabFusion] ListFetcher - Finished fetching https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/profanityList.json!
+[23:28:09.601] [LabFusion] ListFetcher - Finished fetching https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/globalModBlacklist.json!
+[23:28:09.622] [LabFusion] ListFetcher - Finished fetching https://raw.githubusercontent.com/Lakatrazz/Fusion-Lists/main/urlWhitelist.json!
+[23:28:09.644] [ModioModNetworker] Populating currently installed mods via this mod.
+[23:28:09.857] [ModioModNetworker] Checking mod.io account subscriptions
+[23:28:09.862] [ModioModNetworker] Registered on mod.io with auth key!
+[23:28:10.666] [ModioModNetworker] Total subscriptions: 72
+[23:28:10.718] [ModioModNetworker] Finished refreshing mod.io subscriptions!
+[23:28:10.733] [ModioModNetworker] Downloading mod fpv-drone1
+[23:28:12.350] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
+[23:28:12.360] [ModioModNetworker] Error while downloading mod fpv-drone1: System.IO.InvalidDataException: End of Central Directory record could not be found.
    at System.IO.Compression.ZipArchive.ReadEndOfCentralDirectory()
    at System.IO.Compression.ZipArchive..ctor(Stream stream, ZipArchiveMode mode, Boolean leaveOpen, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode)
    at System.IO.Compression.ZipFile.OpenRead(String archiveFileName)
    at DownloadAction.<>c.<Handle>b__3_0()
-[23:09:26.104] [ModioModNetworker] Downloading mod police-french-hood-rp
-[23:09:26.538] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
-[23:09:26.538] [ModioModNetworker] Error while downloading mod police-french-hood-rp: System.IO.InvalidDataException: End of Central Directory record could not be found.
+[23:28:12.374] [ModioModNetworker] Downloading mod police-french-hood-rp
+[23:28:12.841] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
+[23:28:12.841] [ModioModNetworker] Error while downloading mod police-french-hood-rp: System.IO.InvalidDataException: End of Central Directory record could not be found.
    at System.IO.Compression.ZipArchive.ReadEndOfCentralDirectory()
    at System.IO.Compression.ZipArchive..ctor(Stream stream, ZipArchiveMode mode, Boolean leaveOpen, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode)
    at System.IO.Compression.ZipFile.OpenRead(String archiveFileName)
    at DownloadAction.<>c.<Handle>b__3_0()
-[23:09:26.572] [ModioModNetworker] Downloading mod ghosts-of-tabor-gun-pack
-[23:09:27.004] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
-[23:09:27.005] [ModioModNetworker] Error while downloading mod ghosts-of-tabor-gun-pack: System.IO.InvalidDataException: End of Central Directory record could not be found.
+[23:28:12.874] [ModioModNetworker] Downloading mod ghosts-of-tabor-gun-pack
+[23:28:13.307] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
+[23:28:13.308] [ModioModNetworker] Error while downloading mod ghosts-of-tabor-gun-pack: System.IO.InvalidDataException: End of Central Directory record could not be found.
    at System.IO.Compression.ZipArchive.ReadEndOfCentralDirectory()
    at System.IO.Compression.ZipArchive..ctor(Stream stream, ZipArchiveMode mode, Boolean leaveOpen, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode)
    at System.IO.Compression.ZipFile.OpenRead(String archiveFileName)
    at DownloadAction.<>c.<Handle>b__3_0()
-[23:09:27.038] [ModioModNetworker] Downloading mod taborite-ghost-of-tabor-avatar
-[23:09:27.471] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
-[23:09:27.472] [ModioModNetworker] Error while downloading mod taborite-ghost-of-tabor-avatar: System.IO.InvalidDataException: End of Central Directory record could not be found.
+[23:28:13.345] [ModioModNetworker] Downloading mod taborite-ghost-of-tabor-avatar
+[23:28:13.774] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
+[23:28:13.775] [ModioModNetworker] Error while downloading mod taborite-ghost-of-tabor-avatar: System.IO.InvalidDataException: End of Central Directory record could not be found.
    at System.IO.Compression.ZipArchive.ReadEndOfCentralDirectory()
    at System.IO.Compression.ZipArchive..ctor(Stream stream, ZipArchiveMode mode, Boolean leaveOpen, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode)
    at System.IO.Compression.ZipFile.OpenRead(String archiveFileName)
    at DownloadAction.<>c.<Handle>b__3_0()
-[23:09:27.504] [ModioModNetworker] Downloading mod ukr-war-test-still-in-development
-[23:09:27.938] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
-[23:09:27.939] [ModioModNetworker] Error while downloading mod ukr-war-test-still-in-development: System.IO.InvalidDataException: End of Central Directory record could not be found.
+[23:28:13.807] [ModioModNetworker] Downloading mod ukr-war-test-still-in-development
+[23:28:14.274] [ModioModNetworker] Extracting /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/temp.zip to /storage/emulated/0/Android/data/com.StressLevelZero.BONELAB/files/Mods/tempfolder
+[23:28:14.275] [ModioModNetworker] Error while downloading mod ukr-war-test-still-in-development: System.IO.InvalidDataException: End of Central Directory record could not be found.
    at System.IO.Compression.ZipArchive.ReadEndOfCentralDirectory()
    at System.IO.Compression.ZipArchive..ctor(Stream stream, ZipArchiveMode mode, Boolean leaveOpen, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode, Encoding entryNameEncoding)
    at System.IO.Compression.ZipFile.Open(String archiveFileName, ZipArchiveMode mode)
    at System.IO.Compression.ZipFile.OpenRead(String archiveFileName)
    at DownloadAction.<>c.<Handle>b__3_0()
-[23:09:33.071] [BulletCleanup] Tracking probe heartbeat: updates=238, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
-[23:09:43.090] [BulletCleanup] Tracking probe heartbeat: updates=478, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
-[23:09:46.511] [LabUtils] MelonPreferences Saved to /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/MelonPreferences.cfg
-[23:09:46.544] [LabUtils] Preferences Saved!
-[23:09:46.575] [SearchThing] Fusion integration: Successfully applied RegisterSpawnHistory patch
-[23:10:05.504] [BulletCleanup] Tracking probe heartbeat: updates=709, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
-[23:10:18.048] [BulletCleanup] Tracking probe heartbeat: updates=714, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
-[23:10:18.891] [Cinematic_Camera] Recording badge layer added to camera 'Main Camera'.
-[23:10:18.892] [Cinematic_Camera] Recording badge now rides the player's view camera 'Main Camera'.
-[23:10:18.892] [Cinematic_Camera] The operator's view now renders the recording badge layer.
-[23:10:23.932] [BoneLib] Finding player object references
-[23:10:24.140] [BulletCleanup] Level-loaded callback received.
-[23:10:24.182] [Ultimate_Ragdoll] Level loaded: 15 - Void G114
-[23:10:24.183] [Doppel] Bot Player: a player body was spawned (SLZ.BONELAB.Core.Spawnable.RigManagerBlank)
-[23:10:26.748] [Doppel] Moves: now those of ChillNew (0 recorded)
-[23:10:27.030] [Cinematic_Camera] Recording badge now rides the player's view camera 'Headset'.
-[23:10:28.127] [BulletCleanup] Tracking probe heartbeat: updates=1178, ready=True, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
-[23:10:38.130] [BulletCleanup] Tracking probe heartbeat: updates=1991, ready=True, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
-[23:10:48.130] [BulletCleanup] Tracking probe heartbeat: updates=2883, ready=True, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
-[23:10:58.140] [BulletCleanup] Tracking probe heartbeat: updates=3775, ready=True, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
-[23:11:08.140] [BulletCleanup] Tracking probe heartbeat: updates=4666, ready=True, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
-[23:11:13.872] [BulletCleanup] Creating cleanup worker after grab.
-[23:11:13.883] [BulletCleanup] Tracking unfired round type: Rexmeck.WeaponPackLT.Spawnable.Cartridge9x19mm
-[23:11:13.883] [BulletCleanup] Tracking spent casing type: Rexmeck.WeaponPackLT.Spawnable.Cartridge9x19mmCase
-[23:11:13.885] [BulletCleanup] Casing scan begin.
-[23:11:13.909] [BulletCleanup] Casing scan complete: tracked=0, removed=0, scanned=8, ammo types=2, unfired types=1, magazine types=0, passes=1
-[23:11:14.117] [BulletCleanup] Casing scan begin.
-[23:11:14.118] [BulletCleanup] Casing scan complete: tracked=0, removed=0, scanned=16, ammo types=2, unfired types=1, magazine types=0, passes=2
-[23:11:14.396] [BulletCleanup] Casing scan begin.
-[23:11:14.397] [BulletCleanup] Casing scan complete: tracked=0, removed=0, scanned=24, ammo types=2, unfired types=1, magazine types=0, passes=3
-[23:11:18.140] [BulletCleanup] Tracking probe heartbeat: updates=5533, ready=True, worker=True, cleanup=True; tracked=2, removed=0, scanned=189, ammo types=2, unfired types=1, magazine types=0, passes=17
-[23:11:25.307] [Gun_Modifier] Gun Modifier: Any Mag set to True. Magazine compatibility hook status will be reported by GunController.
-[23:11:25.957] [Gun_Modifier] Gun Modifier: Any Mag prefix could not read a platform. plug=Il2CppSLZ.Marrow.Plug; magazine=null; magazineState=null; magazineData=null; plug members=isWrapped, pooledPtr, host, effectiveRadius, marrowEntity, useGUILayout, enabled, isActiveAndEnabled, transform, gameObject, tag, m_CachedPtr, name, hideFlags, ObjectClass, Pointer, WasCollected
-[23:11:25.958] [Gun_Modifier] Gun Modifier: Any Mag postfix could not read a platform. plug=Il2CppSLZ.Marrow.Plug; magazine=null; magazineState=null; magazineData=null; plug members=isWrapped, pooledPtr, host, effectiveRadius, marrowEntity, useGUILayout, enabled, isActiveAndEnabled, transform, gameObject, tag, m_CachedPtr, name, hideFlags, ObjectClass, Pointer, WasCollected
-[23:11:28.149] [BulletCleanup] Tracking probe heartbeat: updates=6397, ready=True, worker=True, cleanup=True; tracked=0, removed=0, scanned=577, ammo types=2, unfired types=1, magazine types=0, passes=56
-[23:11:38.159] [BulletCleanup] Tracking probe heartbeat: updates=7283, ready=True, worker=True, cleanup=True; tracked=0, removed=0, scanned=930, ammo types=2, unfired types=1, magazine types=0, passes=95
-[23:11:38.187] [Gun_Modifier] Gun Modifier: gun layout Il2CppSLZ.Marrow.Gun => isWrapped, pooledPtr, _magState, _hasMagState, isSilenced, roundsPerMinute, muzzleVelocity, fireMode, fireCurve, returnCurve, isSlideReleaseOnCollision, allowFireOnSlideGrabbed, isCharged, isSlideLockedOnEmpty, isLoaded, isMagEjectOnEmpty, muzzleFlareSpawnable, weaponSlot, ammoSocket, animator, host, entity, internalMagazine, defaultMagazine, defaultCartridge, slideVirtualController, chargingHelperHighRes, magazineHelperHighRes, chargingHelperLowRes, magazineHelperLowRes, _chargingHandleHelperRenderer, _magazineHelperRenderer, triggerGrip, otherGrips, gunSFX, proxyOverride, shellSpawnTransform, shellOrientationTransform, firePointTransform, nextCartridgeGameObject, chamberedCaseGameObject, chamberedCatridgeGameObject, _hasChamberedCartArt, _chamberedCartridgeArt, _hasChamberedCaseArt, _chamberedCartridgeCaseArt, _hasNextCartArt, _nextCartridgeArt, onFireDelegate, OnSlideUpdate, OnSlideGrabbed, OnSlideReleased, OnMagazineEjectDelegate, isTriggerPulledOnAttach, isFiring, isTriggerPulled, isTriggerPressed, hasFiredOnce, fireSpeedHash, neutralHash, slidePullHash, slideReturnHash, slideLockedHash, pullAnimationPerc, returnAnimationPerc, pullAnimationSpeed, returnAnimationSpeed, roundsPerSecond, fireDuration, slideLockDuration, chamberedCartridge, _wasInstaLoaded, _isUpdatingArt, _waitForEOF, _ammoInventory, animationState, slideState, hammerState, cartridgeState, cachedVelocity, blinkHighlightCoroutine, overridePerc, isSlideOverride, _isSlideGrabbed, lastCompletedAnimation, leftOverTime, playAnimationStateCoroutine, MagazineState, _poolee, ID, IsDespawned, useGUILayout, enabled, isActiveAndEnabled, transform, gameObject, tag, m_CachedPtr, name, hideFlags
-[23:11:38.191] [Gun_Modifier] Gun Modifier: ammoSocket=Il2CppSLZ.Marrow.AmmoSocket; socket platform=EDER; plug=Il2CppSLZ.Marrow.AmmoPlug; magazine=Il2CppSLZ.Marrow.Magazine; inserted=True; magazineData=Il2CppSLZ.Marrow.Data.MagazineData; mag platform=EDER; mag rounds=17; loaded ammo=16; default platform=EDER; default rounds=17; internal rounds=null
-[23:11:38.239] [Gun_Modifier] Gun Modifier: recoil could not locate a Rigidbody on the gun, its parents, or its children.
-[23:11:48.163] [BulletCleanup] Tracking probe heartbeat: updates=8136, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=1588, ammo types=2, unfired types=1, magazine types=0, passes=134
-[23:11:58.167] [BulletCleanup] Tracking probe heartbeat: updates=8985, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=2251, ammo types=2, unfired types=1, magazine types=0, passes=173
-[23:12:08.167] [BulletCleanup] Tracking probe heartbeat: updates=9859, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=2914, ammo types=2, unfired types=1, magazine types=0, passes=212
-[23:12:18.168] [BulletCleanup] Tracking probe heartbeat: updates=10751, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=3577, ammo types=2, unfired types=1, magazine types=0, passes=251
-[23:12:28.173] [BulletCleanup] Tracking probe heartbeat: updates=11627, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=4240, ammo types=2, unfired types=1, magazine types=0, passes=290
-[23:12:38.178] [BulletCleanup] Tracking probe heartbeat: updates=12493, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=4886, ammo types=2, unfired types=1, magazine types=0, passes=328
-[23:12:48.179] [BulletCleanup] Tracking probe heartbeat: updates=13350, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=5549, ammo types=2, unfired types=1, magazine types=0, passes=367
-[23:12:58.187] [BulletCleanup] Tracking probe heartbeat: updates=14243, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=6212, ammo types=2, unfired types=1, magazine types=0, passes=406
-[23:13:08.189] [BulletCleanup] Tracking probe heartbeat: updates=15136, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=6875, ammo types=2, unfired types=1, magazine types=0, passes=445
-[23:13:18.198] [BulletCleanup] Tracking probe heartbeat: updates=16018, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=7555, ammo types=2, unfired types=1, magazine types=0, passes=485
-[23:13:28.204] [BulletCleanup] Tracking probe heartbeat: updates=16902, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=8218, ammo types=2, unfired types=1, magazine types=0, passes=524
-[23:13:38.204] [BulletCleanup] Tracking probe heartbeat: updates=17798, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=8881, ammo types=2, unfired types=1, magazine types=0, passes=563
-[23:13:48.204] [BulletCleanup] Tracking probe heartbeat: updates=18691, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=9544, ammo types=2, unfired types=1, magazine types=0, passes=602
-[23:13:58.214] [BulletCleanup] Tracking probe heartbeat: updates=19586, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=10207, ammo types=2, unfired types=1, magazine types=0, passes=641
-[23:14:08.216] [BulletCleanup] Tracking probe heartbeat: updates=20479, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=10870, ammo types=2, unfired types=1, magazine types=0, passes=680
-[23:14:18.223] [BulletCleanup] Tracking probe heartbeat: updates=21372, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=11533, ammo types=2, unfired types=1, magazine types=0, passes=719
-[23:14:28.223] [BulletCleanup] Tracking probe heartbeat: updates=22260, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=12196, ammo types=2, unfired types=1, magazine types=0, passes=758
-[23:14:38.224] [BulletCleanup] Tracking probe heartbeat: updates=23155, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=12859, ammo types=2, unfired types=1, magazine types=0, passes=797
-[23:14:48.229] [BulletCleanup] Tracking probe heartbeat: updates=24048, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=13539, ammo types=2, unfired types=1, magazine types=0, passes=837
-[23:14:58.235] [BulletCleanup] Tracking probe heartbeat: updates=24946, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=14202, ammo types=2, unfired types=1, magazine types=0, passes=876
-[23:15:08.235] [BulletCleanup] Tracking probe heartbeat: updates=25838, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=14865, ammo types=2, unfired types=1, magazine types=0, passes=915
-[23:15:18.245] [BulletCleanup] Tracking probe heartbeat: updates=26734, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=15528, ammo types=2, unfired types=1, magazine types=0, passes=954
-[23:15:28.247] [BulletCleanup] Tracking probe heartbeat: updates=27627, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=16191, ammo types=2, unfired types=1, magazine types=0, passes=993
-[23:15:38.248] [BulletCleanup] Tracking probe heartbeat: updates=28517, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=16854, ammo types=2, unfired types=1, magazine types=0, passes=1032
-[23:15:48.256] [BulletCleanup] Tracking probe heartbeat: updates=29416, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=17517, ammo types=2, unfired types=1, magazine types=0, passes=1071
-[23:15:58.257] [BulletCleanup] Tracking probe heartbeat: updates=30310, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=18180, ammo types=2, unfired types=1, magazine types=0, passes=1110
-[23:16:08.258] [BulletCleanup] Tracking probe heartbeat: updates=31203, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=18860, ammo types=2, unfired types=1, magazine types=0, passes=1150
-[23:16:18.268] [BulletCleanup] Tracking probe heartbeat: updates=32098, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=19523, ammo types=2, unfired types=1, magazine types=0, passes=1189
-[23:16:28.279] [BulletCleanup] Tracking probe heartbeat: updates=32993, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=20186, ammo types=2, unfired types=1, magazine types=0, passes=1228
-[23:16:38.279] [BulletCleanup] Tracking probe heartbeat: updates=33880, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=20849, ammo types=2, unfired types=1, magazine types=0, passes=1267
-[23:16:48.290] [BulletCleanup] Tracking probe heartbeat: updates=34765, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=21512, ammo types=2, unfired types=1, magazine types=0, passes=1306
-[23:16:58.293] [BulletCleanup] Tracking probe heartbeat: updates=35648, ready=True, worker=True, cleanup=True; tracked=4, removed=0, scanned=22175, ammo types=2, unfired types=1, magazine types=0, passes=1345
+[23:28:18.940] [BulletCleanup] Tracking probe heartbeat: updates=223, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[23:28:28.973] [BulletCleanup] Tracking probe heartbeat: updates=468, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[23:28:34.066] [LabUtils] MelonPreferences Saved to /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/MelonPreferences.cfg
+[23:28:34.099] [LabUtils] Preferences Saved!
+[23:28:34.129] [SearchThing] Fusion integration: Successfully applied RegisterSpawnHistory patch
+[23:28:51.926] [BulletCleanup] Tracking probe heartbeat: updates=618, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[23:29:03.886] [BulletCleanup] Tracking probe heartbeat: updates=623, ready=False, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[23:29:04.758] [Cinematic_Camera] Recording badge layer added to camera 'Main Camera'.
+[23:29:04.759] [Cinematic_Camera] Recording badge now rides the player's view camera 'Main Camera'.
+[23:29:04.759] [Cinematic_Camera] The operator's view now renders the recording badge layer.
+[23:29:10.173] [BoneLib] Finding player object references
+[23:29:10.386] [BulletCleanup] Level-loaded callback received.
+[23:29:10.435] [Ultimate_Ragdoll] Level loaded: 15 - Void G114
+[23:29:10.436] [Doppel] Bot Player: a player body was spawned (SLZ.BONELAB.Core.Spawnable.RigManagerBlank)
+[23:29:13.484] [Doppel] Moves: now those of ChillNew (0 recorded)
+[23:29:13.697] [Cinematic_Camera] Recording badge now rides the player's view camera 'Headset'.
+[23:29:13.920] [BulletCleanup] Tracking probe heartbeat: updates=1056, ready=True, worker=False, cleanup=True; waiting for gunfire or a grabbed gun/magazine
+[23:29:15.916] [BulletCleanup] Creating cleanup worker after grab.
+[23:29:15.926] [BulletCleanup] Tracking unfired round type: Rexmeck.WeaponPackLT.Spawnable.Cartridge9x19mm
+[23:29:15.926] [BulletCleanup] Tracking spent casing type: Rexmeck.WeaponPackLT.Spawnable.Cartridge9x19mmCase
+[23:29:15.928] [BulletCleanup] Casing scan begin.
+[23:29:15.951] [BulletCleanup] Casing scan complete: tracked=0, removed=0, scanned=8, ammo types=2, unfired types=1, magazine types=0, passes=1
+[23:29:16.181] [BulletCleanup] Casing scan begin.
+[23:29:16.182] [BulletCleanup] Casing scan complete: tracked=0, removed=0, scanned=16, ammo types=2, unfired types=1, magazine types=0, passes=2
+[23:29:16.448] [BulletCleanup] Casing scan begin.
+[23:29:16.449] [BulletCleanup] Casing scan complete: tracked=0, removed=0, scanned=24, ammo types=2, unfired types=1, magazine types=0, passes=3
+[23:29:23.922] [BulletCleanup] Tracking probe heartbeat: updates=1850, ready=True, worker=True, cleanup=True; tracked=0, removed=0, scanned=256, ammo types=2, unfired types=1, magazine types=0, passes=32
+[23:29:24.547] [Gun_Modifier] Gun Modifier: Any Mag set to True. Magazine compatibility hook status will be reported by GunController.
+[23:29:26.471] [Gun_Modifier] Gun Modifier: Any Mag matched socket and gun magazine platform to incoming magazine platform 'EDER'.
+[23:29:26.479] [Gun_Modifier] Gun Modifier: Any Mag deferred waiting for attached magazine data. plug=null; magazine=null; magazineState=null; magazineData=null; plug members=null
+[23:29:28.268] [Gun_Modifier] Gun Modifier: gun layout Il2CppSLZ.Marrow.Gun => isWrapped, pooledPtr, _magState, _hasMagState, isSilenced, roundsPerMinute, muzzleVelocity, fireMode, fireCurve, returnCurve, isSlideReleaseOnCollision, allowFireOnSlideGrabbed, isCharged, isSlideLockedOnEmpty, isLoaded, isMagEjectOnEmpty, muzzleFlareSpawnable, weaponSlot, ammoSocket, animator, host, entity, internalMagazine, defaultMagazine, defaultCartridge, slideVirtualController, chargingHelperHighRes, magazineHelperHighRes, chargingHelperLowRes, magazineHelperLowRes, _chargingHandleHelperRenderer, _magazineHelperRenderer, triggerGrip, otherGrips, gunSFX, proxyOverride, shellSpawnTransform, shellOrientationTransform, firePointTransform, nextCartridgeGameObject, chamberedCaseGameObject, chamberedCatridgeGameObject, _hasChamberedCartArt, _chamberedCartridgeArt, _hasChamberedCaseArt, _chamberedCartridgeCaseArt, _hasNextCartArt, _nextCartridgeArt, onFireDelegate, OnSlideUpdate, OnSlideGrabbed, OnSlideReleased, OnMagazineEjectDelegate, isTriggerPulledOnAttach, isFiring, isTriggerPulled, isTriggerPressed, hasFiredOnce, fireSpeedHash, neutralHash, slidePullHash, slideReturnHash, slideLockedHash, pullAnimationPerc, returnAnimationPerc, pullAnimationSpeed, returnAnimationSpeed, roundsPerSecond, fireDuration, slideLockDuration, chamberedCartridge, _wasInstaLoaded, _isUpdatingArt, _waitForEOF, _ammoInventory, animationState, slideState, hammerState, cartridgeState, cachedVelocity, blinkHighlightCoroutine, overridePerc, isSlideOverride, _isSlideGrabbed, lastCompletedAnimation, leftOverTime, playAnimationStateCoroutine, MagazineState, _poolee, ID, IsDespawned, useGUILayout, enabled, isActiveAndEnabled, transform, gameObject, tag, m_CachedPtr, name, hideFlags
+[23:29:28.272] [Gun_Modifier] Gun Modifier: ammoSocket=Il2CppSLZ.Marrow.AmmoSocket; socket platform=MP5; plug=Il2CppSLZ.Marrow.AmmoPlug; magazine=Il2CppSLZ.Marrow.Magazine; inserted=True; magazineData=Il2CppSLZ.Marrow.Data.MagazineData; mag platform=EDER; mag rounds=17; loaded ammo=16; default platform=MP5; default rounds=30; internal rounds=null
+[23:29:30.268] [Gun_Modifier] Gun Modifier: Any Mag matched socket and gun magazine platform to incoming magazine platform 'MP5'.
+[23:29:33.692] [BulletCleanup] Despawning loose item ID=159
+[23:29:33.693] [BulletCleanup] Despawning loose item ID=166
+[23:29:33.693] [BulletCleanup] Despawning loose item ID=175
+[23:29:33.694] [BulletCleanup] Despawning loose item ID=185
+[23:29:33.923] [BulletCleanup] Tracking probe heartbeat: updates=2712, ready=True, worker=True, cleanup=True; tracked=12, removed=4, scanned=1036, ammo types=2, unfired types=1, magazine types=0, passes=70
+[23:29:33.947] [BulletCleanup] Despawning loose item ID=192
+[23:29:33.947] [BulletCleanup] Despawning loose item ID=202
+[23:29:33.948] [BulletCleanup] Despawning loose item ID=215
+[23:29:34.203] [BulletCleanup] Despawning loose item ID=225
+[23:29:43.933] [BulletCleanup] Tracking probe heartbeat: updates=3559, ready=True, worker=True, cleanup=True; tracked=5, removed=22, scanned=1872, ammo types=2, unfired types=1, magazine types=0, passes=109
+[23:29:45.114] [Gun_Modifier] Gun Modifier: recoil found a Rigidbody on the gun hierarchy.
+[23:29:53.946] [BulletCleanup] Tracking probe heartbeat: updates=4417, ready=True, worker=True, cleanup=True; tracked=6, removed=39, scanned=2862, ammo types=2, unfired types=1, magazine types=0, passes=149
+[23:30:03.953] [BulletCleanup] Tracking probe heartbeat: updates=5288, ready=True, worker=True, cleanup=True; tracked=0, removed=61, scanned=3936, ammo types=2, unfired types=1, magazine types=0, passes=188
+[23:30:13.953] [BulletCleanup] Tracking probe heartbeat: updates=6128, ready=True, worker=True, cleanup=True; tracked=0, removed=61, scanned=4294, ammo types=2, unfired types=1, magazine types=0, passes=226
+[23:30:18.722] [BulletCleanup] Tracking unfired round type: Mercury.SourceAesthetics.Spawnable.Cartridge12GSABuckshot
+[23:30:18.722] [BulletCleanup] Tracking spent casing type: Mercury.SourceAesthetics.Spawnable.Cartridge12GSABuckshotCase
+[23:30:19.078] [Gun_Modifier] Gun Modifier: Any Mag matched socket and gun magazine platform to incoming magazine platform '12/70'.
+[23:30:22.302] [Gun_Modifier] Gun Modifier: default-magazine capacity set to 82 rounds.
+[23:30:22.303] [Gun_Modifier] Gun Modifier: loaded-magazine capacity set to 3 rounds.
+[23:30:22.305] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:22.374] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:22.448] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:22.518] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:22.584] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:22.643] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:22.709] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:22.786] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:22.849] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:22.918] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:23.953] [BulletCleanup] Tracking probe heartbeat: updates=6976, ready=True, worker=True, cleanup=True; tracked=10, removed=61, scanned=4983, ammo types=4, unfired types=2, magazine types=0, passes=265
+[23:30:24.746] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:24.820] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:24.894] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:24.974] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:25.035] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:25.108] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:25.174] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:25.255] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:25.316] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:25.376] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:25.458] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:25.534] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:25.600] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:25.669] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:25.734] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:25.809] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:25.874] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:25.941] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:26.007] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:26.101] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:26.163] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:26.224] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:26.291] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:27.213] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:27.297] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:27.372] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:27.444] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:27.512] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:27.569] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:27.636] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:27.741] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:27.799] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:27.862] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:27.944] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:28.012] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:28.078] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:28.144] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:28.208] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:28.299] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:28.365] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:28.430] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:28.511] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:28.593] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:28.664] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:28.743] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:28.809] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:28.889] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:28.954] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:29.020] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:29.109] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:29.174] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:29.242] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:29.329] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:29.399] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:29.463] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:29.535] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:30.175] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:30.253] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:30.342] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:30.412] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:30.474] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:30.535] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:30.652] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:30.713] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:30.774] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:30.836] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:30.917] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:30.989] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:31.051] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:31.121] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:31.185] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:31.275] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:31.336] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:33.963] [BulletCleanup] Tracking probe heartbeat: updates=7714, ready=True, worker=True, cleanup=True; tracked=10, removed=61, scanned=6231, ammo types=4, unfired types=2, magazine types=0, passes=304
+[23:30:43.963] [BulletCleanup] Tracking probe heartbeat: updates=8570, ready=True, worker=True, cleanup=True; tracked=2, removed=72, scanned=7236, ammo types=4, unfired types=2, magazine types=0, passes=343
+[23:30:46.693] [BulletCleanup] Tracking unfired round type: Rexmeck.WeaponPackLT.Spawnable.Cartridge12Gauge
+[23:30:46.693] [BulletCleanup] Tracking spent casing type: Rexmeck.WeaponPackLT.Spawnable.Cartridge12GaugeCase
+[23:30:48.627] [Gun_Modifier] Gun Modifier: Any Mag matched socket and gun magazine platform to incoming magazine platform 'SHOTGUN SHELL'.
+[23:30:50.445] [Gun_Modifier] Gun Modifier: default-magazine capacity set to 3 rounds.
+[23:30:50.445] [Gun_Modifier] Gun Modifier: internal-magazine capacity set to 14 rounds.
+[23:30:50.446] [Gun_Modifier] Gun Modifier: loaded-magazine capacity set to 3 rounds.
+[23:30:50.446] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:50.825] [LabUtils] MelonPreferences Saved to /storage/emulated/0/MelonLoader/com.StressLevelZero.BONELAB/UserData/MelonPreferences.cfg
+[23:30:50.836] [LabUtils] Preferences Saved!
+[23:30:53.974] [BulletCleanup] Tracking probe heartbeat: updates=9434, ready=True, worker=True, cleanup=True; tracked=5, removed=74, scanned=8040, ammo types=6, unfired types=3, magazine types=0, passes=382
+[23:30:58.701] [Gun_Modifier] Gun Modifier: default-magazine capacity set to 47 rounds.
+[23:30:58.703] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:58.896] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:59.634] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:30:59.852] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:00.024] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:00.601] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:00.953] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:01.118] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:01.321] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:01.496] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:01.664] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:01.826] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:01.984] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:02.123] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:02.296] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:02.452] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:02.622] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:02.797] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:02.953] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:03.085] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:03.235] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:03.406] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:03.564] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:03.704] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:03.874] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:03.975] [BulletCleanup] Tracking probe heartbeat: updates=10252, ready=True, worker=True, cleanup=True; tracked=16, removed=77, scanned=9145, ammo types=6, unfired types=3, magazine types=0, passes=421
+[23:31:04.008] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:04.193] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:04.341] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:04.488] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:04.652] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:04.816] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:04.964] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:05.129] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:05.297] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:05.474] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:05.619] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:05.800] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:05.980] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:06.119] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:06.286] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:06.451] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:06.630] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:06.779] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:06.954] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:07.096] [Gun_Modifier] Gun Modifier: adjusted loaded magazine capacity to 3 rounds.
+[23:31:13.981] [BulletCleanup] Tracking probe heartbeat: updates=11062, ready=True, worker=True, cleanup=True; tracked=16, removed=77, scanned=10666, ammo types=6, unfired types=3, magazine types=0, passes=460
+[23:31:23.992] [BulletCleanup] Tracking probe heartbeat: updates=11900, ready=True, worker=True, cleanup=True; tracked=16, removed=77, scanned=12187, ammo types=6, unfired types=3, magazine types=0, passes=499
