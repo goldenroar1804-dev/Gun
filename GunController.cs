@@ -33,6 +33,12 @@ namespace GunModifier
             public float[] AngularVelocity;
         }
 
+        private sealed class PendingAnyMagRetry
+        {
+            public object Socket;
+            public int Attempts;
+        }
+
         private static bool _initialized;
         private static bool _damageHookInstalled;
         private static bool _anyMagHooksInstalled;
@@ -44,6 +50,7 @@ namespace GunModifier
         private static readonly Dictionary<string, int> AppliedMagazineCapacity = new Dictionary<string, int>();
         private static readonly Dictionary<int, PlatformSnapshot> PlatformSnapshots = new Dictionary<int, PlatformSnapshot>();
         private static readonly Dictionary<int, RecoilSnapshot> RecoilSnapshots = new Dictionary<int, RecoilSnapshot>();
+        private static readonly Dictionary<int, PendingAnyMagRetry> PendingAnyMagRetries = new Dictionary<int, PendingAnyMagRetry>();
         private static readonly HashSet<string> LoggedMembers = new HashSet<string>();
         private static bool _infiniteAmmoLogWritten;
 
@@ -232,27 +239,76 @@ namespace GunModifier
 
         private static object FindGunRigidbody(object gun, object socket, Type rigidbodyType)
         {
+            // Unity's generic GetComponentInParent<T>() is the supported path used
+            // by other BONELAB mods. The non-generic overload does not expose
+            // System.Type correctly through this IL2CPP runtime.
             object[] candidates =
             {
-                socket,
-                GetMemberValue(socket, "gameObject"),
-                GetMemberValue(socket, "transform"),
                 gun,
                 GetMemberValue(gun, "gameObject"),
                 GetMemberValue(gun, "transform"),
                 GetMemberValue(gun, "host"),
                 GetMemberValue(GetMemberValue(gun, "host"), "gameObject"),
                 GetMemberValue(gun, "entity"),
-                GetMemberValue(GetMemberValue(gun, "entity"), "gameObject")
+                GetMemberValue(GetMemberValue(gun, "entity"), "gameObject"),
+                socket,
+                GetMemberValue(socket, "gameObject"),
+                GetMemberValue(socket, "transform")
             };
 
             foreach (object candidate in candidates)
             {
                 if (candidate == null) continue;
-                object body = InvokeComponentLookup(candidate, "GetComponent", rigidbodyType);
+                object body = InvokeGenericComponentLookup(candidate, "GetComponentInParent", rigidbodyType);
+                if (body == null) body = InvokeGenericComponentLookup(candidate, "GetComponent", rigidbodyType);
+                if (body == null) body = InvokeGenericComponentLookup(candidate, "GetComponentInChildren", rigidbodyType);
                 if (body == null) body = InvokeComponentLookup(candidate, "GetComponentInParent", rigidbodyType);
-                if (body == null) body = InvokeComponentLookup(candidate, "GetComponentInChildren", rigidbodyType);
                 if (body != null) return body;
+            }
+            return null;
+        }
+
+        private static object InvokeGenericComponentLookup(object target, string methodName, Type componentType)
+        {
+            if (target == null || componentType == null) return null;
+            try
+            {
+                MethodInfo method = target.GetType().GetMethods(InstanceFlags)
+                    .FirstOrDefault(m => m.Name == methodName && m.IsGenericMethodDefinition &&
+                        m.GetGenericArguments().Length == 1 && m.GetParameters().Length == 0);
+                return method == null ? null :
+                    method.MakeGenericMethod(componentType).Invoke(target, null);
+            }
+            catch { return null; }
+        }
+
+        private static object FindAmmoPlug(object plug)
+        {
+            if (plug == null) return null;
+            if (plug.GetType().FullName == "Il2CppSLZ.Marrow.AmmoPlug")
+                return plug;
+
+            Type ammoPlugType = AppDomain.CurrentDomain.GetAssemblies()
+                .Select(a => a.GetType("Il2CppSLZ.Marrow.AmmoPlug"))
+                .FirstOrDefault(t => t != null);
+            if (ammoPlugType == null) return null;
+
+            object host = GetMemberValue(plug, "host");
+            object[] candidates =
+            {
+                plug,
+                GetMemberValue(plug, "gameObject"),
+                GetMemberValue(plug, "transform"),
+                host,
+                GetMemberValue(host, "gameObject")
+            };
+            foreach (object candidate in candidates)
+            {
+                if (candidate == null) continue;
+                object result = InvokeGenericComponentLookup(candidate, "GetComponent", ammoPlugType);
+                if (result == null) result = InvokeGenericComponentLookup(candidate, "GetComponentInParent", ammoPlugType);
+                if (result == null) result = InvokeGenericComponentLookup(candidate, "GetComponentInChildren", ammoPlugType);
+                if (result != null) return result;
             }
             return null;
         }
@@ -363,33 +419,67 @@ namespace GunModifier
         private static void AnyMagPrefix(object __instance, object[] __args)
         {
             object plug = __args != null && __args.Length > 0 ? __args[0] : null;
+            QueueAnyMagRetry(__instance);
             TryApplyAnyMag(__instance, plug, "prefix");
         }
 
         private static void AnyMagPostfix(object __instance, object[] __args)
         {
             object plug = __args != null && __args.Length > 0 ? __args[0] : null;
+            QueueAnyMagRetry(__instance);
             TryApplyAnyMag(__instance, plug, "postfix");
         }
 
-        private static void TryApplyAnyMag(object socket, object incomingPlug, string phase)
+        private static void QueueAnyMagRetry(object socket)
         {
-            if (socket == null) return;
+            if (socket == null || !GunSettings.AnyMag) return;
+            int id = GetInstanceId(socket, socket.GetType());
+            if (!PendingAnyMagRetries.ContainsKey(id))
+                PendingAnyMagRetries[id] = new PendingAnyMagRetry { Socket = socket };
+        }
 
+        public static void Update()
+        {
+            if (PendingAnyMagRetries.Count == 0) return;
+            foreach (KeyValuePair<int, PendingAnyMagRetry> entry in PendingAnyMagRetries.ToArray())
+            {
+                PendingAnyMagRetry pending = entry.Value;
+                if (pending == null || pending.Socket == null || ++pending.Attempts > 180)
+                {
+                    PendingAnyMagRetries.Remove(entry.Key);
+                    continue;
+                }
+                if (!GunSettings.AnyMag)
+                {
+                    RestoreAnyMagPlatforms(entry.Key);
+                    PendingAnyMagRetries.Remove(entry.Key);
+                    continue;
+                }
+                // Retry on the main thread after AmmoSocket has assigned its
+                // internal AmmoPlug and the Magazine component is available.
+                if (TryApplyAnyMag(pending.Socket, null, "deferred"))
+                    PendingAnyMagRetries.Remove(entry.Key);
+            }
+        }
+
+        private static bool TryApplyAnyMag(object socket, object incomingPlug, string phase)
+        {
+            if (socket == null) return false;
             int socketId = GetInstanceId(socket, socket.GetType());
             if (!GunSettings.AnyMag)
             {
                 RestoreAnyMagPlatforms(socketId);
-                return;
+                return false;
             }
 
             try
             {
-                // OnPlugEnter's argument may not yet contain its Magazine. After
-                // the socket assigns _magazinePlug, that object is the reliable path.
-                object plug = incomingPlug ??
-                    GetMemberValue(socket, "_magazinePlug") ??
-                    GetMemberValue(socket, "magazinePlug");
+                // Prefer AmmoSocket's attached plug. The OnPlugEnter argument is
+                // often only the base Plug class and has no Magazine member.
+                object plug = GetMemberValue(socket, "_magazinePlug") ??
+                    GetMemberValue(socket, "magazinePlug") ?? incomingPlug;
+                object resolvedAmmoPlug = FindAmmoPlug(plug);
+                if (resolvedAmmoPlug != null) plug = resolvedAmmoPlug;
 
                 object magazine = GetMemberValue(plug, "magazine") ??
                     GetMemberValue(plug, "_magazine");
@@ -400,8 +490,7 @@ namespace GunModifier
                     GetMemberValue(plug, "magazineData") ??
                     GetMemberValue(plug, "data");
 
-                string incomingPlatform =
-                    SafeString(GetMemberValue(magazineData, "platform"));
+                string incomingPlatform = SafeString(GetMemberValue(magazineData, "platform"));
                 if (incomingPlatform == "null" || string.IsNullOrEmpty(incomingPlatform))
                     incomingPlatform = SafeString(GetMemberValue(magazine, "platform"));
                 if (incomingPlatform == "null" || string.IsNullOrEmpty(incomingPlatform))
@@ -410,12 +499,12 @@ namespace GunModifier
                 if (incomingPlatform == "null" || string.IsNullOrEmpty(incomingPlatform))
                 {
                     LogOnce("anymag-no-platform-" + phase,
-                        "Gun Modifier: Any Mag " + phase + " could not read a platform. plug=" +
+                        "Gun Modifier: Any Mag " + phase + " waiting for attached magazine data. plug=" +
                         DescribeObject(plug) + "; magazine=" + DescribeObject(magazine) +
                         "; magazineState=" + DescribeObject(magazineState) +
                         "; magazineData=" + DescribeObject(magazineData) +
                         "; plug members=" + DescribeMembers(plug));
-                    return;
+                    return false;
                 }
 
                 object gun = GetMemberValue(socket, "gun");
@@ -423,7 +512,7 @@ namespace GunModifier
                 if (gun == null || defaultMagazine == null)
                 {
                     LogOnce("anymag-no-gun-default", "Gun Modifier: Any Mag could not find the gun's default magazine data.");
-                    return;
+                    return false;
                 }
 
                 int plugId = GetInstanceId(plug ?? magazine, (plug ?? magazine).GetType());
@@ -441,12 +530,10 @@ namespace GunModifier
                         DefaultMagazine = defaultMagazine,
                         DefaultPlatformMember = FindMember(defaultMagazine.GetType(), "platform")
                     };
-
                     if (snapshot.SocketPlatformMember != null)
                         snapshot.SocketPlatformValue = ReadMember(socket, snapshot.SocketPlatformMember);
                     if (snapshot.DefaultPlatformMember != null)
                         snapshot.DefaultPlatformValue = ReadMember(defaultMagazine, snapshot.DefaultPlatformMember);
-
                     PlatformSnapshots[socketId] = snapshot;
                 }
 
@@ -458,10 +545,12 @@ namespace GunModifier
                 LogOnce("anymag-platform:" + incomingPlatform,
                     "Gun Modifier: Any Mag matched socket and gun magazine platform to incoming magazine platform '" +
                     incomingPlatform + "'.");
+                return true;
             }
             catch (Exception ex)
             {
                 LogOnce("anymag-prefix-error", "Gun Modifier: Any Mag compatibility match failed: " + ex.Message);
+                return false;
             }
         }
 
@@ -473,6 +562,7 @@ namespace GunModifier
             try
             {
                 int socketId = GetInstanceId(__instance, __instance.GetType());
+                PendingAnyMagRetries.Remove(socketId);
                 RestoreAnyMagPlatforms(socketId);
             }
             catch (Exception ex)
