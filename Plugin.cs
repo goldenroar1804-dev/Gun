@@ -1,71 +1,142 @@
-using MelonLoader;
-using BoneLib.BoneMenu;
-using UnityEngine;
+            if (boneLib == null)
+                boneLib = Assembly.Load("BoneLib");
 
-[assembly: MelonInfo(
-    typeof(GunModifier.Plugin),
-    "Gun Modifier",
-    "1.0.0",
-    "GunModifier")]
+            // Find BoneMenu's Page class.
+            Type pageType = boneLib.GetType("BoneLib.BoneMenu.Page");
 
-[assembly: MelonGame("Stress Level Zero", "BONELAB")]
+            if (pageType == null)
+                throw new Exception("Could not find BoneMenu Page.");
 
-namespace GunModifier
-{
-    public class Plugin : MelonMod
-    {
-        public override void OnInitializeMelon()
-        {
-            MelonLogger.Msg("Gun Modifier loaded!");
+            // Find Unity's Color type at runtime.
+            Assembly unityAssembly = AppDomain.CurrentDomain
+                .GetAssemblies()
+                .FirstOrDefault(a => a.GetName().Name == "UnityEngine.CoreModule");
 
-            Page page = Page.Root.CreatePage(
-                "Gun Modifier",
-                Color.white
+            if (unityAssembly == null)
+                unityAssembly = Assembly.Load("UnityEngine.CoreModule");
+
+            Type colorType = unityAssembly.GetType("UnityEngine.Color");
+
+            if (colorType == null)
+                throw new Exception("Could not find UnityEngine.Color.");
+
+            // Create white.
+            object white = Activator.CreateInstance(colorType);
+
+            colorType.GetField("r").SetValue(white, 1f);
+            colorType.GetField("g").SetValue(white, 1f);
+            colorType.GetField("b").SetValue(white, 1f);
+            colorType.GetField("a").SetValue(white, 1f);
+
+            // Get the BoneMenu root page.
+            PropertyInfo rootProperty = pageType.GetProperty(
+                "Root",
+                BindingFlags.Public | BindingFlags.Static
             );
 
-            page.CreateInt(
-                "Damage (%)",
-                Color.white,
-                100, 10, 0, 500,
-                value => GunSettings.DamageMultiplier = value / 100f
+            object root = rootProperty.GetValue(null);
+
+            // Create Gun Modifier page.
+            MethodInfo createPage = pageType.GetMethod(
+                "CreatePage",
+                new Type[] { typeof(string), colorType }
             );
 
-            page.CreateInt(
-                "Fire Rate (%)",
-                Color.white,
-                100, 10, 10, 300,
-                value => GunSettings.FireRateMultiplier = value / 100f
+            object page = createPage.Invoke(
+                root,
+                new object[] { "Gun Modifier", white }
             );
 
-            page.CreateInt(
-                "Recoil (%)",
-                Color.white,
-                100, 10, 0, 300,
-                value => GunSettings.RecoilMultiplier = value / 100f
+            // Add damage slider.
+            MethodInfo createInt = pageType.GetMethod(
+                "CreateInt",
+                new Type[]
+                {
+                    typeof(string),
+                    colorType,
+                    typeof(int),
+                    typeof(int),
+                    typeof(int),
+                    typeof(int),
+                    typeof(Action<int>)
+                }
             );
 
-            page.CreateInt(
-                "Magazine (%)",
-                Color.white,
-                100, 25, 100, 500,
-                value => GunSettings.MagazineMultiplier = value / 100f
+            createInt.Invoke(page, new object[]
+            {
+                "Damage (%)", white, 100, 10, 0, 500,
+                new Action<int>(SetDamage)
+            });
+
+            // Add fire-rate slider.
+            createInt.Invoke(page, new object[]
+            {
+                "Fire Rate (%)", white, 100, 10, 10, 300,
+                new Action<int>(SetFireRate)
+            });
+
+            // Add recoil slider.
+            createInt.Invoke(page, new object[]
+            {
+                "Recoil (%)", white, 100, 10, 0, 300,
+                new Action<int>(SetRecoil)
+            });
+
+            // Add magazine slider.
+            createInt.Invoke(page, new object[]
+            {
+                "Magazine (%)", white, 100, 25, 100, 500,
+                new Action<int>(SetMagazine)
+            });
+
+            // Add infinite-ammo toggle.
+            MethodInfo createBool = pageType.GetMethod(
+                "CreateBool",
+                new Type[]
+                {
+                    typeof(string),
+                    colorType,
+                    typeof(bool),
+                    typeof(Action<bool>)
+                }
             );
 
-            page.CreateBool(
-                "Infinite Ammo",
-                Color.white,
-                false,
-                value => GunSettings.InfiniteAmmo = value
-            );
-
-            page.CreateBool(
-                "Extended Magazine",
-                Color.white,
-                false,
-                value => GunSettings.ExtendedMagazine = value
-            );
+            createBool.Invoke(page, new object[]
+            {
+                "Infinite Ammo", white, false,
+                new Action<bool>(SetInfiniteAmmo)
+            });
 
             MelonLogger.Msg("Gun Modifier menu created!");
         }
+        catch (Exception ex)
+        {
+            MelonLogger.Error("Gun Modifier menu failed: " + ex);
+        }
+    }
+
+    private static void SetDamage(int value)
+    {
+        GunSettings.DamageMultiplier = value / 100f;
+    }
+
+    private static void SetFireRate(int value)
+    {
+        GunSettings.FireRateMultiplier = value / 100f;
+    }
+
+    private static void SetRecoil(int value)
+    {
+        GunSettings.RecoilMultiplier = value / 100f;
+    }
+
+    private static void SetMagazine(int value)
+    {
+        GunSettings.MagazineMultiplier = value / 100f;
+    }
+
+    private static void SetInfiniteAmmo(bool value)
+    {
+        GunSettings.InfiniteAmmo = value;
     }
 }
