@@ -22,6 +22,15 @@ namespace GunModifier
             public object DefaultPlatformValue;
         }
 
+        private sealed class RecoilSnapshot
+        {
+            public object Rigidbody;
+            public MemberInfo VelocityMember;
+            public MemberInfo AngularVelocityMember;
+            public float[] Velocity;
+            public float[] AngularVelocity;
+        }
+
         private static bool _initialized;
         private static bool _damageHookInstalled;
         private static bool _anyMagHooksInstalled;
@@ -32,6 +41,7 @@ namespace GunModifier
         private static readonly Dictionary<string, float> OriginalValues = new Dictionary<string, float>();
         private static readonly Dictionary<string, int> AppliedMagazineCapacity = new Dictionary<string, int>();
         private static readonly Dictionary<int, Stack<PlatformSnapshot>> PlatformSnapshots = new Dictionary<int, Stack<PlatformSnapshot>>();
+        private static readonly Dictionary<int, RecoilSnapshot> RecoilSnapshots = new Dictionary<int, RecoilSnapshot>();
         private static readonly HashSet<string> LoggedMembers = new HashSet<string>();
         private static bool _infiniteAmmoLogWritten;
 
@@ -71,6 +81,7 @@ namespace GunModifier
 
                 InstallDamageHook(hookingType);
                 InstallAnyMagHooks();
+                InstallRecoilHooks();
 
                 _initialized = true;
                 MelonLogger.Msg("Gun Modifier: fire-rate hook installed.");
@@ -109,6 +120,153 @@ namespace GunModifier
             {
                 MelonLogger.Warning("Gun Modifier: damage hook unavailable: " + ex.Message);
             }
+        }
+
+        private static void InstallRecoilHooks()
+        {
+            try
+            {
+                Type gunType = AppDomain.CurrentDomain.GetAssemblies()
+                    .Select(a => a.GetType("Il2CppSLZ.Marrow.Gun"))
+                    .FirstOrDefault(t => t != null);
+                if (gunType == null)
+                {
+                    MelonLogger.Warning("Gun Modifier: Gun type not found; recoil hook unavailable.");
+                    return;
+                }
+
+                MethodInfo target = gunType.GetMethods(InstanceFlags).FirstOrDefault(m => m.Name == "OnFire");
+                MethodInfo prefix = typeof(GunController).GetMethod(nameof(RecoilPrefix), StaticFlags);
+                MethodInfo postfix = typeof(GunController).GetMethod(nameof(RecoilPostfix), StaticFlags);
+                if (target == null || prefix == null || postfix == null)
+                    throw new Exception("Gun.OnFire or recoil callbacks were not found.");
+
+                _createHookMethod.Invoke(null, new object[] { target, prefix, true });
+                _createHookMethod.Invoke(null, new object[] { target, postfix, false });
+                MelonLogger.Msg("Gun Modifier: physical recoil hooks installed on Gun.OnFire.");
+            }
+            catch (Exception ex)
+            {
+                MelonLogger.Warning("Gun Modifier: recoil hook unavailable: " + ex.Message);
+            }
+        }
+
+        private static void RecoilPrefix(object __instance)
+        {
+            if (__instance == null || Math.Abs(GunSettings.RecoilMultiplier - 1f) < 0.001f)
+                return;
+
+            try
+            {
+                object grip = GetMemberValue(__instance, "triggerGrip");
+                Type rigidbodyType = AppDomain.CurrentDomain.GetAssemblies()
+                    .Select(a => a.GetType("UnityEngine.Rigidbody"))
+                    .FirstOrDefault(t => t != null);
+                if (rigidbodyType == null)
+                    return;
+
+                object body = GetComponentInParentByType(grip ?? __instance, rigidbodyType);
+                if (body == null)
+                {
+                    LogOnce("recoil-no-rigidbody", "Gun Modifier: recoil hook found no gun Rigidbody.");
+                    return;
+                }
+
+                MemberInfo velocity = FindMember(body.GetType(), "velocity");
+                MemberInfo angularVelocity = FindMember(body.GetType(), "angularVelocity");
+                if (velocity == null || angularVelocity == null)
+                    return;
+
+                int id = GetInstanceId(__instance, __instance.GetType());
+                RecoilSnapshots[id] = new RecoilSnapshot
+                {
+                    Rigidbody = body,
+                    VelocityMember = velocity,
+                    AngularVelocityMember = angularVelocity,
+                    Velocity = ReadVector(ReadMember(body, velocity)),
+                    AngularVelocity = ReadVector(ReadMember(body, angularVelocity))
+                };
+            }
+            catch (Exception ex)
+            {
+                LogOnce("recoil-prefix-error", "Gun Modifier: recoil capture failed: " + ex.Message);
+            }
+        }
+
+        private static void RecoilPostfix(object __instance)
+        {
+            if (__instance == null)
+                return;
+
+            try
+            {
+                int id = GetInstanceId(__instance, __instance.GetType());
+                if (!RecoilSnapshots.TryGetValue(id, out RecoilSnapshot before))
+                    return;
+                RecoilSnapshots.Remove(id);
+
+                float multiplier = GunSettings.RecoilMultiplier;
+                if (Math.Abs(multiplier - 1f) < 0.001f || before.Rigidbody == null)
+                    return;
+
+                float[] velocityAfter = ReadVector(ReadMember(before.Rigidbody, before.VelocityMember));
+                float[] angularAfter = ReadVector(ReadMember(before.Rigidbody, before.AngularVelocityMember));
+                float[] velocityTarget = ScaleDelta(before.Velocity, velocityAfter, multiplier);
+                float[] angularTarget = ScaleDelta(before.AngularVelocity, angularAfter, multiplier);
+
+                WriteMemberValue(before.Rigidbody, before.VelocityMember, CreateVector(before.VelocityMember, velocityTarget));
+                WriteMemberValue(before.Rigidbody, before.AngularVelocityMember, CreateVector(before.AngularVelocityMember, angularTarget));
+            }
+            catch (Exception ex)
+            {
+                LogOnce("recoil-postfix-error", "Gun Modifier: recoil adjustment failed: " + ex.Message);
+            }
+        }
+
+        private static object GetComponentInParentByType(object target, Type componentType)
+        {
+            if (target == null) return null;
+            MethodInfo method = target.GetType().GetMethods(InstanceFlags)
+                .FirstOrDefault(m => m.Name == "GetComponentInParent" &&
+                    m.GetParameters().Length == 1 && m.GetParameters()[0].ParameterType == typeof(Type));
+            return method == null ? null : method.Invoke(target, new object[] { componentType });
+        }
+
+        private static float[] ReadVector(object vector)
+        {
+            if (vector == null) return new[] { 0f, 0f, 0f };
+            return new[]
+            {
+                Convert.ToSingle(GetMemberValue(vector, "x")),
+                Convert.ToSingle(GetMemberValue(vector, "y")),
+                Convert.ToSingle(GetMemberValue(vector, "z"))
+            };
+        }
+
+        private static float[] ScaleDelta(float[] before, float[] after, float multiplier)
+        {
+            return new[]
+            {
+                before[0] + (after[0] - before[0]) * multiplier,
+                before[1] + (after[1] - before[1]) * multiplier,
+                before[2] + (after[2] - before[2]) * multiplier
+            };
+        }
+
+        private static object CreateVector(MemberInfo vectorMember, float[] values)
+        {
+            Type vectorType = vectorMember is FieldInfo
+                ? ((FieldInfo)vectorMember).FieldType
+                : ((PropertyInfo)vectorMember).PropertyType;
+            ConstructorInfo constructor = vectorType.GetConstructor(new[] { typeof(float), typeof(float), typeof(float) });
+            if (constructor != null)
+                return constructor.Invoke(new object[] { values[0], values[1], values[2] });
+
+            object vector = Activator.CreateInstance(vectorType);
+            WriteMemberValue(vector, FindMember(vectorType, "x"), values[0]);
+            WriteMemberValue(vector, FindMember(vectorType, "y"), values[1]);
+            WriteMemberValue(vector, FindMember(vectorType, "z"), values[2]);
+            return vector;
         }
 
         private static void InstallAnyMagHooks()
