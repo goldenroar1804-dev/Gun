@@ -1,0 +1,29 @@
+name: Build Gun Modifier
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Build project
+        run: dotnet build GunModifier.csproj --configuration Release
+
+      - name: Upload DLL
+        uses: actions/upload-artifact@v4
+        with:
+          name: GunModifier-DLL
+          path: bin/Release/net6.0/GunModifier.dll
