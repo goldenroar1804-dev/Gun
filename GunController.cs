@@ -142,16 +142,16 @@ namespace GunModifier
                 }
 
                 MethodInfo target = gunType.GetMethods(InstanceFlags)
-                    .FirstOrDefault(m => m.Name == "Fire" && m.GetParameters().Length == 0)
-                    ?? gunType.GetMethods(InstanceFlags).FirstOrDefault(m => m.Name == "Fire");
+                    .FirstOrDefault(m => m.Name == "OnFire" && m.GetParameters().Length == 0)
+                    ?? gunType.GetMethods(InstanceFlags).FirstOrDefault(m => m.Name == "OnFire");
                 MethodInfo prefix = typeof(GunController).GetMethod(nameof(RecoilPrefix), StaticFlags);
                 MethodInfo postfix = typeof(GunController).GetMethod(nameof(RecoilPostfix), StaticFlags);
                 if (target == null || prefix == null || postfix == null)
-                    throw new Exception("Gun.Fire or recoil callbacks were not found.");
+                    throw new Exception("Gun.OnFire or recoil callbacks were not found.");
 
                 _createHookMethod.Invoke(null, new object[] { target, prefix, true });
                 _createHookMethod.Invoke(null, new object[] { target, postfix, false });
-                MelonLogger.Msg("Gun Modifier: physical recoil hooks installed on Gun.Fire.");
+                MelonLogger.Msg("Gun Modifier: physical recoil hooks installed on Gun.OnFire.");
             }
             catch (Exception ex)
             {
