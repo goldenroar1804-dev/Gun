@@ -26,6 +26,8 @@ namespace GunModifier
 
         public override void OnUpdate()
         {
+            GunController.Update();
+
             if (_menuCreated || _menuAttempted)
                 return;
 
