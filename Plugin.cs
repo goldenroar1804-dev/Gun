@@ -6,7 +6,7 @@ using MelonLoader;
 [assembly: MelonInfo(
     typeof(GunModifier.Plugin),
     "Gun Modifier",
-    "1.0.2",
+    "1.1.0",
     "GunModifier")]
 
 [assembly: MelonGame("Stress Level Zero", "BONELAB")]
@@ -137,6 +137,12 @@ namespace GunModifier
                     new Action<bool>(SetInfiniteAmmo)
                 });
 
+                createBool.Invoke(page, new object[]
+                {
+                    "Any Mag", white, false,
+                    new Action<bool>(SetAnyMag)
+                });
+
                 _menuCreated = true;
                 MelonLogger.Msg("Gun Modifier menu created successfully!");
             }
@@ -170,6 +176,12 @@ namespace GunModifier
         private static void SetInfiniteAmmo(bool value)
         {
             GunSettings.InfiniteAmmo = value;
+        }
+
+        private static void SetAnyMag(bool value)
+        {
+            GunSettings.AnyMag = value;
+            MelonLogger.Msg("Gun Modifier: Any Mag set to " + value + ". Magazine compatibility hook status will be reported by GunController.");
         }
     }
 }
