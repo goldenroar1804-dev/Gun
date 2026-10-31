@@ -1,4 +1,4 @@
- using System;
+using System;
 using System.Linq;
 using System.Reflection;
 using MelonLoader;
@@ -6,7 +6,7 @@ using MelonLoader;
 [assembly: MelonInfo(
     typeof(GunModifier.Plugin),
     "Gun Modifier",
-    "1.0.0",
+    "1.0.1",
     "GunModifier")]
 
 [assembly: MelonGame("Stress Level Zero", "BONELAB")]
@@ -15,9 +15,19 @@ namespace GunModifier
 {
     public class Plugin : MelonMod
     {
+        private bool _menuCreated;
+        private bool _menuAttempted;
+
         public override void OnInitializeMelon()
         {
             MelonLogger.Msg("Gun Modifier loaded!");
+            MelonLogger.Msg("Waiting for BoneLib BoneMenu to initialize...");
+        }
+
+        public override void OnUpdate()
+        {
+            if (_menuCreated || _menuAttempted)
+                return;
 
             try
             {
@@ -26,70 +36,63 @@ namespace GunModifier
                     .FirstOrDefault(a => a.GetName().Name == "BoneLib");
 
                 if (boneLib == null)
-                {
-                    boneLib = Assembly.Load("BoneLib");
-                }
+                    return;
 
                 Type pageType = boneLib.GetType("BoneLib.BoneMenu.Page");
-
                 if (pageType == null)
-                {
-                    throw new Exception("BoneMenu Page type not found.");
-                }
+                    throw new Exception("BoneLib.BoneMenu.Page type was not found.");
+
+                PropertyInfo rootProperty = pageType.GetProperty(
+                    "Root",
+                    BindingFlags.Public | BindingFlags.Static);
+
+                if (rootProperty == null)
+                    throw new Exception("BoneMenu Page.Root property was not found.");
+
+                // BoneLib creates Page.Root during its own initialization.
+                // Wait until it exists instead of trying to build our menu too early.
+                object root = rootProperty.GetValue(null);
+                if (root == null)
+                    return;
 
                 Assembly unityAssembly = AppDomain.CurrentDomain
                     .GetAssemblies()
                     .FirstOrDefault(a => a.GetName().Name == "UnityEngine.CoreModule");
 
                 if (unityAssembly == null)
-                {
                     unityAssembly = Assembly.Load("UnityEngine.CoreModule");
-                }
 
                 Type colorType = unityAssembly.GetType("UnityEngine.Color");
-
                 if (colorType == null)
-                {
-                    throw new Exception("Unity Color type not found.");
-                }
+                    throw new Exception("UnityEngine.Color type was not found.");
 
                 object white = Activator.CreateInstance(colorType);
-
                 colorType.GetField("r").SetValue(white, 1f);
                 colorType.GetField("g").SetValue(white, 1f);
                 colorType.GetField("b").SetValue(white, 1f);
                 colorType.GetField("a").SetValue(white, 1f);
 
-                PropertyInfo rootProperty = pageType.GetProperty(
-                    "Root",
-                    BindingFlags.Public | BindingFlags.Static
-                );
-
-                object root = rootProperty.GetValue(null);
-
+                // BoneLib 3.2.2 CreatePage has four parameters:
+                // name, color, maxElements, createLink.
                 MethodInfo createPage = pageType.GetMethod(
                     "CreatePage",
-                    new Type[] { typeof(string), colorType }
-                );
+                    new Type[] { typeof(string), colorType, typeof(int), typeof(bool) });
 
-                object page = createPage.Invoke(
-                    root,
-                    new object[] { "Gun Modifier", white }
-                );
+                if (createPage == null)
+                    throw new Exception("BoneMenu CreatePage(string, Color, int, bool) was not found.");
+
+                object page = createPage.Invoke(root, new object[] { "Gun Modifier", white, 0, true });
 
                 MethodInfo createInt = pageType.GetMethod(
                     "CreateInt",
                     new Type[]
                     {
-                        typeof(string),
-                        colorType,
-                        typeof(int),
-                        typeof(int),
-                        typeof(int),
-                        typeof(int),
-                        typeof(Action<int>)
-                    }
-                );
+                        typeof(string), colorType, typeof(int), typeof(int),
+                        typeof(int), typeof(int), typeof(Action<int>)
+                    });
+
+                if (createInt == null)
+                    throw new Exception("BoneMenu CreateInt method was not found.");
 
                 createInt.Invoke(page, new object[]
                 {
@@ -119,12 +122,11 @@ namespace GunModifier
                     "CreateBool",
                     new Type[]
                     {
-                        typeof(string),
-                        colorType,
-                        typeof(bool),
-                        typeof(Action<bool>)
-                    }
-                );
+                        typeof(string), colorType, typeof(bool), typeof(Action<bool>)
+                    });
+
+                if (createBool == null)
+                    throw new Exception("BoneMenu CreateBool method was not found.");
 
                 createBool.Invoke(page, new object[]
                 {
@@ -132,10 +134,12 @@ namespace GunModifier
                     new Action<bool>(SetInfiniteAmmo)
                 });
 
-                MelonLogger.Msg("Gun Modifier menu created!");
+                _menuCreated = true;
+                MelonLogger.Msg("Gun Modifier menu created successfully!");
             }
             catch (Exception ex)
             {
+                _menuAttempted = true;
                 MelonLogger.Error("Gun Modifier menu failed: " + ex);
             }
         }
@@ -165,4 +169,4 @@ namespace GunModifier
             GunSettings.InfiniteAmmo = value;
         }
     }
-}           
+}
