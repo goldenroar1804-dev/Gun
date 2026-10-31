@@ -1,4 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>GunModifier</AssemblyName>
@@ -11,15 +12,23 @@
   <ItemGroup>
     <Reference Include="MelonLoader">
       <HintPath>Lib/MelonLoader.dll</HintPath>
+      <Private>false</Private>
     </Reference>
+
     <Reference Include="BoneLib">
       <HintPath>Lib/BoneLib.dll</HintPath>
+      <Private>false</Private>
     </Reference>
+
     <Reference Include="Assembly-CSharp">
       <HintPath>Lib/Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
     </Reference>
+
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>Lib/UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
     </Reference>
   </ItemGroup>
+
 </Project>
