@@ -28,8 +28,6 @@ namespace GunModifier
         {
             public object Rigidbody;
             public object FireTransform;
-            public int AmmoBefore;
-            public bool HasAmmoBefore;
         }
 
         private sealed class PendingAnyMagRetry
@@ -182,23 +180,25 @@ namespace GunModifier
                 object body = FindGunRigidbody(__instance, socket, rigidbodyType);
                 if (body == null)
                 {
-                    LogOnce("recoil-no-rigidbody", "Gun Modifier: recoil could not locate a Rigidbody on the gun hierarchy.");
+                    LogOnce("recoil-no-rigidbody", "Gun Modifier: Gun.Fire ran, but no Rigidbody was found on the gun hierarchy.");
                     return;
                 }
 
                 object fireTransform = GetMemberValue(__instance, "firePointTransform");
                 if (fireTransform == null)
                     fireTransform = GetMemberValue(__instance, "transform");
+                if (fireTransform == null)
+                {
+                    LogOnce("recoil-no-fire-transform", "Gun Modifier: found the gun Rigidbody, but no fire-point Transform was available.");
+                    return;
+                }
 
-                int ammoBefore;
-                bool hasAmmoBefore = TryReadAmmoCount(__instance, out ammoBefore);
+                LogOnce("recoil-fire-prefix", "Gun Modifier: Gun.Fire recoil prefix ran and found the gun Rigidbody.");
                 int id = GetInstanceId(__instance, __instance.GetType());
                 RecoilSnapshots[id] = new RecoilSnapshot
                 {
                     Rigidbody = body,
-                    FireTransform = fireTransform,
-                    AmmoBefore = hasAmmoBefore ? ammoBefore : -1,
-                    HasAmmoBefore = hasAmmoBefore
+                    FireTransform = fireTransform
                 };
             }
             catch (Exception ex)
@@ -223,47 +223,12 @@ namespace GunModifier
                 if (multiplier <= 0f || shot.Rigidbody == null)
                     return;
 
-                // Match the working BONELAB Gun.Fire recoil pattern: only apply
-                // recoil when Fire actually consumed ammunition.
-                if (shot.HasAmmoBefore)
-                {
-                    int ammoAfter;
-                    if (!TryReadAmmoCount(__instance, out ammoAfter) || ammoAfter >= shot.AmmoBefore)
-                        return;
-                }
-
+                LogOnce("recoil-fire-postfix", "Gun Modifier: Gun.Fire recoil postfix ran; applying recoil.");
                 ApplyDirectRecoil(shot.Rigidbody, shot.FireTransform, multiplier);
             }
             catch (Exception ex)
             {
                 LogOnce("recoil-postfix-error", "Gun Modifier: direct recoil failed: " + ex.Message);
-            }
-        }
-
-        private static bool TryReadAmmoCount(object gun, out int count)
-        {
-            count = -1;
-            if (gun == null) return false;
-            try
-            {
-                MethodInfo ammoMethod = gun.GetType().GetMethods(InstanceFlags)
-                    .FirstOrDefault(m => m.Name == "AmmoCount" && m.GetParameters().Length == 0);
-                if (ammoMethod != null)
-                {
-                    count = Convert.ToInt32(ammoMethod.Invoke(gun, null));
-                    return true;
-                }
-
-                object value = GetMemberValue(gun, "ammoCount") ??
-                    GetMemberValue(gun, "_ammoCount") ??
-                    GetMemberValue(gun, "currentAmmo");
-                if (value == null) return false;
-                count = Convert.ToInt32(value);
-                return true;
-            }
-            catch
-            {
-                return false;
             }
         }
 
@@ -345,7 +310,7 @@ namespace GunModifier
                     });
                 if (method == null) return false;
 
-                object impulseMode = Enum.ToObject(method.GetParameters()[1].ParameterType, 2);
+                object impulseMode = Enum.Parse(method.GetParameters()[1].ParameterType, "Impulse", true);
                 method.Invoke(body, new[] { vector, impulseMode });
                 return true;
             }
