@@ -6,7 +6,7 @@ using MelonLoader;
 [assembly: MelonInfo(
     typeof(GunModifier.Plugin),
     "Gun Modifier",
-    "1.0.1",
+    "1.0.2",
     "GunModifier")]
 
 [assembly: MelonGame("Stress Level Zero", "BONELAB")]
@@ -54,6 +54,9 @@ namespace GunModifier
                 object root = rootProperty.GetValue(null);
                 if (root == null)
                     return;
+
+                // Install the gun-fire hook once BoneLib is fully available.
+                GunController.Initialize(boneLib);
 
                 Assembly unityAssembly = AppDomain.CurrentDomain
                     .GetAssemblies()
