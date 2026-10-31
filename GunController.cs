@@ -167,20 +167,17 @@ namespace GunModifier
                 if (rigidbodyType == null)
                     return;
 
-                // BONELAB gun mods locate the gun body from its ammo socket parent.
-                // triggerGrip can lead to the player's hand rather than the gun.
+                // Search the socket, gun object, their transforms, and the gun's
+                // host/entity roots. Unity components can expose lookup methods on
+                // their GameObject or Transform rather than on the IL2CPP wrapper.
                 object socket = GetMemberValue(__instance, "ammoSocket");
-                object body = GetComponentInParentByType(socket, rigidbodyType);
-                if (body == null && socket != null)
-                    body = GetComponentInParentByType(GetMemberValue(socket, "gameObject"), rigidbodyType);
-                if (body == null)
-                    body = GetComponentInParentByType(__instance, rigidbodyType);
+                object body = FindGunRigidbody(__instance, socket, rigidbodyType);
                 if (body == null)
                 {
-                    LogOnce("recoil-no-rigidbody", "Gun Modifier: recoil could not find the Rigidbody above the gun's AmmoSocket.");
+                    LogOnce("recoil-no-rigidbody", "Gun Modifier: recoil could not locate a Rigidbody on the gun, its parents, or its children.");
                     return;
                 }
-                LogOnce("recoil-rigidbody-found", "Gun Modifier: recoil found the gun Rigidbody through its AmmoSocket parent.");
+                LogOnce("recoil-rigidbody-found", "Gun Modifier: recoil found a Rigidbody on the gun hierarchy.");
 
                 MemberInfo velocity = FindMember(body.GetType(), "velocity");
                 MemberInfo angularVelocity = FindMember(body.GetType(), "angularVelocity");
@@ -233,13 +230,45 @@ namespace GunModifier
             }
         }
 
-        private static object GetComponentInParentByType(object target, Type componentType)
+        private static object FindGunRigidbody(object gun, object socket, Type rigidbodyType)
+        {
+            object[] candidates =
+            {
+                socket,
+                GetMemberValue(socket, "gameObject"),
+                GetMemberValue(socket, "transform"),
+                gun,
+                GetMemberValue(gun, "gameObject"),
+                GetMemberValue(gun, "transform"),
+                GetMemberValue(gun, "host"),
+                GetMemberValue(GetMemberValue(gun, "host"), "gameObject"),
+                GetMemberValue(gun, "entity"),
+                GetMemberValue(GetMemberValue(gun, "entity"), "gameObject")
+            };
+
+            foreach (object candidate in candidates)
+            {
+                if (candidate == null) continue;
+                object body = InvokeComponentLookup(candidate, "GetComponent", rigidbodyType);
+                if (body == null) body = InvokeComponentLookup(candidate, "GetComponentInParent", rigidbodyType);
+                if (body == null) body = InvokeComponentLookup(candidate, "GetComponentInChildren", rigidbodyType);
+                if (body != null) return body;
+            }
+            return null;
+        }
+
+        private static object InvokeComponentLookup(object target, string methodName, Type componentType)
         {
             if (target == null) return null;
-            MethodInfo method = target.GetType().GetMethods(InstanceFlags)
-                .FirstOrDefault(m => m.Name == "GetComponentInParent" &&
-                    m.GetParameters().Length == 1 && m.GetParameters()[0].ParameterType == typeof(Type));
-            return method == null ? null : method.Invoke(target, new object[] { componentType });
+            try
+            {
+                MethodInfo method = target.GetType().GetMethods(InstanceFlags)
+                    .FirstOrDefault(m => m.Name == methodName &&
+                        m.GetParameters().Length == 1 &&
+                        m.GetParameters()[0].ParameterType == typeof(Type));
+                return method == null ? null : method.Invoke(target, new object[] { componentType });
+            }
+            catch { return null; }
         }
 
         private static float[] ReadVector(object vector)
@@ -294,12 +323,16 @@ namespace GunModifier
                 }
 
                 MethodInfo prefix = typeof(GunController).GetMethod(nameof(AnyMagPrefix), StaticFlags);
+                MethodInfo applyPostfix = typeof(GunController).GetMethod(nameof(AnyMagPostfix), StaticFlags);
                 MethodInfo restorePostfix = typeof(GunController).GetMethod(nameof(AnyMagRestorePostfix), StaticFlags);
                 int installed = 0;
 
-                // Match platforms before lock and keep the match until the plug exits/unlocks.
+                // Try the incoming plug before the socket validates it, then retry
+                // after the socket has assigned its internal magazine plug.
                 installed += HookAnyMagMethod(socketType, "OnPlugEnter", 1, prefix, true);
+                installed += HookAnyMagMethod(socketType, "OnPlugEnter", 1, applyPostfix, false);
                 installed += HookAnyMagMethod(socketType, "OnPlugLocked", 1, prefix, true);
+                installed += HookAnyMagMethod(socketType, "OnPlugLocked", 1, applyPostfix, false);
                 installed += HookAnyMagMethod(socketType, "OnPlugExit", 1, restorePostfix, false);
                 installed += HookAnyMagMethod(socketType, "OnPlugUnlocked", 0, restorePostfix, false);
 
@@ -329,33 +362,63 @@ namespace GunModifier
 
         private static void AnyMagPrefix(object __instance, object[] __args)
         {
-            if (__instance == null)
-                return;
+            object plug = __args != null && __args.Length > 0 ? __args[0] : null;
+            TryApplyAnyMag(__instance, plug, "prefix");
+        }
 
-            int socketId = GetInstanceId(__instance, __instance.GetType());
+        private static void AnyMagPostfix(object __instance, object[] __args)
+        {
+            object plug = __args != null && __args.Length > 0 ? __args[0] : null;
+            TryApplyAnyMag(__instance, plug, "postfix");
+        }
+
+        private static void TryApplyAnyMag(object socket, object incomingPlug, string phase)
+        {
+            if (socket == null) return;
+
+            int socketId = GetInstanceId(socket, socket.GetType());
             if (!GunSettings.AnyMag)
             {
                 RestoreAnyMagPlatforms(socketId);
                 return;
             }
 
-            if (__args == null || __args.Length == 0 || __args[0] == null)
-                return;
-
             try
             {
-                object plug = __args[0];
-                object magazine = GetMemberValue(plug, "magazine");
-                object magazineState = GetMemberValue(magazine, "magazineState");
-                object magazineData = GetMemberValue(magazineState, "magazineData");
-                string incomingPlatform = GetMemberValue(magazineData, "platform") as string;
-                if (string.IsNullOrEmpty(incomingPlatform))
+                // OnPlugEnter's argument may not yet contain its Magazine. After
+                // the socket assigns _magazinePlug, that object is the reliable path.
+                object plug = incomingPlug ??
+                    GetMemberValue(socket, "_magazinePlug") ??
+                    GetMemberValue(socket, "magazinePlug");
+
+                object magazine = GetMemberValue(plug, "magazine") ??
+                    GetMemberValue(plug, "_magazine");
+                object magazineState = GetMemberValue(magazine, "magazineState") ??
+                    GetMemberValue(magazine, "state");
+                object magazineData = GetMemberValue(magazineState, "magazineData") ??
+                    GetMemberValue(magazine, "magazineData") ??
+                    GetMemberValue(plug, "magazineData") ??
+                    GetMemberValue(plug, "data");
+
+                string incomingPlatform =
+                    SafeString(GetMemberValue(magazineData, "platform"));
+                if (incomingPlatform == "null" || string.IsNullOrEmpty(incomingPlatform))
+                    incomingPlatform = SafeString(GetMemberValue(magazine, "platform"));
+                if (incomingPlatform == "null" || string.IsNullOrEmpty(incomingPlatform))
+                    incomingPlatform = SafeString(GetMemberValue(plug, "platform"));
+
+                if (incomingPlatform == "null" || string.IsNullOrEmpty(incomingPlatform))
                 {
-                    LogOnce("anymag-no-platform", "Gun Modifier: Any Mag saw a plug, but its magazine platform was empty or unavailable.");
+                    LogOnce("anymag-no-platform-" + phase,
+                        "Gun Modifier: Any Mag " + phase + " could not read a platform. plug=" +
+                        DescribeObject(plug) + "; magazine=" + DescribeObject(magazine) +
+                        "; magazineState=" + DescribeObject(magazineState) +
+                        "; magazineData=" + DescribeObject(magazineData) +
+                        "; plug members=" + DescribeMembers(plug));
                     return;
                 }
 
-                object gun = GetMemberValue(__instance, "gun");
+                object gun = GetMemberValue(socket, "gun");
                 object defaultMagazine = GetMemberValue(gun, "defaultMagazine");
                 if (gun == null || defaultMagazine == null)
                 {
@@ -363,7 +426,7 @@ namespace GunModifier
                     return;
                 }
 
-                int plugId = GetInstanceId(plug, plug.GetType());
+                int plugId = GetInstanceId(plug ?? magazine, (plug ?? magazine).GetType());
                 if (PlatformSnapshots.TryGetValue(socketId, out PlatformSnapshot existing) && existing.PlugId != plugId)
                     RestoreAnyMagPlatforms(socketId);
 
@@ -371,16 +434,16 @@ namespace GunModifier
                 {
                     snapshot = new PlatformSnapshot
                     {
-                        Socket = __instance,
+                        Socket = socket,
                         Plug = plug,
                         PlugId = plugId,
-                        SocketPlatformMember = FindMember(__instance.GetType(), "platform"),
+                        SocketPlatformMember = FindMember(socket.GetType(), "platform"),
                         DefaultMagazine = defaultMagazine,
                         DefaultPlatformMember = FindMember(defaultMagazine.GetType(), "platform")
                     };
 
                     if (snapshot.SocketPlatformMember != null)
-                        snapshot.SocketPlatformValue = ReadMember(__instance, snapshot.SocketPlatformMember);
+                        snapshot.SocketPlatformValue = ReadMember(socket, snapshot.SocketPlatformMember);
                     if (snapshot.DefaultPlatformMember != null)
                         snapshot.DefaultPlatformValue = ReadMember(defaultMagazine, snapshot.DefaultPlatformMember);
 
@@ -388,12 +451,13 @@ namespace GunModifier
                 }
 
                 if (snapshot.SocketPlatformMember != null)
-                    WriteMemberValue(__instance, snapshot.SocketPlatformMember, incomingPlatform);
+                    WriteMemberValue(socket, snapshot.SocketPlatformMember, incomingPlatform);
                 if (snapshot.DefaultMagazine != null && snapshot.DefaultPlatformMember != null)
                     WriteMemberValue(snapshot.DefaultMagazine, snapshot.DefaultPlatformMember, incomingPlatform);
 
                 LogOnce("anymag-platform:" + incomingPlatform,
-                    "Gun Modifier: Any Mag matched socket and gun magazine platform to incoming magazine platform '" + incomingPlatform + "'. The match stays active until exit/unlock.");
+                    "Gun Modifier: Any Mag matched socket and gun magazine platform to incoming magazine platform '" +
+                    incomingPlatform + "'.");
             }
             catch (Exception ex)
             {
@@ -612,6 +676,18 @@ namespace GunModifier
         private static string DescribeObject(object value)
         {
             return value == null ? "null" : value.GetType().FullName;
+        }
+
+        private static string DescribeMembers(object value)
+        {
+            if (value == null) return "null";
+            try
+            {
+                return string.Join(", ", value.GetType().GetFields(InstanceFlags).Select(f => f.Name)
+                    .Concat(value.GetType().GetProperties(InstanceFlags).Select(p => p.Name))
+                    .Distinct().Take(60));
+            }
+            catch { return value.GetType().FullName; }
         }
 
         private static string SafeString(object value)
