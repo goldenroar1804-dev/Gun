@@ -10,25 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="MelonLoader">
-      <HintPath>Lib/MelonLoader.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-
-    <Reference Include="BoneLib">
-      <HintPath>Lib/BoneLib.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-
-    <Reference Include="Assembly-CSharp">
-      <HintPath>Lib/Assembly-CSharp.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>Lib/UnityEngine.CoreModule.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
+    <PackageReference Include="LavaGang.MelonLoader"
+                      Version="0.6.5" />
   </ItemGroup>
 
 </Project>
