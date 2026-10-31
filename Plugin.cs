@@ -6,7 +6,7 @@ using MelonLoader;
 [assembly: MelonInfo(
     typeof(GunModifier.Plugin),
     "Gun Modifier",
-    "1.2.6",
+    "1.2.7",
     "GunModifier")]
 
 [assembly: MelonGame("Stress Level Zero", "BONELAB")]
