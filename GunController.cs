@@ -12,14 +12,28 @@ namespace GunModifier
         private const BindingFlags InstanceFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
         private const BindingFlags StaticFlags = BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
 
+        private sealed class PlatformSnapshot
+        {
+            public object Socket;
+            public MemberInfo SocketPlatformMember;
+            public object SocketPlatformValue;
+            public object DefaultMagazine;
+            public MemberInfo DefaultPlatformMember;
+            public object DefaultPlatformValue;
+        }
+
         private static bool _initialized;
         private static bool _damageHookInstalled;
-        private static bool _magHooksScanned;
+        private static bool _anyMagHooksInstalled;
         private static EventInfo _preFireEvent;
         private static Delegate _preFireHandler;
         private static MethodInfo _setRpmMethod;
+        private static MethodInfo _createHookMethod;
         private static readonly Dictionary<string, float> OriginalValues = new Dictionary<string, float>();
+        private static readonly Dictionary<string, int> AppliedMagazineCapacity = new Dictionary<string, int>();
+        private static readonly Dictionary<int, Stack<PlatformSnapshot>> PlatformSnapshots = new Dictionary<int, Stack<PlatformSnapshot>>();
         private static readonly HashSet<string> LoggedMembers = new HashSet<string>();
+        private static bool _infiniteAmmoLogWritten;
 
         public static void Initialize(Assembly boneLib)
         {
@@ -32,6 +46,11 @@ namespace GunModifier
                 Type extensionsType = boneLib.GetType("BoneLib.Extensions");
                 if (hookingType == null || extensionsType == null)
                     throw new Exception("BoneLib Hooking or Extensions type was not found.");
+
+                _createHookMethod = hookingType.GetMethod("CreateHook", StaticFlags, null,
+                    new[] { typeof(MethodInfo), typeof(MethodInfo), typeof(bool) }, null);
+                if (_createHookMethod == null)
+                    throw new Exception("BoneLib Hooking.CreateHook was not found.");
 
                 _preFireEvent = hookingType.GetEvent("OnPreFireGun", StaticFlags);
                 if (_preFireEvent == null)
@@ -51,7 +70,7 @@ namespace GunModifier
                 _preFireEvent.AddEventHandler(null, _preFireHandler);
 
                 InstallDamageHook(hookingType);
-                ScanMagazineCompatibilityHooks(hookingType);
+                InstallAnyMagHooks();
 
                 _initialized = true;
                 MelonLogger.Msg("Gun Modifier: fire-rate hook installed.");
@@ -82,8 +101,7 @@ namespace GunModifier
                 if (target == null || prefix == null)
                     throw new Exception("TakeDamage or damage prefix method not found.");
 
-                MethodInfo createHook = hookingType.GetMethod("CreateHook", StaticFlags);
-                createHook.Invoke(null, new object[] { target, prefix, true });
+                _createHookMethod.Invoke(null, new object[] { target, prefix, true });
                 _damageHookInstalled = true;
                 MelonLogger.Msg("Gun Modifier: NPC damage hook installed.");
             }
@@ -93,8 +111,130 @@ namespace GunModifier
             }
         }
 
-        // Harmony supplies the original arguments as an object array. The Attack value
-        // is changed only when its own damage member is found.
+        private static void InstallAnyMagHooks()
+        {
+            try
+            {
+                Type socketType = AppDomain.CurrentDomain.GetAssemblies()
+                    .Select(a => a.GetType("Il2CppSLZ.Marrow.AmmoSocket"))
+                    .FirstOrDefault(t => t != null);
+
+                if (socketType == null)
+                {
+                    MelonLogger.Warning("Gun Modifier: AmmoSocket type not found; Any Mag unavailable.");
+                    return;
+                }
+
+                MethodInfo prefix = typeof(GunController).GetMethod(nameof(AnyMagPrefix), StaticFlags);
+                MethodInfo postfix = typeof(GunController).GetMethod(nameof(AnyMagPostfix), StaticFlags);
+                int installed = 0;
+
+                foreach (string methodName in new[] { "OnPlugEnter", "OnPlugLocked" })
+                {
+                    MethodInfo target = socketType.GetMethods(InstanceFlags)
+                        .FirstOrDefault(m => m.Name == methodName && m.GetParameters().Length == 1);
+                    if (target == null)
+                    {
+                        MelonLogger.Warning("Gun Modifier: AmmoSocket." + methodName + " was not found.");
+                        continue;
+                    }
+
+                    _createHookMethod.Invoke(null, new object[] { target, prefix, true });
+                    _createHookMethod.Invoke(null, new object[] { target, postfix, false });
+                    installed++;
+                    MelonLogger.Msg("Gun Modifier: Any Mag hooked AmmoSocket." + methodName + ".");
+                }
+
+                _anyMagHooksInstalled = installed > 0;
+                MelonLogger.Msg("Gun Modifier: targeted Any Mag hooks installed: " + installed + ".");
+            }
+            catch (Exception ex)
+            {
+                MelonLogger.Warning("Gun Modifier: Any Mag hook setup failed: " + ex);
+            }
+        }
+
+        private static void AnyMagPrefix(object __instance, object[] __args)
+        {
+            if (!GunSettings.AnyMag || __instance == null || __args == null || __args.Length == 0)
+                return;
+
+            try
+            {
+                object plug = __args[0];
+                object magazine = GetMemberValue(plug, "magazine");
+                object magazineState = GetMemberValue(magazine, "magazineState");
+                object magazineData = GetMemberValue(magazineState, "magazineData");
+                string incomingPlatform = GetMemberValue(magazineData, "platform") as string;
+                if (string.IsNullOrEmpty(incomingPlatform))
+                    return;
+
+                object gun = GetMemberValue(__instance, "gun");
+                object defaultMagazine = GetMemberValue(gun, "defaultMagazine");
+                int socketId = GetInstanceId(__instance, __instance.GetType());
+
+                PlatformSnapshot snapshot = new PlatformSnapshot
+                {
+                    Socket = __instance,
+                    SocketPlatformMember = FindMember(__instance.GetType(), "platform"),
+                    SocketPlatformValue = null,
+                    DefaultMagazine = defaultMagazine,
+                    DefaultPlatformMember = defaultMagazine != null ? FindMember(defaultMagazine.GetType(), "platform") : null,
+                    DefaultPlatformValue = null
+                };
+
+                if (snapshot.SocketPlatformMember != null)
+                    snapshot.SocketPlatformValue = ReadMember(__instance, snapshot.SocketPlatformMember);
+                if (defaultMagazine != null && snapshot.DefaultPlatformMember != null)
+                    snapshot.DefaultPlatformValue = ReadMember(defaultMagazine, snapshot.DefaultPlatformMember);
+
+                if (!PlatformSnapshots.TryGetValue(socketId, out Stack<PlatformSnapshot> stack))
+                {
+                    stack = new Stack<PlatformSnapshot>();
+                    PlatformSnapshots[socketId] = stack;
+                }
+                stack.Push(snapshot);
+
+                if (snapshot.SocketPlatformMember != null)
+                    WriteMemberValue(__instance, snapshot.SocketPlatformMember, incomingPlatform);
+                if (defaultMagazine != null && snapshot.DefaultPlatformMember != null)
+                    WriteMemberValue(defaultMagazine, snapshot.DefaultPlatformMember, incomingPlatform);
+
+                LogOnce("anymag-platform:" + incomingPlatform,
+                    "Gun Modifier: Any Mag temporarily matching magazine platform '" + incomingPlatform + "'.");
+            }
+            catch (Exception ex)
+            {
+                LogOnce("anymag-prefix-error", "Gun Modifier: Any Mag compatibility check failed: " + ex.Message);
+            }
+        }
+
+        private static void AnyMagPostfix(object __instance)
+        {
+            if (__instance == null)
+                return;
+
+            try
+            {
+                int socketId = GetInstanceId(__instance, __instance.GetType());
+                if (!PlatformSnapshots.TryGetValue(socketId, out Stack<PlatformSnapshot> stack) || stack.Count == 0)
+                    return;
+
+                PlatformSnapshot snapshot = stack.Pop();
+                if (stack.Count == 0)
+                    PlatformSnapshots.Remove(socketId);
+
+                if (snapshot.SocketPlatformMember != null && snapshot.Socket != null)
+                    WriteMemberValue(snapshot.Socket, snapshot.SocketPlatformMember, snapshot.SocketPlatformValue);
+                if (snapshot.DefaultMagazine != null && snapshot.DefaultPlatformMember != null)
+                    WriteMemberValue(snapshot.DefaultMagazine, snapshot.DefaultPlatformMember, snapshot.DefaultPlatformValue);
+            }
+            catch (Exception ex)
+            {
+                LogOnce("anymag-restore-error", "Gun Modifier: Any Mag platform restore failed: " + ex.Message);
+            }
+        }
+
         private static void DamagePrefix(object[] __args)
         {
             float multiplier = GunSettings.DamageMultiplier;
@@ -106,89 +246,18 @@ namespace GunModifier
                 object value = __args[i];
                 if (value == null) continue;
 
-                Type type = value.GetType();
-                MemberInfo damageMember = FindMember(type, "damage");
+                MemberInfo damageMember = FindMember(value.GetType(), "damage");
                 if (damageMember == null) continue;
 
                 try
                 {
-                    object oldValue = ReadMember(value, damageMember);
-                    float damage = Convert.ToSingle(oldValue);
-                    WriteMember(value, damageMember, damage * multiplier);
+                    float damage = Convert.ToSingle(ReadMember(value, damageMember));
+                    WriteMemberValue(value, damageMember, damage * multiplier);
                     __args[i] = value;
                     return;
                 }
                 catch { }
             }
-        }
-
-        private static void ScanMagazineCompatibilityHooks(Type hookingType)
-        {
-            if (_magHooksScanned) return;
-            _magHooksScanned = true;
-
-            try
-            {
-                MethodInfo createHook = hookingType.GetMethod("CreateHook", StaticFlags);
-                MethodInfo prefix = typeof(GunController).GetMethod(nameof(AnyMagPrefix), StaticFlags);
-                int installed = 0;
-
-                foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
-                {
-                    string assemblyName = assembly.GetName().Name ?? "";
-                    if (!assemblyName.Contains("Il2CppSLZ") && !assemblyName.Contains("Assembly-CSharp"))
-                        continue;
-
-                    Type[] types;
-                    try { types = assembly.GetTypes(); }
-                    catch (ReflectionTypeLoadException ex) { types = ex.Types.Where(t => t != null).ToArray(); }
-                    catch { continue; }
-
-                    foreach (Type type in types)
-                    {
-                        string typeName = type.Name;
-                        if (!typeName.Contains("Magazine") && !typeName.Contains("Mag"))
-                            continue;
-
-                        MethodInfo[] methods;
-                        try { methods = type.GetMethods(InstanceFlags); }
-                        catch { continue; }
-
-                        foreach (MethodInfo method in methods)
-                        {
-                            string name = method.Name.ToLowerInvariant();
-                            bool looksLikeCompatibility =
-                                name.Contains("compatib") || name.Contains("caninsert") ||
-                                name.Contains("canplug") || name.Contains("canattach") ||
-                                name.Contains("acceptmag") || name.Contains("validmag");
-                            if (!looksLikeCompatibility || method.ReturnType != typeof(bool))
-                                continue;
-
-                            try
-                            {
-                                createHook.Invoke(null, new object[] { method, prefix, true });
-                                installed++;
-                            }
-                            catch { }
-                        }
-                    }
-                }
-
-                MelonLogger.Msg("Gun Modifier: Any Mag compatibility hooks found: " + installed + ".");
-                if (installed == 0)
-                    MelonLogger.Warning("Gun Modifier: no known magazine compatibility methods found; Any Mag needs runtime inspection.");
-            }
-            catch (Exception ex)
-            {
-                MelonLogger.Warning("Gun Modifier: magazine compatibility scan failed: " + ex.Message);
-            }
-        }
-
-        private static bool AnyMagPrefix(ref bool __result)
-        {
-            if (!GunSettings.AnyMag) return true;
-            __result = true;
-            return false;
         }
 
         private static void OnPreFireGun(object gun)
@@ -199,8 +268,10 @@ namespace GunModifier
             {
                 Type gunType = gun.GetType();
                 ApplyFireRate(gun, gunType);
-                ApplyGunValues(gun, gunType);
-                LogGunMembersOnce(gun, gunType);
+                ApplyMagazineCapacity(gun, gunType);
+                ApplyInfiniteAmmo(gun, gunType);
+                LogGunMembersOnce(gunType);
+                InspectMagazineLayout(gun, gunType);
             }
             catch (Exception ex)
             {
@@ -227,120 +298,235 @@ namespace GunModifier
             _setRpmMethod.Invoke(null, new object[] { gun, target });
         }
 
-        private static void ApplyGunValues(object gun, Type gunType)
+        private static void ApplyMagazineCapacity(object gun, Type gunType)
         {
-            ApplyNamedMultiplier(gun, gunType,
-                new[] { "recoil", "recoilForce", "recoilAmount", "recoilStrength" },
-                GunSettings.RecoilMultiplier, "recoil");
+            float multiplier = GunSettings.MagazineMultiplier;
+            object defaultMagazine = GetMemberValue(gun, "defaultMagazine");
+            object internalMagazine = GetMemberValue(gun, "internalMagazine");
 
-            ApplyNamedMultiplier(gun, gunType,
-                new[] { "magazineCapacity", "maxMagazine", "maxAmmo", "maxRounds", "capacity" },
-                GunSettings.MagazineMultiplier, "magazine");
+            ApplyMagazineData(defaultMagazine, multiplier, "default-magazine");
+            ApplyMagazineData(internalMagazine, multiplier, "internal-magazine");
 
-            if (GunSettings.InfiniteAmmo)
+            object socket = GetMemberValue(gun, "ammoSocket");
+            object plug = GetMemberValue(socket, "_magazinePlug");
+            object magazine = GetMemberValue(plug, "magazine");
+            object state = GetMemberValue(magazine, "magazineState");
+            object loadedData = GetMemberValue(state, "magazineData");
+
+            ApplyMagazineData(loadedData, multiplier, "loaded-magazine");
+
+            if (state != null && loadedData != null)
             {
-                float maximum = FindNumericMember(gun, gunType,
-                    new[] { "magazineCapacity", "maxMagazine", "maxAmmo", "maxRounds", "capacity" });
-                if (maximum > 0f)
-                    SetNamedNumericMembers(gun, gunType,
-                        new[] { "ammo", "currentAmmo", "ammoCount", "rounds", "currentRounds", "loadedAmmo" },
-                        maximum);
-            }
-        }
-
-        private static void ApplyNamedMultiplier(object target, Type type, string[] names, float multiplier, string category)
-        {
-            if (Math.Abs(multiplier - 1f) < 0.001f) return;
-
-            foreach (string name in names)
-            {
-                MemberInfo member = FindMember(type, name);
-                if (member == null) continue;
-
-                try
+                int targetCapacity = ReadIntMember(loadedData, "rounds");
+                int stateId = GetInstanceId(state, state.GetType());
+                string key = stateId + ":capacity";
+                if (targetCapacity > 0 && (!AppliedMagazineCapacity.TryGetValue(key, out int previous) || previous != targetCapacity))
                 {
-                    string key = GetInstanceId(target, type) + ":" + member.Name;
-                    float original;
-                    if (!OriginalValues.TryGetValue(key, out original))
+                    AppliedMagazineCapacity[key] = targetCapacity;
+                    if (GunSettings.MagazineMultiplier > 1.001f || ReadAmmoCount(state) > targetCapacity)
                     {
-                        original = Convert.ToSingle(ReadMember(target, member));
-                        OriginalValues[key] = original;
+                        InvokeIntMethod(state, "SetCartridge", targetCapacity);
+                        LogOnce("mag-capacity-set:" + key,
+                            "Gun Modifier: adjusted loaded magazine capacity to " + targetCapacity + " rounds.");
                     }
-                    WriteMember(target, member, original * multiplier);
-                    LogMember(category, type, member.Name);
                 }
-                catch { }
             }
         }
 
-        private static float FindNumericMember(object target, Type type, string[] names)
+        private static void ApplyMagazineData(object magazineData, float multiplier, string category)
         {
-            foreach (string name in names)
-            {
-                MemberInfo member = FindMember(type, name);
-                if (member == null) continue;
-                try { return Convert.ToSingle(ReadMember(target, member)); }
-                catch { }
-            }
-            return 0f;
-        }
+            if (magazineData == null) return;
 
-        private static void SetNamedNumericMembers(object target, Type type, string[] names, float value)
-        {
-            foreach (string name in names)
+            MemberInfo roundsMember = FindMember(magazineData.GetType(), "rounds");
+            if (roundsMember == null) return;
+
+            try
             {
-                MemberInfo member = FindMember(type, name);
-                if (member == null) continue;
-                try
+                string key = GetInstanceId(magazineData, magazineData.GetType()) + ":rounds";
+                if (!OriginalValues.TryGetValue(key, out float original))
                 {
-                    WriteMember(target, member, value);
-                    LogMember("infinite-ammo", type, member.Name);
+                    original = Convert.ToSingle(ReadMember(magazineData, roundsMember));
+                    OriginalValues[key] = original;
                 }
-                catch { }
+
+                int target = Math.Max(1, (int)Math.Round(original * multiplier));
+                WriteMemberValue(magazineData, roundsMember, target);
+                if (Math.Abs(multiplier - 1f) > 0.001f)
+                    LogOnce(category + ":" + key, "Gun Modifier: " + category + " capacity set to " + target + " rounds.");
+            }
+            catch (Exception ex)
+            {
+                LogOnce("mag-data-error:" + category, "Gun Modifier: could not adjust " + category + ": " + ex.Message);
             }
         }
 
-        private static void LogGunMembersOnce(object gun, Type type)
+        private static void ApplyInfiniteAmmo(object gun, Type gunType)
+        {
+            if (!GunSettings.InfiniteAmmo)
+                return;
+
+            object magazineState = GetMemberValue(gun, "MagazineState");
+            if (magazineState == null)
+            {
+                object socket = GetMemberValue(gun, "ammoSocket");
+                object plug = GetMemberValue(socket, "_magazinePlug");
+                object magazine = GetMemberValue(plug, "magazine");
+                magazineState = GetMemberValue(magazine, "magazineState");
+            }
+
+            if (magazineState != null && InvokeNoArgMethod(magazineState, "Refill"))
+            {
+                if (!_infiniteAmmoLogWritten)
+                {
+                    _infiniteAmmoLogWritten = true;
+                    MelonLogger.Msg("Gun Modifier: infinite ammo is refilling the active MagazineState.");
+                }
+            }
+            else
+            {
+                LogOnce("infinite-ammo-no-magstate",
+                    "Gun Modifier: infinite ammo is enabled, but this gun has no active MagazineState. Internal-magazine handling still needs inspection.");
+            }
+        }
+
+        private static void InspectMagazineLayout(object gun, Type gunType)
+        {
+            string gunKey = "mag-inspect:" + gunType.FullName;
+            if (!LoggedMembers.Add(gunKey)) return;
+
+            object socket = GetMemberValue(gun, "ammoSocket");
+            object plug = GetMemberValue(socket, "_magazinePlug");
+            object magazine = GetMemberValue(plug, "magazine");
+            object state = GetMemberValue(magazine, "magazineState");
+            object data = GetMemberValue(state, "magazineData");
+
+            MelonLogger.Msg("Gun Modifier: ammoSocket=" + DescribeObject(socket) +
+                "; socket platform=" + SafeString(GetMemberValue(socket, "platform")) +
+                "; plug=" + DescribeObject(plug) +
+                "; magazine=" + DescribeObject(magazine) +
+                "; inserted=" + SafeString(GetMemberValue(magazine, "isMagazineInserted")) +
+                "; magazineData=" + DescribeObject(data) +
+                "; mag platform=" + SafeString(GetMemberValue(data, "platform")) +
+                "; mag rounds=" + SafeString(GetMemberValue(data, "rounds")) +
+                "; loaded ammo=" + SafeString(GetMemberValue(state, "AmmoCount")) +
+                "; default platform=" + SafeString(GetMemberValue(GetMemberValue(gun, "defaultMagazine"), "platform")) +
+                "; default rounds=" + SafeString(GetMemberValue(GetMemberValue(gun, "defaultMagazine"), "rounds")) +
+                "; internal rounds=" + SafeString(GetMemberValue(GetMemberValue(gun, "internalMagazine"), "rounds")));
+        }
+
+        private static string DescribeObject(object value)
+        {
+            return value == null ? "null" : value.GetType().FullName;
+        }
+
+        private static string SafeString(object value)
+        {
+            return value == null ? "null" : Convert.ToString(value);
+        }
+
+        private static int ReadAmmoCount(object state)
+        {
+            try { return Convert.ToInt32(GetMemberValue(state, "AmmoCount")); }
+            catch { return -1; }
+        }
+
+        private static int ReadIntMember(object target, string name)
+        {
+            try { return Convert.ToInt32(GetMemberValue(target, name)); }
+            catch { return 0; }
+        }
+
+        private static void InvokeIntMethod(object target, string name, int value)
+        {
+            try
+            {
+                MethodInfo method = target.GetType().GetMethods(InstanceFlags)
+                    .FirstOrDefault(m => m.Name == name && m.GetParameters().Length == 1 &&
+                        (m.GetParameters()[0].ParameterType == typeof(int) || m.GetParameters()[0].ParameterType == typeof(uint)));
+                if (method != null)
+                    method.Invoke(target, new object[] { Convert.ChangeType(value, method.GetParameters()[0].ParameterType) });
+            }
+            catch (Exception ex)
+            {
+                LogOnce("invoke-" + name, "Gun Modifier: " + name + " failed: " + ex.Message);
+            }
+        }
+
+        private static bool InvokeNoArgMethod(object target, string name)
+        {
+            try
+            {
+                MethodInfo method = target.GetType().GetMethods(InstanceFlags)
+                    .FirstOrDefault(m => m.Name == name && m.GetParameters().Length == 0);
+                if (method == null) return false;
+                method.Invoke(target, null);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                LogOnce("invoke-" + name, "Gun Modifier: " + name + " failed: " + ex.Message);
+                return false;
+            }
+        }
+
+        private static void LogGunMembersOnce(Type type)
         {
             string key = "gun-layout:" + type.FullName;
             if (!LoggedMembers.Add(key)) return;
 
             string members = string.Join(", ", type.GetFields(InstanceFlags).Select(f => f.Name)
-                .Concat(type.GetProperties(InstanceFlags).Select(p => p.Name)).Distinct().Take(80));
+                .Concat(type.GetProperties(InstanceFlags).Select(p => p.Name)).Distinct().Take(100));
             MelonLogger.Msg("Gun Modifier: gun layout " + type.FullName + " => " + members);
         }
 
-        private static void LogMember(string category, Type type, string member)
+        private static void LogOnce(string key, string message)
         {
-            string key = category + ":" + type.FullName + ":" + member;
             if (LoggedMembers.Add(key))
-                MelonLogger.Msg("Gun Modifier: detected " + category + " member " + type.FullName + "." + member);
+                MelonLogger.Msg(message);
         }
 
         private static MemberInfo FindMember(Type type, string name)
         {
-            const BindingFlags flags = InstanceFlags;
-            FieldInfo field = type.GetField(name, flags | BindingFlags.IgnoreCase);
+            if (type == null) return null;
+            FieldInfo field = type.GetField(name, InstanceFlags | BindingFlags.IgnoreCase);
             if (field != null) return field;
-            PropertyInfo property = type.GetProperty(name, flags | BindingFlags.IgnoreCase);
-            if (property != null && property.CanRead && property.CanWrite) return property;
+            PropertyInfo property = type.GetProperty(name, InstanceFlags | BindingFlags.IgnoreCase);
+            if (property != null && property.CanRead) return property;
             return null;
+        }
+
+        private static object GetMemberValue(object target, string name)
+        {
+            if (target == null) return null;
+            try
+            {
+                MemberInfo member = FindMember(target.GetType(), name);
+                return member == null ? null : ReadMember(target, member);
+            }
+            catch { return null; }
         }
 
         private static object ReadMember(object target, MemberInfo member)
         {
             FieldInfo field = member as FieldInfo;
             if (field != null) return field.GetValue(target);
-            return ((PropertyInfo)member).GetValue(target);
+            return ((PropertyInfo)member).GetValue(target, null);
         }
 
-        private static void WriteMember(object target, MemberInfo member, float value)
+        private static void WriteMemberValue(object target, MemberInfo member, object value)
         {
             Type memberType = member is FieldInfo ? ((FieldInfo)member).FieldType : ((PropertyInfo)member).PropertyType;
-            object converted = Convert.ChangeType(value, memberType);
+            object converted = value == null ? null :
+                (memberType.IsInstanceOfType(value) ? value : Convert.ChangeType(value, Nullable.GetUnderlyingType(memberType) ?? memberType));
             FieldInfo field = member as FieldInfo;
-            if (field != null) field.SetValue(target, converted);
-            else ((PropertyInfo)member).SetValue(target, converted);
+            if (field != null)
+                field.SetValue(target, converted);
+            else
+            {
+                PropertyInfo property = (PropertyInfo)member;
+                if (property.CanWrite)
+                    property.SetValue(target, converted, null);
+            }
         }
 
         private static float ReadRpm(object gun, Type type)
